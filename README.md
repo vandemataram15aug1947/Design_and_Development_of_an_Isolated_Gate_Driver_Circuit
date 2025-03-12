@@ -200,10 +200,10 @@ The schematic diagram of the **HCPL-3120** represents its internal architecture,
 A properly designed schematic ensures that the **HCPL-3120** functions optimally with minimal signal distortion and maximum switching speed.
 
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/Simulation%20Diagran%20and%20Results/Schematic%20Diagram%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Applicat
+<p align="center"><b>Figure 2:</b> Schematic Diagram of HCPL-3120</p>
 
 ## PCB Layout Design Considerations
 ### **Best Practices for PCB Layout**
@@ -215,25 +215,25 @@ When designing a PCB layout for the **HCPL-3120**, the following key points shou
 
 ### **PCB Layout Images**
 #### **Top-Layer Traces and Copper**
-<p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
+<p align="center"> 
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%20Top-Layer%20Traces%20and%20Copper%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Applicat
+<p align="center"><b>Figure 2:</b> DIP Top-Layer Traces and Copper of HCPL-3120</p>  
 
 #### **Bottom-Layer Traces and Copper**
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%20Bottom-Layer%20Traces%20and%20Copper%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Applicat
+<p align="center"><b>Figure 2:</b> DIP Bottom-Layer Traces and Copper of HCPL-3120</p>  
 
 #### **3D PCB View**
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%203-D%20PCB%20View%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Applicat
+<p align="center"><b>Figure 2:</b> DIP 3-D PCB View of HCPL-3120</p>  
 
 ## 3. PCB Material Selection
 For reliability and performance, the **FR-4 UL94V-0** printed circuit board material is recommended. This material is preferred due to:
@@ -265,7 +265,205 @@ By following the guidelines for **schematic design, PCB layout, and material sel
 
 ---
 
-_This repository provides all necessary design files and PCB layouts to assist engineers in implementing the HCPL-3120 in their projects._
+
+# Design of Isolated UCC23513DWYR Optocoupler Gate Drivers
+
+## Introduction
+The **UCC23513DWYR** is a high-performance, single-channel gate driver designed for IGBTs, MOSFETs, and SiC MOSFETs. With a peak output current of **4.5A source** and **5.3A sink**, along with a reinforced isolation rating of **5.7kV RMS**, it offers reliability and efficiency. Its **33V wide supply voltage range** enables effective driving of IGBTs and SiC power FETs using bipolar supplies. This driver can operate both **low-side and high-side power FETs**, providing significant performance improvements over standard opto-coupler-based gate drivers.
+
+### Key Features
+- High **Common Mode Transient Immunity (CMTI)**
+- Low propagation delay and minimal pulse width distortion
+- **Minimized part-to-part skew** through tight process control
+- **Emulated diode (e-diode) input stage** for improved long-term reliability
+- Suitable for **motor drives, solar inverters, industrial power supplies**, and appliances
+- Supports **higher operating temperatures** compared to traditional optocouplers
+
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/Functional%20Diagram%20of%20HCPL-3120.png" width="500">
+</p>  
+
+<p align="center"><b>Figure 2:</b> Functional Diagram of HCPL-3120</p>  
+
+
+## Pin Functions
+
+| SL. NO. | PIN NAME | PIN NO. | TYPE  | DESCRIPTION |
+|---------|---------|---------|-------|-------------|
+| 1       | ANODE   | 1       | Input | Anode       |
+| 2       | NC      | 2       | -     | No Connection |
+| 3       | CATHODE | 3       | Input | Cathode     |
+| 4       | VCC     | 6       | Power | Positive output supply |
+| 5       | VEE     | 4       | Power | Negative output supply |
+| 6       | VOUT    | 5       | Output | Gate-drive output |
+
+## Specifications
+### Absolute Maximum Ratings
+Over operating free air temperature range (unless otherwise noted)
+
+| Parameter | Symbol | Min | Max | Unit |
+|-----------|--------|-----|-----|------|
+| Average Input Current | IF(AVG) | - | 25 | mA |
+| Peak Transient Input Current | IF(TRAN) | - | 1 | A |
+| Reverse Input Voltage | IR(MAX) | - | 14 | V |
+| Output Supply Voltage | VCC-VEE | -0.3 | 35 | V |
+| Output Signal Voltage | VOUT-VCE | - | 0.3 | V |
+| Output Signal Voltage | VOUT-VEE | -0.3 | - | V |
+
+> **Note:** Stresses beyond these limits may cause permanent damage to the device. Absolute maximum ratings do not imply functional operation beyond recommended operating conditions. Prolonged exposure to these conditions may impact device reliability.
+
+
+
+# Recommended Operating Conditions
+Over operating free-air temperature range (unless otherwise noted)
+
+| Parameter | Description | MIN | MAX | UNIT |
+|-----------|-------------|------|------|------|
+| $V_{CC}$ | Output Supply Voltage ($V_{CC}$-$V_{EE}$) | 14 | 33 | V |
+| $I_{F}$ (ON) | Input Diode Forward Current (Diode "ON") | 7 | 16 | mA |
+| $V_{F}$ (OFF) | Anode Voltage - Cathode Voltage (Diode "OFF") | -13 | 0.9 | V |
+
+## Power Ratings
+
+| Parameter | Test Conditions | MIN | MAX | UNIT |
+|-----------|----------------|------|------|------|
+| Maximum Power Dissipation On I/O | $V_{CC}$=20, $I_{F}$=10, f=10kHz |  | 750 | mW |
+| Maximum Input Power Dissipation | Duty cycle = 50% |  | 10 | mW |
+| Maximum Output Power Dissipation | Square Wave, 180nF Load |  | 740 | mW |
+
+# Feature Description
+
+## Power Supply
+Since the input stage is an emulated diode, no power supply is needed at the input. The output supply, $V_{CC}$, supports a voltage range from 14V to 33V.
+
+For operation with bipolar supplies, the power device is turned off with a negative voltage on the gate with respect to the emitter or source. This configuration prevents the power device from unintentionally turning on due to the Miller effect. The typical values of the $V_{CC}$ and $V_{EE}$ output supplies for bipolar operation are:
+- **IGBTs:** 15V and -8V with respect to GND.
+- **SiC MOSFETs:** 20V and -5V with respect to GND.
+
+For operation with unipolar supply:
+- **IGBTs:** $V_{CC}$ = 15V with respect to GND, $V_{EE}$ = 0V.
+- **SiC MOSFETs:** $V_{CC}$ = 20V with respect to GND, $V_{EE}$ = 0V.
+
+In this design, the secondary side is powered by a +15V and –8V rail referenced to the IGBT emitter. As shown in Figure 3.2:
+- The 15V rail ($V_{CC}$) is connected to the $V_{CC}$ pin.
+- The –8V rail ($V_{EE}$) is connected to the $V_{EE}$ pin of the gate driver.
+
+The total secondary voltage is **23V**, which is used for biasing the gate driver internal circuit and to drive the IGBT gate.
+
+### Capacitors Used:
+- **Bulk capacitors:** 4.7μF capacitors (C4 and C5) supply the IGBT gate current and minimize parasitic inductance, ensuring faster switching.
+- **Noise decoupling capacitors:** 0.1μF capacitors (C2 and C3) filter the power input.
+
+# UCC23513DWYR Gate Driver
+
+## Input Power Stage
+The input stage of **UCC23513DWYR** is simply the e-diode and therefore has an **Anode (Pin 1)** and a **Cathode (Pin 3)**. **Pin 2** has no internal connection and can be left open or connected to ground. The input stage does not have a power and ground pin.
+
+When the e-diode is forward biased by applying a positive voltage to the Anode with respect to the Cathode, a forward current **(I_F)** flows into the e-diode. The forward voltage drop across the e-diode is **2.1V (typ)**. An external resistor should be used to limit the forward current. The recommended range for the forward current is **7mA to 16mA**.
+
+When **I_F** exceeds the threshold current **I_FLH** (2.8mA typ.), a high-frequency signal is transmitted across the isolation barrier through the high-voltage **SiO₂ capacitors**. The HF signal is detected by the receiver and **V_OUT** is driven high. The dynamic impedance of the e-diode is very small (**<1.0 Ω**) and the temperature coefficient of the e-diode forward voltage drop is **<1.35 mV/°C**. This leads to excellent stability of the forward current **I_F** across all operating conditions.
+
+If the Anode voltage drops below **V_FHL** (0.9V), or is reverse biased, the gate driver output is driven low. The reverse breakdown voltage of the e-diode is **>15V**, allowing normal operation with a reverse bias of up to **13V**.
+
+The **UCC23513DWYR** can be used in an **interlock architecture**, where **V_SUP** can be as high as **12V**. The system designer has the flexibility to choose a **3.3V, 5.0V, or up to 12V** PWM signal source to drive the input stage of UCC23513DWYR using an appropriate input resistor.
+
+The interlock architecture ensures that if both PWM signals are erroneously stuck high (or low) simultaneously, both gate driver outputs will be driven low, preventing shoot-through in the IGBTs.
+
+## Output Power Stage
+The **UCC23513DWYR** has a single gate driver output for controlling the **IGBT switching time**. A **gate resistor R5** of **30Ω** is selected as recommended in the IGBT module datasheet. This results in maximum peak **source and sink currents of 0.766 A** at a **+15V, –8V rail**.
+
+For independent control of the **IGBT switching ON and OFF**, **D1** can be mounted in parallel with **R5**. A **10kΩ resistor (R6)** is connected between the **IGBT gate and emitter** to ensure that the IGBT remains in the off state in case the gate driver gets disconnected due to faults.
+
+## Applications Information
+**UCC23513DWYR** is a single-channel, isolated gate driver with an **opto-compatible input** designed for power semiconductor devices such as **MOSFETs, IGBTs, and SiC MOSFETs**. It is used in applications such as:
+- Motor control
+- Industrial inverters
+- Switched-mode power supplies (SMPS)
+
+Unlike standard opto-isolated gate drivers, **UCC23513DWYR** does not have an LED input stage. Instead, it uses an **emulated diode (e-diode)**. To turn the **e-diode ON**, a forward current of **7mA to 16mA** must be driven into the **Anode**. This drives the gate driver output **High**, turning on the power FET.
+
+Typically, **MCUs are not capable of providing the required forward current**, so a **buffer** must be used between the MCU and the input stage. Typical buffer power supplies are either **5V or 3.3V**. A **resistor** is required between the buffer and the input stage to limit the current. Choosing the correct resistor value is critical.
+
+### Output Power Supply
+- **Maximum output power supply voltage**: **33V (35V abs max)**
+- **Configurable externally as:**
+  - **Single isolated supply** up to **33V**
+  - **Isolated bipolar supply** ensuring **V_CC - V_EE** does not exceed **33V**
+  - **Bootstrapped configuration** (external diode & capacitor) when using a single power supply with respect to the power ground
+
+Typical **quiescent power supply current** from **V_CC** is **1.2mA (max 2.2mA)**.
+
+---
+This document provides a detailed overview of the **UCC23513DWYR** gate driver, including its input and output power stages, application information, and power supply considerations.
+
+
+# UCC23513DWYR Gate Driver Design Guide
+
+## Detailed Design Procedure
+
+### Selecting Gate Driver Input Resistor
+The input resistor limits the current flowing into the e-diode when it is forward biased. The threshold current ($I_{FLH}$) is **2.8 mA (typical)**, and the recommended operating range for the forward current is **7 mA to 16 mA** (e-diode ON). All electrical specifications are guaranteed in this range. The resistor should be selected such that under typical operating conditions, **$I_{F}$ is 10 mA**.
+
+#### Factors Affecting Input Resistor Selection:
+- **Variation in Supply Voltage** ($V_{SUP}$)
+- **Manufacturer's tolerance** for the resistor and variations due to temperature
+- **Variation in e-diode Forward Voltage Drop:** At $I_{F}$ = 10mA, the forward voltage typically ranges from **1.8V (min) to 2.4V (max)**, with a typical value of **2.1V**. This variation is influenced by a temperature coefficient **(< 1.35 mV/°C)** and a dynamic impedance **(< 30Ω)**.
+
+#### Input Resistor Calculation:
+The input resistor can be determined using the formula:
+
+```
+R_EXT = (V_SUP - V_F) / I_F
+      = (3.3V - 2.1V) / 0.01A
+      = 120Ω
+```
+
+### Selecting Gate Driver Output Resistor
+The gate driver output resistor is an essential component in controlling the switching characteristics of power MOSFETs or IGBTs. It is connected in series with the gate terminal to **limit inrush current** during charging and discharging of the gate capacitance. The value of this resistor directly affects:
+- **Rise and fall times** of the switching device
+- **Switching losses** and overall efficiency
+- **Electromagnetic interference (EMI) performance**
+
+For this design, a **30Ω resistor** is selected as the gate driver output resistor. This value ensures a **balance between switching speed and power dissipation**. A lower resistance can lead to **excessive gate current and potential device damage**, while a higher resistance may cause **slower switching and increased losses**.
+
+### Selecting $V_{CC}$ Capacitor
+The **$V_{CC}$ capacitor** is crucial for maintaining a stable supply voltage to the gate driver, ensuring reliable operation during high-speed switching events. It acts as a **local energy storage device**, supplying current during transients and filtering out noise.
+
+#### Recommended Capacitor Values:
+- **0.1μF ceramic capacitor**: Placed close to the $V_{CC}$ and ground pins to filter high-frequency noise.
+- **4.7μF electrolytic capacitor**: Provides bulk energy storage and supports low-frequency variations.
+
+Using these capacitors in combination ensures:
+- **Stable voltage levels**
+- **Reduced power supply noise**
+- **Improved system reliability**
+
+---
+
+This guide provides the essential component selection criteria for designing with the **UCC23513DWYR** gate driver, ensuring optimal performance in power electronics applications.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
