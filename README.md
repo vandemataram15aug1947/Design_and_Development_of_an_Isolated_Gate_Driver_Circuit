@@ -24,7 +24,6 @@ The HCPL-3120 contains a Gallium Arsenic Phosphide (GaAsP) LED, while the HCPL-J
 - Under Voltage Lock-Out protection (UVLO) with hysteresis
 - Wide operating $V_{CC}$ range: 15 to 30 Volts
 - 500 ns maximum switching speeds
-- Industrial temperature range: $-40^\circ$C to $100^\circ$C
 
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/Functional%20Diagram%20of%20HCPL-3120.png" width="500">
