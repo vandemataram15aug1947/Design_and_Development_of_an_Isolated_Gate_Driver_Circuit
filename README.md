@@ -9,11 +9,32 @@ This project focuses on the design and development of two isolated gate driver c
 
 The circuits are designed to efficiently drive power switches in high-frequency applications, ensuring **reliable isolation, fast switching, and enhanced noise immunity**. These gate drivers play a crucial role in power electronics applications such as **DC-DC converters, inverters, and motor drives**.  
 
-
-# 2.5 Amp Output Current IGBT Gate Drive **HCPL-3120** Optocoupler
+# HCPL-3120, HCPL-J312, and HCNW3120 Optocoupler Gate Drivers
 
 ## Introduction
-The HCPL-3120 contains a Gallium Arsenic Phosphide (GaAsP) LED, while the HCPL-J312 and the HCNW3120 contain an AlGaAs LED. The LED is optically coupled to an integrated circuit with a power output stage. These optocouplers are ideally suited for driving power IGBTs and MOSFETs used in motor control inverter applications. The high operating voltage range of the output stage provides the drive voltages required by gate-controlled devices. The voltage and current supplied by these optocouplers make them ideally suited for directly driving IGBTs with ratings up to 1200 V/100 A. For IGBTs with higher ratings, the HCPL-3120 series can be used to drive a discrete power stage which drives the IGBT gate. The HCNW3120 has the highest insulation voltage of $V_{IORM}$ = 1230 $V_{peak}$  and the  $V_{IORM}$ = 630 $V_{peak}$ ia also avialable with the HCPL-J312.
+The **HCPL-3120**, **HCPL-J312**, and **HCNW3120** are high-performance optocoupler gate drivers designed for efficient driving of power **IGBTs** and **MOSFETs** in **inverter** and **motor control** applications. These optocouplers integrate a **Gallium Arsenide Phosphide (GaAsP) LED** in the HCPL-3120, while the HCPL-J312 and HCNW3120 utilize an **Aluminum Gallium Arsenide (AlGaAs) LED**. The LED is optically coupled to an integrated circuit with a power output stage, providing reliable and isolated gate drive signals.
+
+## Key Features
+- **High Operating Voltage Range**: Enables direct gate driving of IGBTs rated up to **1200V/100A**.
+- **Isolation Voltage**:
+  - HCNW3120: **$V_{IORM} = 1230 V_{peak}$** (highest insulation voltage among the three).
+  - HCPL-J312: **$V_{IORM} = 630 V_{peak}$**.
+- **Galvanic Isolation**: Ensures safe and reliable operation by electrically separating the low-voltage control circuit from the high-voltage switching circuit.
+- **Driving Higher-Rated IGBTs**: The HCPL-3120 series can be used with a discrete power stage to control high-power IGBTs effectively.
+
+## Applications
+- **Inverter Circuits**
+- **Motor Control Systems**
+- **Industrial Power Electronics**
+- **High-Voltage Switching Circuits**
+
+## Documentation
+This repository provides detailed insights into:
+- **Schematic Design**
+- **PCB Layout Considerations**
+- **Material Selection**
+- **Gate Driver Outputs**
+- **Performance Optimization Techniques**
 
 ## Features of HCPL-3120
 - 2.5 A maximum peak output current
