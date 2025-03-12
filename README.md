@@ -319,7 +319,7 @@ Over operating free-air temperature range (unless otherwise noted)
 
 | Parameter | Description | MIN | MAX | UNIT |
 |-----------|-------------|------|------|------|
-| $V_{CC}$ | Output Supply Voltage ($V_{CC}$-$V_{EE}$) | 14 | 33 | V |
+| $V_{CC}$ | Output Supply Voltage $V_{CC}$-$V_{EE}$ | 14 | 33 | V |
 | $I_{F}$ (ON) | Input Diode Forward Current (Diode "ON") | 7 | 16 | mA |
 | $V_{F}$ (OFF) | Anode Voltage - Cathode Voltage (Diode "OFF") | -13 | 0.9 | V |
 
