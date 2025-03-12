@@ -48,14 +48,7 @@ A three-phase inverter requires six isolated gate drivers for IGBT switch contro
 To eliminate negative IGBT gate drive, minimize Rg and lead inductance from HCPL-3120 to IGBT gate/emitter. Mount HCPL-3120 directly above the IGBT on a small PCB. Avoid routing IGBT collector/emitter traces close to the HCPL-3120 input to prevent signal coupling. If unavoidable, reverse-bias the LED in the off state to prevent unwanted HCPL-3120 activation from transient signals.
 
 ### Selecting the Gate Resistor ($R_g$) to Minimize IGBT Switching Losses
-
-### Calculation of \( R_g \) Minimum from the \( I_{OL} \) Peak Specification
-
-The IGBT and \( R_g \) can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.
-
-### Calculation of \( R_g \) Minimum from the \( I_{OL} \) Peak Specification
-
-The IGBT and \( R_g \) can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.
+The IGBT and $R_g$ can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.
 
 ```math
 R_g \geq \frac{V_{CC} - V_{EE} - V_{OL}}{IOL_{\text{PEAK}}}
