@@ -52,7 +52,7 @@ The HCPL-3120 includes UVLO protection, which ensures that the device operates c
 A three-phase inverter requires six isolated gate drivers for IGBT switch control. The isolated gate driver used in this design is the HCPL-3120. This driver has an opto-LED input stage and is current-controlled. The gate driver is designed to be pin-to-pin compatible with existing opto-isolated gate drivers and is available in a wide-body stretched SO6 package.
 
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="500">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
 </p>  
 
 <p align="center"><b>Figure 1:</b> HCPL-3120 Typical Application Circuit with Negative IGBT Gate Drive</p>  
