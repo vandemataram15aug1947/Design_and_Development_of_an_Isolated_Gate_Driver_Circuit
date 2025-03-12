@@ -200,10 +200,10 @@ The schematic diagram of the **HCPL-3120** represents its internal architecture,
 A properly designed schematic ensures that the **HCPL-3120** functions optimally with minimal signal distortion and maximum switching speed.
 
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/Simulation%20Diagran%20and%20Results/Schematic%20Diagram%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Applicat
+<p align="center"><b>Figure 2:</b> Schematic Diagram of HCPL-3120</p>
 
 ## PCB Layout Design Considerations
 ### **Best Practices for PCB Layout**
@@ -215,25 +215,25 @@ When designing a PCB layout for the **HCPL-3120**, the following key points shou
 
 ### **PCB Layout Images**
 #### **Top-Layer Traces and Copper**
-<p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
+<p align="center"> 
+  <img src="DIP Top-Layer Traces and Copper of HCPL-3120" width="700">
 </p>  
 
-<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Applicat
+<p align="center"><b>Figure 2:</b> Functional Diagram of HCPL-3120</p>  
 
 #### **Bottom-Layer Traces and Copper**
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%20Bottom-Layer%20Traces%20and%20Copper%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Applicat
+<p align="center"><b>Figure 2:</b> DIP Bottom-Layer Traces and Copper of HCPL-3120</p>  
 
 #### **3D PCB View**
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%203-D%20PCB%20View%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Applicat
+<p align="center"><b>Figure 2:</b> DIP 3-D PCB View of HCPL-3120</p>  
 
 ## 3. PCB Material Selection
 For reliability and performance, the **FR-4 UL94V-0** printed circuit board material is recommended. This material is preferred due to:
