@@ -279,6 +279,13 @@ The **UCC23513DWYR** is a high-performance, single-channel gate driver designed 
 - Suitable for **motor drives, solar inverters, industrial power supplies**, and appliances
 - Supports **higher operating temperatures** compared to traditional optocouplers
 
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/Functional%20Diagram%20of%20HCPL-3120.png" width="500">
+</p>  
+
+<p align="center"><b>Figure 2:</b> Functional Diagram of HCPL-3120</p>  
+
+
 ## Pin Functions
 
 | SL. NO. | PIN NAME | PIN NO. | TYPE  | DESCRIPTION |
