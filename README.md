@@ -64,7 +64,7 @@ To eliminate negative IGBT gate drive, minimize Rg and lead inductance from HCPL
 
 ## Step 1: Calculate $R_g$ Minimum from the $I_{OL}$ Peak Specification  
 
-The IGBT and $R_g$ in Figure 26 can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.  
+The IGBT and $R_g$ in (See Figure 26 [DataSheet, Page No. 22])  can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.  
 
 ```math
 R_g \geq \frac{V_{CC} - V_{EE} - V_{OL}}{IOL_{\text{PEAK}}}
@@ -82,7 +82,7 @@ R_g \geq \frac{V_{CC} - V_{EE} - V_{OL}}{IOL_{\text{PEAK}}}
 = 7.2 \Omega \quad @ \quad 8 \Omega
 ```
 
-The $V_{OL}$ value of 2V in the previous equation is a conservative value at the peak current of 2.5A (see Figure 6 [DataSheet]). At lower $R_g$ values, the voltage supplied by the HCPL-3120 is not an ideal voltage step. This results in lower peak currents (more margin) than predicted by this analysis. **When negative gate drive is not used, $V_{EE}$ in the previous equation is equal to zero volts**.
+The $V_{OL}$ value of 2V in the previous equation is a conservative value at the peak current of 2.5A (See Figure 6 [DataSheet, Page No. 17]). At lower $R_g$ values, the voltage supplied by the HCPL-3120 is not an ideal voltage step. This results in lower peak currents (more margin) than predicted by this analysis. **When negative gate drive is not used, $V_{EE}$ in the previous equation is equal to zero volts**.
 ## Step 2: Check the HCPL-3120 Power Dissipation and Increase $R_g$ If Necessary  
 
 The HCPL-3120 total power dissipation $P_T$ is equal to the sum of the emitter power $P_E$ and the output power $P_O$:  
@@ -103,7 +103,7 @@ P_O = (P_{O(BIAS)} + P_{O(SWITCHING)})
 = I_{CC} \times (V_{CC} - V_{EE}) + E_{SW}(R_g, Q_g) \times f
 ```
 
-For the circuit in **Figure 26** [DataSheet], the worst case is:  
+For the circuit in **Figure 26** [See DataSheet, Page No. 22], the worst case is:  
 - $I_{F}$ = 16 mA  
 - $R_g = 8 \Omega$  
 - Max Duty Cycle = 80%  
@@ -135,7 +135,7 @@ P_O = 4.25 \text{ mA} \times 20V + 5.2 \text{ µJ} \times 20 \text{ kHz}
 = 250 \text{ mW} \approx 15^\circ C + 4.8 \text{ mW}/^\circ C
 ```
 
-The value of 4.25 mA for $I_{CC}$ in the previous equation was obtained by derating the $I_{CC}$ max of 5 mA (which occurs at -40°C) to $I_{CC}$ max at 85°C (see **Figure 7** [DataSheet]).  
+The value of 4.25 mA for $I_{CC}$ in the previous equation was obtained by derating the $I_{CC}$ max of 5 mA (which occurs at -40°C) to $I_{CC}$ max at 85°C (see **Figure 7** [See DataSheet, Page No. 17]).  
 
 Since $P_O$ for this case is greater than $P_{O(MAX)}$, $R_g$ must be increased to reduce the HCPL-3120 power dissipation.  
 
@@ -163,7 +163,7 @@ E_{SW(MAX)} = \frac{P_{O(SWITCHING MAX)}}{f}
 = 4.65 \text{ µJ}
 ```
 
-For $Q_g = 500$ nC, from **Figure 27**, a value of $E_{SW}$ = 4.65 µJ gives an $R_g$ = 10.3 \Omega.
+For $Q_g = 500$ nC, from **Figure 27 [See DataSheet, Page No. 24]**, a value of $E_{SW}$ = 4.65 µJ gives an $R_g$ = 10.3 \Omega.
 
 
 The $VOL$ value of 2V in the previous equation is a conservative value of $VOL$ at the peak current of 2.5A. At lower $R_g$ values, the voltage supplied by the HCPL-3120 is not an ideal voltage step. This results in lower peak currents (more margin) than predicted by this analysis. When negative gate drive is not used, $V_{EE}$ in the previous equation is equal to zero volts.
