@@ -26,6 +26,12 @@ The HCPL-3120 contains a Gallium Arsenic Phosphide (GaAsP) LED, while the HCPL-J
 - 500 ns maximum switching speeds
 - Industrial temperature range: $-40^\circ$C to $100^\circ$C
 
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Analysis_of_3_Phase_Inverter_Using_Sinusoidal_ePWM_Modulation_Technique/blob/1828af132295c7d81358624042e5dfd2d54ef2fe/Basic%20Photos/Sine%20Compare%20with%20Triangular%20Wave.png" width="500">
+</p>  
+
+<p align="center"><b>Figure 1:</b> Sine Compare with Triangular Wave</p>  
+
 ## Key Features of the HCPL-3120 Gate Driver
 ### High-Speed Operation
 The HCPL-3120 is designed for high-speed switching applications, making it suitable for use in power converters, motor drives, and other applications where fast switching speeds are required.
@@ -44,6 +50,12 @@ The HCPL-3120 includes UVLO protection, which ensures that the device operates c
 
 ## Applications Information
 A three-phase inverter requires six isolated gate drivers for IGBT switch control. The isolated gate driver used in this design is the HCPL-3120. This driver has an opto-LED input stage and is current-controlled. The gate driver is designed to be pin-to-pin compatible with existing opto-isolated gate drivers and is available in a wide-body stretched SO6 package.
+
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Analysis_of_3_Phase_Inverter_Using_Sinusoidal_ePWM_Modulation_Technique/blob/1828af132295c7d81358624042e5dfd2d54ef2fe/Basic%20Photos/Sine%20Compare%20with%20Triangular%20Wave.png" width="500">
+</p>  
+
+<p align="center"><b>Figure 1:</b> Sine Compare with Triangular Wave</p>  
 
 To eliminate negative IGBT gate drive, minimize Rg and lead inductance from HCPL-3120 to IGBT gate/emitter. Mount HCPL-3120 directly above the IGBT on a small PCB. Avoid routing IGBT collector/emitter traces close to the HCPL-3120 input to prevent signal coupling. If unavoidable, reverse-bias the LED in the off state to prevent unwanted HCPL-3120 activation from transient signals.
 
