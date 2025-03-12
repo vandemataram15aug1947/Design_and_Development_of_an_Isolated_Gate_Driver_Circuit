@@ -53,14 +53,25 @@ To eliminate negative IGBT gate drive, minimize Rg and lead inductance from HCPL
 
 The IGBT and \( R_g \) can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.
 
+### Calculation of \( R_g \) Minimum from the \( I_{OL} \) Peak Specification
+
+The IGBT and \( R_g \) can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.
+
 ```math
 R_g \geq \frac{V_{CC} - V_{EE} - V_{OL}}{IOL_{\text{PEAK}}}
+```
 
+```math
 = \frac{15V + 5V - 2V}{IOL_{\text{PEAK}}}
+```
 
+```math
 = \frac{15V + 5V - 2V}{2.5A}
+```
 
+```math
 = 7.2 \Omega \quad @ \quad 8 \Omega
+```
 
 The $VOL$ value of 2V in the previous equation is a conservative value of $VOL$ at the peak current of 2.5A. At lower $R_g$ values, the voltage supplied by the HCPL-3120 is not an ideal voltage step. This results in lower peak currents (more margin) than predicted by this analysis. When negative gate drive is not used, $V_{EE}$ in the previous equation is equal to zero volts.
 
