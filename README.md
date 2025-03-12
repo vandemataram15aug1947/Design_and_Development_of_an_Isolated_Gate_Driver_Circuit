@@ -29,7 +29,7 @@ The HCPL-3120 contains a Gallium Arsenic Phosphide (GaAsP) LED, while the HCPL-J
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/Functional%20Diagram%20of%20HCPL-3120.png" width="500">
 </p>  
 
-<p align="center"><b>Figure 1:</b> Functional Diagram of HCPL-3120</p>  
+<p align="center"><b>Figure 2:</b> Functional Diagram of HCPL-3120</p>  
 
 A 0.1 μF bypass capacitor must be connected between pins 5 and 8.
 
@@ -62,9 +62,9 @@ To eliminate negative IGBT gate drive, minimize Rg and lead inductance from HCPL
 
 # Selecting the Gate Resistor ($R_g$) to Minimize IGBT Switching Losses
 
-## Step 1: Calculate \( R_g \) Minimum from the \( I_{OL} \) Peak Specification  
+## Step 1: Calculate $R_g$ Minimum from the $I_{OL}$ Peak Specification  
 
-The IGBT and \( R_g \) in Figure 26 can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.  
+The IGBT and $R_g$ in Figure 26 can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.  
 
 ```math
 R_g \geq \frac{V_{CC} - V_{EE} - V_{OL}}{IOL_{\text{PEAK}}}
