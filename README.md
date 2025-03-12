@@ -104,7 +104,7 @@ P_O = (P_{O(BIAS)} + P_{O(SWITCHING)})
 ```
 
 For the circuit in **Figure 26** [DataSheet], the worst case is:  
-- $I_{CC}$ = 16 mA  
+- $I_{F}$ = 16 mA  
 - $R_g = 8 \Omega$  
 - Max Duty Cycle = 80%  
 - $Q_g = 500$ nC  
@@ -135,9 +135,9 @@ P_O = 4.25 \text{ mA} \times 20V + 5.2 \text{ µJ} \times 20 \text{ kHz}
 = 250 \text{ mW} \approx 15^\circ C + 4.8 \text{ mW}/^\circ C
 ```
 
-The value of 4.25 mA for \( I_{CC} \) in the previous equation was obtained by derating the $I_{CC}$ max of 5 mA (which occurs at -40°C) to $I_{CC}$ max at 85°C (see **Figure 7** [DataSheet]).  
+The value of 4.25 mA for $I_{CC}$ in the previous equation was obtained by derating the $I_{CC}$ max of 5 mA (which occurs at -40°C) to $I_{CC}$ max at 85°C (see **Figure 7** [DataSheet]).  
 
-Since $P_O$ for this case is greater than $P_{O(MAX)}$, \( R_g \) must be increased to reduce the HCPL-3120 power dissipation.  
+Since $P_O$ for this case is greater than $P_{O(MAX)}$, $R_g$ must be increased to reduce the HCPL-3120 power dissipation.  
 
 ```math
 P_{O(SWITCHING MAX)} = P_{O(MAX)} - P_{O(BIAS)}
@@ -163,7 +163,7 @@ E_{SW(MAX)} = \frac{P_{O(SWITCHING MAX)}}{f}
 = 4.65 \text{ µJ}
 ```
 
-For \( Q_g = 500 \) nC, from **Figure 27**, a value of \( E_{SW} = 4.65 \) µJ gives an \( R_g = 10.3 \Omega \).
+For $Q_g = 500$ nC, from **Figure 27**, a value of $E_{SW}$ = 4.65 µJ gives an $R_g$ = 10.3 \Omega.
 
 
 The $VOL$ value of 2V in the previous equation is a conservative value of $VOL$ at the peak current of 2.5A. At lower $R_g$ values, the voltage supplied by the HCPL-3120 is not an ideal voltage step. This results in lower peak currents (more margin) than predicted by this analysis. When negative gate drive is not used, $V_{EE}$ in the previous equation is equal to zero volts.
