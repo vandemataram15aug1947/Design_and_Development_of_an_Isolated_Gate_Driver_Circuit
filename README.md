@@ -32,6 +32,8 @@ The HCPL-3120 contains a Gallium Arsenic Phosphide (GaAsP) LED, while the HCPL-J
 
 <p align="center"><b>Figure 1:</b> Functional Diagram of HCPL-3120</p>  
 
+A 0.1 μF bypass capacitor must be connected between pins 5 and 8.
+
 ## Key Features of the HCPL-3120 Gate Driver
 ### High-Speed Operation
 The HCPL-3120 is designed for high-speed switching applications, making it suitable for use in power converters, motor drives, and other applications where fast switching speeds are required.
