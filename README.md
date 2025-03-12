@@ -216,10 +216,10 @@ When designing a PCB layout for the **HCPL-3120**, the following key points shou
 ### **PCB Layout Images**
 #### **Top-Layer Traces and Copper**
 <p align="center"> 
-  <img src="DIP Top-Layer Traces and Copper of HCPL-3120" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%20Top-Layer%20Traces%20and%20Copper%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Functional Diagram of HCPL-3120</p>  
+<p align="center"><b>Figure 2:</b> DIP Top-Layer Traces and Copper of HCPL-3120</p>  
 
 #### **Bottom-Layer Traces and Copper**
 <p align="center">
