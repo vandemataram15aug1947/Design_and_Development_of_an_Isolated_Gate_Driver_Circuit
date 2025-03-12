@@ -168,7 +168,7 @@ For $Q_g = 500$ nC, from **Figure 27 [See DataSheet, Page No. 24]**, a value of 
 
 The $V_{OL}$ value of 2V in the previous equation is a conservative value of $V_{OL}$ at the peak current of 2.5A. At lower $R_g$ values, the voltage supplied by the HCPL-3120 is not an ideal voltage step. This results in lower peak currents (more margin) than predicted by this analysis. When negative gate drive is not used, $V_{EE}$ in the previous equation is equal to zero volts.
 
-IGBTs need to be driven with a higher gate voltage swing than Si MOSFETs (+20V to -2V / -5V). The negative gate voltage must not go below -5V. Negative driving voltage is not mandatory and is suggested only when drain current is high (>50A). The external gate resistance must be appropriately selected to minimize or eliminate ringing in the gate drive circuit. Parasitics must be minimized. Therefore, the gate driver must be located as close as possible to the gate. It is recommended to connect a 10kΩ resistor between the gate and source to prevent excessive floating of the gate during the propagation delay.
+IGBTs need to be driven with a higher gate voltage swing than Si MOSFETs (+20V to -2V / -5V). The negative gate voltage must not go below -5V. Negative driving voltage is not mandatory and is suggested only when drain current is high (>50A). **The external gate resistance must be appropriately selected to minimize or eliminate ringing in the gate drive circuit. Parasitics must be minimized. Therefore, the gate driver must be located as close as possible to the gate. It is recommended to connect a 10kΩ resistor between the gate and source to prevent excessive floating of the gate during the propagation delay**.
 
 
 
