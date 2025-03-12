@@ -191,12 +191,7 @@ The $V_{OL}$ value of 2V in the previous equation is a conservative value of $V_
 
 IGBTs need to be driven with a higher gate voltage swing than Si MOSFETs (+20V to -2V / -5V). The negative gate voltage must not go below -5V. Negative driving voltage is not mandatory and is suggested only when drain current is high (>50A). **The external gate resistance must be appropriately selected to minimize or eliminate ringing in the gate drive circuit. Parasitics must be minimized. Therefore, the gate driver must be located as close as possible to the gate. It is recommended to connect a 10kΩ resistor between the gate and source to prevent excessive floating of the gate during the propagation delay**.
 
-# HCPL-3120 Gate Driver Module
-
-## Overview
-The **HCPL-3120** is a high-performance optocoupler gate driver designed to drive power IGBTs and MOSFETs efficiently in inverter and motor control applications. It provides galvanic isolation between the low-voltage control circuit and the high-voltage switching circuit, ensuring enhanced system reliability and safety. This document provides insights into the **schematic design, PCB layout, material selection, and gate driver outputs**, along with considerations for optimal performance.
-
-## 1. Schematic Diagram of HCPL-3120
+## Schematic Diagram of HCPL-3120
 The schematic diagram of the **HCPL-3120** represents its internal architecture, comprising:
 - **Input LED**: Converts electrical signals into optical signals.
 - **Photodetector**: Detects the optical signals and converts them back into an electrical signal.
@@ -204,9 +199,13 @@ The schematic diagram of the **HCPL-3120** represents its internal architecture,
 
 A properly designed schematic ensures that the **HCPL-3120** functions optimally with minimal signal distortion and maximum switching speed.
 
-![Schematic Diagram](Schematic_Diagram_HCPL-3120.png)
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
+</p>  
 
-## 2. PCB Layout Design Considerations
+<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Applicat
+
+## PCB Layout Design Considerations
 ### **Best Practices for PCB Layout**
 When designing a PCB layout for the **HCPL-3120**, the following key points should be considered:
 - **Placement of Low-ESR and Low-ESL Capacitors:** Position decoupling capacitors close to the VCC and VEE pins to suppress noise and support peak current demands.
@@ -216,13 +215,25 @@ When designing a PCB layout for the **HCPL-3120**, the following key points shou
 
 ### **PCB Layout Images**
 #### **Top-Layer Traces and Copper**
-![Top Layer](Top-Layer_Traces_Copper_HCPL-3120.png)
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
+</p>  
+
+<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Applicat
 
 #### **Bottom-Layer Traces and Copper**
-![Bottom Layer](Bottom-Layer_Traces_Copper_HCPL-3120.png)
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
+</p>  
+
+<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Applicat
 
 #### **3D PCB View**
-![3D View](3D_PCB_View_HCPL-3120.png)
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
+</p>  
+
+<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Applicat
 
 ## 3. PCB Material Selection
 For reliability and performance, the **FR-4 UL94V-0** printed circuit board material is recommended. This material is preferred due to:
