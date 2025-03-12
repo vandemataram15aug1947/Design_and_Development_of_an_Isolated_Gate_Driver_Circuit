@@ -82,7 +82,7 @@ R_g \geq \frac{V_{CC} - V_{EE} - V_{OL}}{IOL_{\text{PEAK}}}
 = 7.2 \Omega \quad @ \quad 8 \Omega
 ```
 
-The $V_{OL}$ value of 2V in the previous equation is a conservative value at the peak current of 2.5A (see Figure 6 [DataSheet]). At lower $R_g$ values, the voltage supplied by the HCPL-3120 is not an ideal voltage step. This results in lower peak currents (more margin) than predicted by this analysis. When negative gate drive is not used, $V_{EE}$ in the previous equation is equal to zero volts.  
+The $V_{OL}$ value of 2V in the previous equation is a conservative value at the peak current of 2.5A (see Figure 6 [DataSheet]). At lower $R_g$ values, the voltage supplied by the HCPL-3120 is not an ideal voltage step. This results in lower peak currents (more margin) than predicted by this analysis. When negative gate drive is not used, $V_{EE}$ in the previous equation is equal to zero volts. <font color="red">When negative gate drive is not used, \( V_{EE} \) in the previous equation is equal to zero volts.</font>  
 
 ## Step 2: Check the HCPL-3120 Power Dissipation and Increase $R_g$ If Necessary  
 
