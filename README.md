@@ -18,7 +18,7 @@ The HCPL-3120 contains a Gallium Arsenic Phosphide (GaAsP) LED, while the HCPL-J
 ## Features of HCPL-3120
 - 2.5 A maximum peak output current
 - 2.0 A minimum peak output current
-- \( 25 \text{ kV}/\mu\text{s} \) minimum Common Mode Rejection (CMR) at \( V_{CM} = 1500 \) V
+- 25 kV/µs minimum Common Mode Rejection (CMR) at \( V_{CM} = 1500 \) V
 - 0.5 V maximum low-level output voltage (VOL)\ Eliminates need for negative gate drive
 - $I_{CC} = 5$ mA maximum supply current
 - Under Voltage Lock-Out protection (UVLO) with hysteresis
