@@ -239,6 +239,13 @@ PCB layout images visually represent the design of a printed circuit board, show
 
 <p align="center"><b>Figure 2:</b> DIP 3-D PCB View of HCPL-3120</p>  
 
+
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/14f879ef49b1cb7ad4574742b9d1e01ea4e0d266/PCB/DIP%20Final%20Assembled%20Gate%20Driver%20PCB%20Design.jpg" width="700">
+</p>  
+
+<p align="center"><b>Figure 2:</b> DIP Final Assembled Gate Driver PCB Design</p>  
+
 ## PCB Material Selection
 For reliability and performance, the **FR-4 UL94V-0** printed circuit board material is recommended. This material is preferred due to:
 - **Low Dielectric Losses:** Suitable for high-frequency applications.
