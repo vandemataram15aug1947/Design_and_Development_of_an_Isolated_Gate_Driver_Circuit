@@ -711,7 +711,6 @@ Using a **gate-to-source Zener diode** is a **cost-effective and reliable method
 ---
 
 ## Simulation Diagram of Diagram of UCC23513DWYR
-
 ## Gate Driver Circuit Analysis
 The circuit consists of a gate driver IC (UCC23513), which is used to drive the gate of a MOSFET (NSR20F30NXT5G). Below is a breakdown of the key components and their roles:
 
@@ -723,7 +722,7 @@ The circuit consists of a gate driver IC (UCC23513), which is used to drive the 
   - **Pin 6 (VCC):** Connected to a 15V DC supply (V3).
   - **Pin 4 (VSS):** Ground of the driver.
 - **Decoupling Capacitors (C2, C3, C4, C5, C6):** These capacitors stabilize the power supply and reduce voltage noise.
-- **MOSFET (D2 - NSR20F30NXT5G):** The driver provides the required gate voltage (through R2 (30Ω)) to switch the MOSFET.
+- **Schottky Diode (D2 - NSR20F30NXT5G):** The driver provides the required gate voltage (through R2 (30Ω)) to switch the MOSFET.
 - **Pull-down Resistor (R3 - 10kΩ):** Ensures that the MOSFET gate is properly discharged when the driver output is low.
 
 <p align="center">
@@ -769,13 +768,14 @@ This simulation confirms that the gate driver operates correctly and is suitable
 
 ## PCB Layout Design Considerations
 ### **Best Practices for PCB Layout**
-When designing a PCB layout for the **HCPL-3120**, the following key points should be considered:
+When designing a PCB layout for the **UCC23513DWY**, the following key points should be considered:
 - **Placement of Low-ESR and Low-ESL Capacitors:** Position decoupling capacitors close to the VCC and VEE pins to suppress noise and support peak current demands.
 - **Minimizing Loop Inductance:** Keep high-current loops as small as possible to reduce switching noise.
 - **Avoiding Traces Under the Device:** Ensure that no PCB traces or copper layers exist beneath the optocoupler to maintain high-voltage isolation.
 - **Thermal Management:** Increase copper thickness and use multiple vias to improve heat dissipation and reliability.
 
 ### **PCB Layout Images**
+PCB layout images visually represent the design of a printed circuit board, showing the placement of components, traces, vias, and layers. These images are crucial in electronics design, helping engineers verify circuit connections and optimize signal integrity.
 
 <p align="center"> 
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/PCB/SMD%20Top%20Layer%20of%20Gate%20Driver%20PCB%20Design.png" width="700">
@@ -829,35 +829,8 @@ The HCPL-3120 provides **complementary gate drive pulses** to control the IGBTs/
 
 <p align="center"><b>Figure 2:</b> Startup Sequence PWM at Gate Driver Output for Second Leg</p>  
 
-
-
 ## 🔗 References
-- MOSFET datasheets (Infineon, STMicroelectronics, etc.)
-- Application notes from Texas Instruments, ON Semiconductor, etc.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9e6d71f39f1dc52c4896c2a9bf28941dc81d05e/DataSheet/HCPL-3120.pdf
+- https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9e6d71f39f1dc52c4896c2a9bf28941dc81d05e/DataSheet/Infineon-IKW25N120T2-DataSheet-v02_02-EN.pdf
+- https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9e6d71f39f1dc52c4896c2a9bf28941dc81d05e/DataSheet/UCC23513DWYR.pdf
 
