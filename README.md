@@ -776,28 +776,28 @@ When designing a PCB layout for the **HCPL-3120**, the following key points shou
 - **Thermal Management:** Increase copper thickness and use multiple vias to improve heat dissipation and reliability.
 
 ### **PCB Layout Images**
-#### **Top-Layer Traces and Copper**
+
 <p align="center"> 
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/PCB/SMD%20Top%20Layer%20of%20Gate%20Driver%20PCB%20Design.png" width="700">
 </p>  
 
 <p align="center"><b>Figure 2:</b> SMD Top Layer of Gate Driver PCB Design</p>  
 
-#### **Bottom-Layer Traces and Copper**
+
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/PCB/SMD%20Bottom%20Layer%20of%20Gate%20Driver%20PCB%20Design.png" width="700">
 </p>  
 
 <p align="center"><b>Figure 2:</b> SMD Bottom Layer of Gate Driver PCB Design</p>  
 
-#### **3D PCB View**
+
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/PCB/SMD%203D%20Model%20of%20Gate%20Driver%20PCB%20Design.png" width="700">
 </p>  
 
 <p align="center"><b>Figure 2:</b> SMD 3D Model of Gate Driver PCB Design</p>  
 
-#### **SMD Final Assembled Gate Driver PCB Design**
+
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/PCB/SMD%20Final%20Assembled%20Gate%20Driver%20PCB%20Design.jpg" width="700">
 </p>  
