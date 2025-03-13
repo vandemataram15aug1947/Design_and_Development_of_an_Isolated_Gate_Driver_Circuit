@@ -351,9 +351,9 @@ The total secondary voltage is **23V**, which is used for biasing the gate drive
 ## Input Power Stage
 The input stage of **UCC23513DWYR** is simply the e-diode and therefore has an **Anode (Pin 1)** and a **Cathode (Pin 3)**. **Pin 2** has no internal connection and can be left open or connected to ground. The input stage does not have a power and ground pin.
 
-When the e-diode is forward biased by applying a positive voltage to the Anode with respect to the Cathode, a forward current **(I_F)** flows into the e-diode. The forward voltage drop across the e-diode is **2.1V (typ)**. An external resistor should be used to limit the forward current. The recommended range for the forward current is **7mA to 16mA**.
+When the e-diode is forward biased by applying a positive voltage to the Anode with respect to the Cathode, a forward current **(I_F)** flows into the e-diode. The forward voltage drop across the e-diode is **2.1V (typical)**. An external resistor should be used to limit the forward current. The recommended range for the forward current is **7mA to 16mA**.
 
-When **I_F** exceeds the threshold current **I_FLH** (2.8mA typ.), a high-frequency signal is transmitted across the isolation barrier through the high-voltage **SiO₂ capacitors**. The HF signal is detected by the receiver and **V_OUT** is driven high. The dynamic impedance of the e-diode is very small (**<1.0 Ω**) and the temperature coefficient of the e-diode forward voltage drop is **<1.35 mV/°C**. This leads to excellent stability of the forward current **I_F** across all operating conditions.
+When **I_F** exceeds the threshold current **I_FLH** (2.8mA typical.), a high-frequency signal is transmitted across the isolation barrier through the high-voltage **SiO₂ capacitors**. The HF signal is detected by the receiver and **V_OUT** is driven high. The dynamic impedance of the e-diode is very small (**<1.0 Ω**) and the temperature coefficient of the e-diode forward voltage drop is **<1.35 mV/°C**. This leads to excellent stability of the forward current **I_F** across all operating conditions.
 
 If the Anode voltage drops below **V_FHL** (0.9V), or is reverse biased, the gate driver output is driven low. The reverse breakdown voltage of the e-diode is **>15V**, allowing normal operation with a reverse bias of up to **13V**.
 
@@ -411,7 +411,6 @@ R_{\text{EXT}} = \frac{V_{\text{SUP}} - V_F}{I_F}
 ```math
 = 120\Omega
 ```
-
 
 ### Selecting Gate Driver Output Resistor
 The gate driver output resistor is an essential component in controlling the switching characteristics of power MOSFETs or IGBTs. It is connected in series with the gate terminal to **limit inrush current** during charging and discharging of the gate capacitance. The value of this resistor directly affects:
