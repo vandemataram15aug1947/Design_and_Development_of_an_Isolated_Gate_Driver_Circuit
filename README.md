@@ -388,14 +388,6 @@ Typical **quiescent power supply current** from **V_CC** is **1.2mA (max 2.2mA)*
 
 ## Detailed Design Procedure
 
-### Selecting Gate Driver Input Resistor
-The input resistor limits the current flowing into the e-diode when it is forward biased. The threshold current ($I_{FLH}$) is **2.8 mA (typical)**, and the recommended operating range for the forward current is **7 mA to 16 mA** (e-diode ON). All electrical specifications are guaranteed in this range. The resistor should be selected such that under typical operating conditions, **$I_{F}$ is 10 mA**.
-
-#### Factors Affecting Input Resistor Selection:
-- **Variation in Supply Voltage** ($V_{SUP}$)
-- **Manufacturer's tolerance** for the resistor and variations due to temperature
-- **Variation in e-diode Forward Voltage Drop:** At $I_{F}$ = 10mA, the forward voltage typically ranges from **1.8V (min) to 2.4V (max)**, with a typical value of **2.1V**. This variation is influenced by a temperature coefficient **(< 1.35 mV/°C)** and a dynamic impedance **(< 30Ω)**.
-
 ## Input Section
 ### ePWM1A (Input Signal)
 - **Purpose:** This is the PWM signal from a DSP or microcontroller. It controls the switching of the IGBT or MOSFET by turning the optocoupler on and off.
@@ -404,6 +396,8 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 ### **Selecting Gate Driver Input Resistor ($R_{IN}$)**
 
 - **Current Limiting for Safe Operation:** The input resistor plays a critical role in limiting the current flowing into the input diode (e-diode) of the UCC23513 isolated gate driver. The input resistor is essential to limit the current flowing into the input diode, ensuring reliable operation while preventing excessive current that could damage the device.
+
+- **Variation in e-diode Forward Voltage Drop:** At $I_{F}$ = 10mA, the forward voltage typically ranges from **1.8V (min) to 2.4V (max)**, with a typical value of **2.1V**. This variation is influenced by a temperature coefficient **(< 1.35 mV/°C)** and a dynamic impedance **(< 30Ω)**.
 
 - **Recommended Operating Range:** When the e-diode is forward biased, the input resistor controls the forward current ($I_F$). The threshold current ($I_{FLH}$) for turning the device ON is 2.8 mA (typical), and the recommended operating range for $I_F$ is between 7 mA and 16 mA. All electrical specifications of the device are guaranteed within this range.
 
