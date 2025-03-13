@@ -403,12 +403,13 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 
 ### **Selecting Gate Driver Input Resistor**
 
-- **Overview** 
+- **Current Limiting for Safe Operation:** 
 The input resistor plays a critical role in limiting the current flowing into the input diode (e-diode) of the UCC23513 isolated gate driver. The input resistor is essential to limit the current flowing into the input diode, ensuring reliable operation while preventing excessive current that could damage the device.
 
-When the e-diode is forward biased, the input resistor controls the forward current (IF). The threshold current (IFLH) for turning the device ON is 2.8 mA (typical), and the recommended operating range for IF is between 7 mA and 16 mA. All electrical specifications of the device are guaranteed within this range.
+- **Recommended Operating Range:** When the e-diode is forward biased, the input resistor controls the forward current (I_F). The threshold current (I_{FLH)} for turning the device ON is 2.8 mA (typical), and the recommended operating range for IF is between 7 mA and 16 mA. All electrical specifications of the device are guaranteed within this range.
 
-For optimal performance, the resistor should be selected to set IF to 10 mA under typical operating conditions.
+- **Optimal Resistor Selection:**
+To achieve stable performance, the input resistor should be chosen to set I_F to 10 mA under typical operating conditions, ensuring a balance between reliable switching and device protection.
 
 ### **Formula**
 The input resistor ($R_{IN}$) is calculated using Ohm’s Law:
