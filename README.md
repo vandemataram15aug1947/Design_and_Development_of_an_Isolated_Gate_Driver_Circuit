@@ -348,8 +348,6 @@ In this design, the secondary side is powered by a +15V and –8V rail reference
 
 The total secondary voltage is **23V**, which is used for biasing the gate driver internal circuit and to drive the IGBT gate.
 
-# UCC23513DWYR Gate Driver
-
 ## Input Power Stage
 The input stage of **UCC23513DWYR** is simply the e-diode and therefore has an **Anode (Pin 1)** and a **Cathode (Pin 3)**. **Pin 2** has no internal connection and can be left open or connected to ground. The input stage does not have a power and ground pin.
 
@@ -389,9 +387,6 @@ Typical **quiescent power supply current** from **V_CC** is **1.2mA (max 2.2mA)*
 
 ---
 This document provides a detailed overview of the **UCC23513DWYR** gate driver, including its input and output power stages, application information, and power supply considerations.
-
-
-# UCC23513DWYR Gate Driver Design Guide
 
 ## Detailed Design Procedure
 
