@@ -456,7 +456,9 @@ The external gate-driver resistors play a crucial role in controlling the gate d
 Gate resistors are used to:
 - **Control Switching Speed:** Adjust the turn-on and turn-off times of MOSFETs/IGBTs.
 - **Reduce EMI:** Minimize electromagnetic interference caused by high-frequency switching.
-- **Limit Ringing:** Dampen oscillations due to parasitic inductances and capacitances.
+- **Limit Ringing:** Suppress oscillations resulting from parasitic inductances and capacitances.
+- **Mitigate High Voltage and Current Effects:** Reduce ringing caused by rapid voltage and current transitions (**dv/dt, di/dt**) and body-diode reverse recovery.
+- **Optimize Gate Drive Strength:** Fine-tune the peak sink and source current to balance switching loss and efficiency.
 - **Protect the Gate Driver:** Prevent excessive peak currents that may damage the driver.
 - **Manage Power Dissipation:** Balance switching losses and thermal performance.
 
@@ -475,7 +477,9 @@ To achieve an effective trade-off between **switching speed** and **EMI reductio
 ### **Formula**
 The gate resistor ($R_G$) is calculated using Ohm’s Law:
 
-\[ R_G = \frac{V_{DRV}}{I_G} \]
+```math
+R_G = \frac{V_{DRV}}{I_G}
+```
 
 Where,
 - **$V_{DRV}$** = 15V (Gate drive voltage)
@@ -484,7 +488,13 @@ Where,
 ### **Calculation**
 Substituting the given values:
 
-\[ R_G = \frac{15V}{0.5A} = 30\Omega \]
+```math
+R_G = \frac{15V}{0.5A} = 30\Omega
+```
+
+```math
+R_G = 30Ω
+```
 
 ### **Design Considerations**
 - A **30Ω** resistor is chosen to ensure **moderate switching speed** while minimizing ringing and excessive power dissipation.
@@ -493,6 +503,14 @@ Substituting the given values:
 
 ### **Conclusion**
 The **30Ω** resistor provides a balanced trade-off between **switching speed, power dissipation, and EMI performance**, ensuring the **reliable operation** of the **UCC23513** gate driver when driving power MOSFETs or IGBTs.
+
+---
+
+### 📌 References
+- [TI UCC23513 Datasheet](https://www.ti.com/product/UCC23513)
+- [Power MOSFET Application Notes](https://www.infineon.com/cms/en/product/power/mosfet/)
+
+---
 
 
 
