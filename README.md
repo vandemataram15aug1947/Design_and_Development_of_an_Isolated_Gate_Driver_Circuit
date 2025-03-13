@@ -727,19 +727,19 @@ The circuit consists of a gate driver IC (UCC23513), which is used to drive the 
 - **Pull-down Resistor (R3 - 10kΩ):** Ensures that the MOSFET gate is properly discharged when the driver output is low.
 
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/Simulation%20Diagran%20and%20Results/Schematic%20Diagram%20of%20HCPL-3120.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/Simulation%20Diagran%20and%20Results/Simulation%20Diagram%20of%20UCC23513DWY.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Schematic Diagram of HCPL-3120</p>
+<p align="center"><b>Figure 2:</b> Simulation Diagram of UCC23513DWY</p>
 
 ## 2. Simulation Results Interpretation
 The second image shows simulation waveforms:
 
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/Simulation%20Diagran%20and%20Results/Schematic%20Diagram%20of%20HCPL-3120.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/Simulation%20Diagran%20and%20Results/Simulation%20Results%20of%20UCC23513DWY.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Schematic Diagram of HCPL-3120</p>
+<p align="center"><b>Figure 2:</b> Simulation Results of UCC23513DWY</p>
 
 ### Waveform Analysis
 - **VCC (Supply Voltage - Red Line)**
@@ -767,12 +767,6 @@ This simulation confirms that the gate driver operates correctly and is suitable
 
 ---
 
-<p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/Simulation%20Diagran%20and%20Results/Schematic%20Diagram%20of%20HCPL-3120.png" width="700">
-</p>  
-
-<p align="center"><b>Figure 2:</b> Schematic Diagram of HCPL-3120</p>
-
 ## PCB Layout Design Considerations
 ### **Best Practices for PCB Layout**
 When designing a PCB layout for the **HCPL-3120**, the following key points should be considered:
@@ -784,24 +778,32 @@ When designing a PCB layout for the **HCPL-3120**, the following key points shou
 ### **PCB Layout Images**
 #### **Top-Layer Traces and Copper**
 <p align="center"> 
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%20Top-Layer%20Traces%20and%20Copper%20of%20HCPL-3120.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/PCB/SMD%20Top%20Layer%20of%20Gate%20Driver%20PCB%20Design.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> DIP Top-Layer Traces and Copper of HCPL-3120</p>  
+<p align="center"><b>Figure 2:</b> SMD Top Layer of Gate Driver PCB Design</p>  
 
 #### **Bottom-Layer Traces and Copper**
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%20Bottom-Layer%20Traces%20and%20Copper%20of%20HCPL-3120.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/PCB/SMD%20Bottom%20Layer%20of%20Gate%20Driver%20PCB%20Design.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> DIP Bottom-Layer Traces and Copper of HCPL-3120</p>  
+<p align="center"><b>Figure 2:</b> SMD Bottom Layer of Gate Driver PCB Design</p>  
 
 #### **3D PCB View**
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%203-D%20PCB%20View%20of%20HCPL-3120.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/PCB/SMD%203D%20Model%20of%20Gate%20Driver%20PCB%20Design.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> DIP 3-D PCB View of HCPL-3120</p>  
+<p align="center"><b>Figure 2:</b> SMD 3D Model of Gate Driver PCB Design</p>  
+
+#### **SMD Final Assembled Gate Driver PCB Design**
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/PCB/SMD%20Final%20Assembled%20Gate%20Driver%20PCB%20Design.jpg" width="700">
+</p>  
+
+<p align="center"><b>Figure 2:</b> SMD Final Assembled Gate Driver PCB Design</p>  
+
 
 ## 3. PCB Material Selection
 For reliability and performance, the **FR-4 UL94V-0** printed circuit board material is recommended. This material is preferred due to:
