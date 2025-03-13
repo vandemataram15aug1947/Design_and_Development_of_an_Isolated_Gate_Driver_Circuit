@@ -443,14 +443,8 @@ R_{IN} = 120Ω
 ### **Conclusion**
 The **120Ω resistor** ensures a robust and efficient operation of the UCC23513 gate driver, balancing switching speed and power consumption.
 
-### **Selecting Gate Driver Gate Resistor**
-
-### **Controlling Switching Behavior**
-The gate resistor ($R_G$) plays a crucial role in shaping the turn-on and turn-off behavior of the power MOSFET/IGBT driven by the **UCC23513** isolated gate driver. It helps control the switching speed, reduce ringing, and mitigate excessive **dv/dt** and **di/dt** effects that can lead to reliability issues.
-
-### **Gate Resistor Selection Guidelines**
-
-The external gate-driver resistors play a crucial role in controlling the gate drive strength, switching losses, and electromagnetic interference (EMI). Proper selection ensures optimal system performance and reliability.
+### **Selecting the Gate Driver Resistor ($R_G$)**
+The gate resistor ($R_G$) plays a crucial role in shaping the turn-on and turn-off behavior of the power MOSFET/IGBT driven by the UCC23513 isolated gate driver. It helps control the switching speed, reduce ringing, and mitigate excessive dv/dt and di/dt effects that can impact reliability. Proper selection of the external gate resistor ensures optimal system performance by balancing switching losses, gate drive strength, and electromagnetic interference (EMI).
 
 ### **Purpose of Gate Resistors**
 Gate resistors are used to:
