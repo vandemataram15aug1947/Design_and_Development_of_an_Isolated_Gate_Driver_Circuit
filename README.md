@@ -84,7 +84,7 @@ To eliminate negative IGBT gate drive, minimize Rg and lead inductance from HCPL
 
 # Selecting the Gate Resistor ($R_g$)
 
-## Step 1: Calculate $R_g$ Minimum from the $I_{OL}$ Peak Specification  
+## Calculate $R_g$ Minimum from the $I_{OL}$ Peak Specification  
 
 The IGBT and $R_g$ in **Figure 26 [DataSheet, Page No. 22]** can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.  
 
@@ -105,7 +105,8 @@ R_g \geq \frac{V_{CC} - V_{EE} - V_{OL}}{IOL_{\text{PEAK}}}
 ```
 
 The $V_{OL}$ value of 2V in the previous equation is a conservative value at the peak current of 2.5A **Figure 6 [DataSheet, Page No. 17]**. At lower $R_g$ values, the voltage supplied by the HCPL-3120 is not an ideal voltage step. This results in lower peak currents (more margin) than predicted by this analysis. **When negative gate drive is not used, $V_{EE}$ in the previous equation is equal to zero volts**.
-## Step 2: Check the HCPL-3120 Power Dissipation and Increase $R_g$ If Necessary  
+
+## Check the HCPL-3120 Power Dissipation and Increase $R_g$
 
 The HCPL-3120 total power dissipation $P_T$ is equal to the sum of the emitter power $P_E$ and the output power $P_O$:  
 
@@ -215,45 +216,52 @@ When designing a PCB layout for the **HCPL-3120**, the following key points shou
 - **Thermal Management:** Increase copper thickness and use multiple vias to improve heat dissipation and reliability.
 
 ### **PCB Layout Images**
-#### **Top-Layer Traces and Copper**
+PCB layout images visually represent the design of a printed circuit board, showing the placement of components, traces, vias, and layers. These images are crucial in electronics design, helping engineers verify circuit connections and optimize signal integrity.
+
+
 <p align="center"> 
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%20Top-Layer%20Traces%20and%20Copper%20of%20HCPL-3120.png" width="700">
 </p>  
 
 <p align="center"><b>Figure 2:</b> DIP Top-Layer Traces and Copper of HCPL-3120</p>  
 
-#### **Bottom-Layer Traces and Copper**
+
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%20Bottom-Layer%20Traces%20and%20Copper%20of%20HCPL-3120.png" width="700">
 </p>  
 
 <p align="center"><b>Figure 2:</b> DIP Bottom-Layer Traces and Copper of HCPL-3120</p>  
 
-#### **3D PCB View**
+
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%203-D%20PCB%20View%20of%20HCPL-3120.png" width="700">
 </p>  
 
 <p align="center"><b>Figure 2:</b> DIP 3-D PCB View of HCPL-3120</p>  
 
-## 3. PCB Material Selection
+## PCB Material Selection
 For reliability and performance, the **FR-4 UL94V-0** printed circuit board material is recommended. This material is preferred due to:
 - **Low Dielectric Losses:** Suitable for high-frequency applications.
 - **Minimal Moisture Absorption:** Enhances durability in humid environments.
 - **High Mechanical Strength and Stiffness:** Prevents PCB warping under thermal stress.
 - **Self-Extinguishing Properties:** Improves safety by reducing fire hazards.
 
-## 4. Gate Driver Output Signals
+## Gate Driver Output Signals
 The HCPL-3120 provides **complementary gate drive pulses** to control the IGBTs/MOSFETs in an inverter bridge.
 
-#### **Complementary Pulse of First Leg**
-![First Leg](Complementary_Pulse_First_Leg.png)
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/e901177c6e94ca66eb4f06d9b0ee6d019a6bf346/Hardware%20Results/Startup%20Sequence%20PWM%20at%20Gate%20Driver%20Output%20for%20First%20Leg.png" width="700">
+</p>  
 
-#### **Complementary Pulse of Second Leg**
-![Second Leg](Complementary_Pulse_Second_Leg.png)
+<p align="center"><b>Figure 2:</b> Startup Sequence PWM at Gate Driver Output for First Leg</p>  
 
-#### **Complementary Pulse of Third Leg**
-![Third Leg](Complementary_Pulse_Third_Leg.png)
+
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/e901177c6e94ca66eb4f06d9b0ee6d019a6bf346/Hardware%20Results/Startup%20Sequence%20PWM%20at%20Gate%20Driver%20Output%20for%20Second%20Leg.png" width="700">
+</p>  
+
+<p align="center"><b>Figure 2:</b> Startup Sequence PWM at Gate Driver Output for Second Leg</p>  
+
 
 ## 5. Conclusion
 The **HCPL-3120, HCPL-J312, and HCNW3120** optocouplers provide a reliable and efficient solution for **motor control and inverter applications**. Their ability to drive power IGBTs and MOSFETs ensures precise and efficient performance, while their wide operating voltage range makes them suitable for diverse gate drive requirements. The **HCNW3120** offers high insulation voltage, adding an extra layer of safety and compliance with industry standards.
