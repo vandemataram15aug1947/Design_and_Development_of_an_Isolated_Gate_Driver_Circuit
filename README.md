@@ -482,9 +482,7 @@ Gate resistors are used to:
 ### **Optimal Resistor Selection**
 To achieve an effective trade-off between **switching speed** and **EMI reduction**, the gate resistor is selected based on the desired **gate charge current**.
 
-# Gate Resistor Calculation for MOSFET
-
-Selecting the appropriate gate resistor (Rg) is crucial for optimizing MOSFET switching performance. This resistor controls the gate drive current, influences turn-on and turn-off times, and helps in reducing oscillations.
+Selecting the appropriate gate resistor (Rg) is crucial for optimizing IGBT/MOSFET switching performance. This resistor controls the gate drive current, influences turn-on and turn-off times, and helps in reducing oscillations.
 
 ## 📌 Formula
 
@@ -494,38 +492,77 @@ The gate resistor is determined using the following steps:
 ```math
 I_g = \frac{Q_g}{t}
 ```
-where:
+Where,
 - **Ig** = Gate drive current (A)
-- **Qg** = Gate charge (C) (from MOSFET datasheet)
-- **t** = Desired switching time (s)
+- **Qg** = Gate charge (C)
+- **t** = Desired switching time (s) 
 
 ### **Step 2: Compute Gate Resistor (Rg)**
 ```math
 R_g = \frac{V_{gs(on)} - V_{gs(th)}}{I_g}
 ```
-where:
+Where,
 - **Rg** = Gate resistor (Ω)
-- **Vgs(on)** = Applied gate-source voltage (V)
-- **Vgs(th)** = Threshold voltage (V) (from MOSFET datasheet)
+- **Vgs(on)** = Applied gate-source voltage (V) 
+- **Vgs(th)** = Threshold voltage (V)
 - **Ig** = Gate drive current (A)
 
 ## 📖 Example Calculation
 
-### Given:
-- **Qg** = 10 nC
-- **t** = 50 ns
-- **Vgs(on)** = 10 V
-- **Vgs(th)** = 2 V
+# Gate Drive Resistor and Current Calculation
 
-### Calculation:
-1. Compute gate drive current:
+## Given Parameters
+- **Total Gate Charge**: \( Q_g = 120 \) nC *(From DataSheet, Page No. 3)*
+- **Switching Time**: \( t = 200 \) ns *(Assumed, See DataSheet, Page No. 3)*
+- **Gate-Source Voltage (On)**: \( V_{gs(on)} = 15V \) *(From DataSheet, Page No. 3)*
+- **Threshold Voltage**: \( V_{gs(th)} = 5.8V \) *(Typical, See DataSheet, Page No. 2)*
+
+## Calculations
+### Step 1: Compute Gate Drive Current
+Using the equation:
+
 ```math
-I_g = \frac{10 \times 10^{-9} C}{50 \times 10^{-9} s} = 0.2 A (200 mA)
+I_g = \frac{Q_g}{t}
 ```
-2. Calculate gate resistor:
+
+Substituting the values:
+
 ```math
-R_g = \frac{10V - 2V}{0.2A} = \frac{8V}{0.2A} = 40 Ω
+I_g = \frac{120 \times 10^{-9} C}{200 \times 10^{-9} s}
 ```
+
+```math
+I_g = 0.6A \quad (600 \text{ mA})
+\]
+
+### Step 2: Calculate the Gate Resistor
+Using Ohm's Law:
+
+```math
+R_g = \frac{V_{gs(on)} - V_{gs(th)}}{I_g}
+```
+
+Substituting the values:
+```math
+R_g = \frac{15V - 5.8V}{0.6A}
+```
+
+```math
+R_g = \frac{9.2V}{0.6A}
+```
+
+```math
+R_g = 15.33 \Omega
+```
+
+## Final Results
+- **Gate Drive Current**: \( 0.6A \) (600 mA)
+- **Gate Resistor**: \( 15.33 \Omega \)  
+
+## Notes
+- The calculated resistor value is a theoretical value. A standard resistor close to this value should be chosen, considering the power dissipation and practical design considerations.
+- The actual switching performance may depend on additional factors such as PCB layout, driver strength, and parasitic capacitances.
+
 
 ### ✅ Result: **40 Ω gate resistor is required**
 
