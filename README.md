@@ -280,7 +280,7 @@ The **UCC23513DWYR** is a high-performance, single-channel gate driver designed 
 - Supports **higher operating temperatures** compared to traditional optocouplers
 
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/2cd613561b05f2d28f937a1e42ad4a2828a5d576/Basic%20Photos/Functional%20Block%20Diagram%20of%20UCC23513DWYR.png" width="400">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/2cd613561b05f2d28f937a1e42ad4a2828a5d576/Basic%20Photos/Functional%20Block%20Diagram%20of%20UCC23513DWYR.png" width="300">
 </p>  
 
 <p align="center"><b>Figure 2:</b> Functional Block Diagram of UCC23513DWYR</p>  
