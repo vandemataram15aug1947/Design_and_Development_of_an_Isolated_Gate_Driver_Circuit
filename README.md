@@ -312,8 +312,6 @@ Over operating free air temperature range (unless otherwise noted)
 
 > **Note:** Stresses beyond these limits may cause permanent damage to the device. Absolute maximum ratings do not imply functional operation beyond recommended operating conditions. Prolonged exposure to these conditions may impact device reliability.
 
-
-
 # Recommended Operating Conditions
 Over operating free-air temperature range (unless otherwise noted)
 
@@ -349,10 +347,6 @@ In this design, the secondary side is powered by a +15V and –8V rail reference
 - The –8V rail ($V_{EE}$) is connected to the $V_{EE}$ pin of the gate driver.
 
 The total secondary voltage is **23V**, which is used for biasing the gate driver internal circuit and to drive the IGBT gate.
-
-### Capacitors Used:
-- **Bulk capacitors:** 4.7μF capacitors (C4 and C5) supply the IGBT gate current and minimize parasitic inductance, ensuring faster switching.
-- **Noise decoupling capacitors:** 0.1μF capacitors (C2 and C3) filter the power input.
 
 # UCC23513DWYR Gate Driver
 
@@ -432,6 +426,10 @@ The **$V_{CC}$ capacitor** is crucial for maintaining a stable supply voltage to
 #### Recommended Capacitor Values:
 - **0.1μF ceramic capacitor**: Placed close to the $V_{CC}$ and ground pins to filter high-frequency noise.
 - **4.7μF electrolytic capacitor**: Provides bulk energy storage and supports low-frequency variations.
+
+#### Capacitors Used:
+- **Bulk capacitors:** 4.7μF capacitors (C4 and C5) supply the IGBT gate current and minimize parasitic inductance, ensuring faster switching.
+- **Noise decoupling capacitors:** 0.1μF capacitors (C2 and C3) filter the power input.
 
 Using these capacitors in combination ensures:
 - **Stable voltage levels**
