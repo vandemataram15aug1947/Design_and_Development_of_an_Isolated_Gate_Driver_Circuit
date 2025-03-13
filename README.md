@@ -418,30 +418,30 @@ R_{IN} = \frac {V_{SUP} - V_F}{I_F}
 
 Where,
 - $V_{SUP}$ = 3.3V (Input supply voltage)
-- $V_F$ = 1.2V (Forward voltage drop of the input diode)
+- $V_F$ = 2.1V (Typical forward voltage drop of the input diode)
 - $I_F$ = 10mA (Desired forward current for proper operation)
 
 ### **Calculation**
 Substituting the given values:
 
 ```math
-R_{IN} = \frac{3.3V - 1.2V}{0.01A}
+R_{IN} = \frac{3.3V - 2.1V}{0.01A}
 ```
 
 ```math
-R_{IN} = \frac{2.1V}{0.01A} 
+R_{IN} = \frac{1.2V}{0.01A} 
 ```
 
 ```math
-R_{IN} = 210,\Omega
+R_{IN} = 120Ω
 ```
 
 ### **Design Consideration**
-- In practical implementation, a **150Ω** resistor is chosen instead of **210Ω** to allow a slightly higher current.
+- In practical implementation, a **220Ω** resistor is chosen instead of **120Ω** to allow a slightly higher current.
 - This results in **faster switching**, but increases the current draw, which is a trade-off between switching speed and power dissipation.
 
 ### **Conclusion**
-The **150Ω resistor** ensures a robust and efficient operation of the UCC23513 gate driver, balancing switching speed and power consumption.
+The **120Ω resistor** ensures a robust and efficient operation of the UCC23513 gate driver, balancing switching speed and power consumption.
 
 
 
