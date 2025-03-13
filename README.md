@@ -430,7 +430,7 @@ R_{IN} = \frac{1.2V}{0.01A}
 R_{IN} = 120Ω
 ```
 
-### **Power Dissipation Calculation for Resistor R_{IN}**
+### **Power Dissipation Calculation for Resistor $R_{IN}$**
 
 ## **Calculation:**
 The power dissipated by resistor R_{IN} is given by:
@@ -481,6 +481,73 @@ Gate resistors are used to:
 
 ### **Optimal Resistor Selection**
 To achieve an effective trade-off between **switching speed** and **EMI reduction**, the gate resistor is selected based on the desired **gate charge current**.
+
+# Gate Resistor Calculation for MOSFET
+
+Selecting the appropriate gate resistor (Rg) is crucial for optimizing MOSFET switching performance. This resistor controls the gate drive current, influences turn-on and turn-off times, and helps in reducing oscillations.
+
+## 📌 Formula
+
+The gate resistor is determined using the following steps:
+
+### **Step 1: Calculate Gate Drive Current (Ig)**
+```math
+I_g = \frac{Q_g}{t}
+```
+where:
+- **Ig** = Gate drive current (A)
+- **Qg** = Gate charge (C) (from MOSFET datasheet)
+- **t** = Desired switching time (s)
+
+### **Step 2: Compute Gate Resistor (Rg)**
+```math
+R_g = \frac{V_{gs(on)} - V_{gs(th)}}{I_g}
+```
+where:
+- **Rg** = Gate resistor (Ω)
+- **Vgs(on)** = Applied gate-source voltage (V)
+- **Vgs(th)** = Threshold voltage (V) (from MOSFET datasheet)
+- **Ig** = Gate drive current (A)
+
+## 📖 Example Calculation
+
+### Given:
+- **Qg** = 10 nC
+- **t** = 50 ns
+- **Vgs(on)** = 10 V
+- **Vgs(th)** = 2 V
+
+### Calculation:
+1. Compute gate drive current:
+```math
+I_g = \frac{10 \times 10^{-9} C}{50 \times 10^{-9} s} = 0.2 A (200 mA)
+```
+2. Calculate gate resistor:
+```math
+R_g = \frac{10V - 2V}{0.2A} = \frac{8V}{0.2A} = 40 Ω
+```
+
+### ✅ Result: **40 Ω gate resistor is required**
+
+## 📌 Considerations
+- **Refer to the MOSFET datasheet** for accurate values.
+- **Higher switching frequencies** require faster transitions, affecting resistor selection.
+- **Check the internal resistance** of the gate driver if applicable.
+- **Fine-tuning may be necessary** for minimizing ringing and optimizing efficiency.
+
+## 🛠 Applications
+✔️ Buck Converters  
+✔️ Inverters  
+✔️ Motor Drives  
+✔️ Switching Power Supplies  
+
+## 🔗 References
+- MOSFET datasheets (Infineon, STMicroelectronics, etc.)
+- Application notes from Texas Instruments, ON Semiconductor, etc.
+
+---
+### 🛠 **Contribute**
+Feel free to submit pull requests if you have improvements or additional insights!
 
 ### **Formula**
 The gate resistor ($R_G$) is calculated using Ohm’s Law:
