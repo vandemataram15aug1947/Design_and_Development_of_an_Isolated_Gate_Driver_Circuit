@@ -399,8 +399,8 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 
 ## Input Section
 ### ePWM1A (Input Signal)
-**Purpose:** This is the PWM signal from a DSP or microcontroller. It controls the switching of the IGBT or MOSFET by turning the optocoupler on and off.
-**Operation:** When ePWM1A is high, it activates the LED inside the HCPL-3120, turning on the phototransistor and driving the gate of the IGBT/MOSFET.
+- **Purpose:** This is the PWM signal from a DSP or microcontroller. It controls the switching of the IGBT or MOSFET by turning the optocoupler on and off.
+- **Operation:** When ePWM1A is high, it activates the LED inside the HCPL-3120, turning on the phototransistor and driving the gate of the IGBT/MOSFET.
 
 #### Input Resistor Calculation:
 The input resistor can be determined using the formula:
