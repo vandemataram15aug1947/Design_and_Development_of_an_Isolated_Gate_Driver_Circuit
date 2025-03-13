@@ -723,7 +723,7 @@ Using a **gate-to-source Zener diode** is a **cost-effective and reliable method
 
 ---
 
-## Simulation Diagram of Diagram of UCC23513DWYR
+## Simulation Diagram of UCC23513DWYR
 ## Gate Driver Circuit Analysis
 The circuit consists of a gate driver IC (UCC23513), which is used to drive the gate of a MOSFET (NSR20F30NXT5G). Below is a breakdown of the key components and their roles:
 
