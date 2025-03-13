@@ -575,22 +575,18 @@ Using a **15.33Ω** gate resistor ensures optimal **switching performance, EMI c
 ---
 
 ### Selecting $V_{CC}$ Capacitor
-The **$V_{CC}$ capacitor** is crucial for maintaining a stable supply voltage to the gate driver, ensuring reliable operation during high-speed switching events. It acts as a **local energy storage device**, supplying current during transients and filtering out noise.
+The **$V_{CC}$ bypass capacitor** is crucial for maintaining a stable supply voltage to the gate driver, ensuring reliable operation during high-speed switching events. It acts as a **local energy storage device**, supplying current during transients and filtering out noise.
+
+To achieve optimal performance, **Texas Instruments (TI)** recommends using **low-ESR and low-ESL, surface-mount, multi-layer ceramic capacitors (MLCCs)** with adequate **voltage ratings, temperature coefficients, and capacitance tolerances** to ensure stability under varying operating conditions.
 
 #### Recommended Capacitor Values:
-- **0.1μF ceramic capacitor**: Placed close to the $V_{CC}$ and ground pins to filter high-frequency noise.
-- **4.7μF electrolytic capacitor**: Provides bulk energy storage and supports low-frequency variations.
+For **$C_{VCC}$**, the following capacitors are selected:
+- **0.22-μF MLCC (50V)** Placed close to the $V_{CC}$ and ground pins to filter high-frequency noise and improve transient response.
+- **10-μF MLCC (50V)** to provide bulk energy storage and reduce voltage fluctuations.
 
 #### Capacitors Used:
-- **Bulk capacitors:** 4.7μF capacitors (C4 and C5) supply the IGBT gate current and minimize parasitic inductance, ensuring faster switching.
 - **Noise decoupling capacitors:** 0.1μF capacitors (C2 and C3) filter the power input.
-
-### **Selecting VCC Capacitor**
-Proper **VCC bypass capacitors** are crucial for ensuring stable and reliable operation of the gate driver. **Texas Instruments (TI)** recommends using **low-ESR and low-ESL, surface-mount, multi-layer ceramic capacitors (MLCCs)** with adequate **voltage ratings, temperature coefficients, and capacitance tolerances**.
-
-For **CVCC**, the following capacitors are selected:
-- **10-μF MLCC (50V)** to provide bulk energy storage and reduce voltage fluctuations.
-- **0.22-μF MLCC (50V)** to filter high-frequency noise and improve transient response.
+- **Bulk capacitors:** 4.7μF capacitors (C4 and C5) supply the IGBT gate current and minimize parasitic inductance, ensuring faster switching.
 
 If the **bias power supply output** is located at a considerable distance from the **VCC pin**, an additional **tantalum or electrolytic capacitor (>10 μF)** should be placed in parallel with **CVCC** to compensate for voltage drops and maintain stability.
 
@@ -599,8 +595,6 @@ The **DC bias effect** in MLCCs can significantly reduce their effective capacit
 
 ### **Conclusion**
 - Additionally, selecting appropriate **VCC bypass capacitors** helps maintain stable operation and minimize voltage fluctuations. Proper component selection enhances the overall robustness of the circuit.
-
-
 
 ---
 
