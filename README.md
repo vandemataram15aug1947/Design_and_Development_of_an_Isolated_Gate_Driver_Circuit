@@ -401,7 +401,7 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 - **Purpose:** This is the PWM signal from a DSP or microcontroller. It controls the switching of the IGBT or MOSFET by turning the optocoupler on and off.
 - **Operation:** When ePWM1A is high, it activates the LED inside the UCC23513DWYR, turning on the phototransistor and driving the gate of the IGBT/MOSFET.
 
-### **Selecting Gate Driver Input Resistor**
+### **Selecting Gate Driver Input Resistor ($R_{IN}$)**
 
 - **Current Limiting for Safe Operation:** The input resistor plays a critical role in limiting the current flowing into the input diode (e-diode) of the UCC23513 isolated gate driver. The input resistor is essential to limit the current flowing into the input diode, ensuring reliable operation while preventing excessive current that could damage the device.
 
@@ -483,7 +483,7 @@ Where,
 Substituting the given values:
 
 ```math
-R_G = \frac{15V}{0.5A} = 30\Omega
+R_G = \frac{15V}{0.5A}
 ```
 
 ```math
