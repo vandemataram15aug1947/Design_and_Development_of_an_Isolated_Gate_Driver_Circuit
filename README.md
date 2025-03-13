@@ -397,6 +397,11 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 - **Manufacturer's tolerance** for the resistor and variations due to temperature
 - **Variation in e-diode Forward Voltage Drop:** At $I_{F}$ = 10mA, the forward voltage typically ranges from **1.8V (min) to 2.4V (max)**, with a typical value of **2.1V**. This variation is influenced by a temperature coefficient **(< 1.35 mV/°C)** and a dynamic impedance **(< 30Ω)**.
 
+## Input Section
+### ePWM1A (Input Signal)
+**Purpose:** This is the PWM signal from a DSP or microcontroller. It controls the switching of the IGBT or MOSFET by turning the optocoupler on and off.
+**Operation:** When ePWM1A is high, it activates the LED inside the HCPL-3120, turning on the phototransistor and driving the gate of the IGBT/MOSFET.
+
 #### Input Resistor Calculation:
 The input resistor can be determined using the formula:
 
