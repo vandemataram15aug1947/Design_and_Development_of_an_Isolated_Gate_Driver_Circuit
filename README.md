@@ -458,7 +458,7 @@ P_{IN} \approx 0.015W
 - A 1/4W (0.25W) resistor is sufficient as it has a power rating significantly higher than the calculated power dissipation (0.057W), ensuring safe operation and reliability.
 
 ### **Selecting the Gate Driver Resistor ($R_G$)**
-The gate resistor ($R_G$) plays a crucial role in shaping the turn-on and turn-off behavior of the power MOSFET/IGBT driven by the UCC23513 isolated gate driver. It helps control the switching speed, reduce ringing, and mitigate excessive dv/dt and di/dt effects that can impact reliability. Proper selection of the external gate resistor ensures optimal system performance by balancing switching losses, gate drive strength, and electromagnetic interference (EMI).
+The gate resistor ($R_G$) plays a crucial role in shaping the turn-on and turn-off behavior of the power MOSFET/IGBT driven by the UCC23513 isolated gate driver. It is connected in series with the gate terminal to **limit inrush current** during charging and discharging of the gate capacitance. It helps control the switching speed, reduce ringing, and mitigate excessive dv/dt and di/dt effects that can impact reliability. Proper selection of the external gate resistor ensures optimal system performance by balancing switching losses, gate drive strength, and electromagnetic interference (EMI).
 
 ### **Purpose of Gate Resistors**
 Gate resistors are used to:
@@ -574,13 +574,6 @@ Using a **15.33Ω** gate resistor ensures optimal **switching performance, EMI c
 
 ---
 
-### Selecting Gate Driver Output Resistor
-The gate driver output resistor is an essential component in controlling the switching characteristics of power MOSFETs or IGBTs. It is connected in series with the gate terminal to **limit inrush current** during charging and discharging of the gate capacitance. The value of this resistor directly affects:
-- **Rise and fall times** of the switching device
-- **Switching losses** and overall efficiency
-- **Electromagnetic interference (EMI) performance**
-
-For this design, a **30Ω resistor** is selected as the gate driver output resistor. This value ensures a **balance between switching speed and power dissipation**. A lower resistance can lead to **excessive gate current and potential device damage**, while a higher resistance may cause **slower switching and increased losses**.
 
 ### Selecting $V_{CC}$ Capacitor
 The **$V_{CC}$ capacitor** is crucial for maintaining a stable supply voltage to the gate driver, ensuring reliable operation during high-speed switching events. It acts as a **local energy storage device**, supplying current during transients and filtering out noise.
