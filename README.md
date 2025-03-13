@@ -408,7 +408,9 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 ### **Formula**
 The input resistor ($R_{IN}$) is calculated using Ohm’s Law:
 
+```math
 $R_{IN}$ = \frac $V_{SUP}$ - V_F}{I_F}
+```
 
 Where,
 - $V_{SUP}$ = 3.3V (Input supply voltage)
@@ -418,9 +420,12 @@ Where,
 ### **Calculation**
 Substituting the given values:
 
+```math
 $R_{IN}$ = \frac{3.3V - 1.2V}{0.01A}
-
+```
+```math
 $R_{IN}$ = \frac{2.1V}{0.01A} = 210\,\Omega
+```
 
 ### **Design Consideration**
 - In practical implementation, a **150Ω** resistor is chosen instead of **210Ω** to allow a slightly higher current.
