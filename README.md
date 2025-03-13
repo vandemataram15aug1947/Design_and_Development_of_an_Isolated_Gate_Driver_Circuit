@@ -250,31 +250,28 @@ For reliability and performance, the **FR-4 UL94V-0** printed circuit board mate
 The HCPL-3120 provides **complementary gate drive pulses** to control the IGBTs/MOSFETs in an inverter bridge.
 
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/e901177c6e94ca66eb4f06d9b0ee6d019a6bf346/Hardware%20Results/Startup%20Sequence%20PWM%20at%20Gate%20Driver%20Output%20for%20First%20Leg.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/94a5c29b298366247649e341ca2a88772a4d6023/Hardware%20Results/Complementary%20Pulse%20of%20First%20Leg.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Startup Sequence PWM at Gate Driver Output for First Leg</p>  
+<p align="center"><b>Figure 2:</b> Complementary Pulse of First Leg</p>  
 
 
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/e901177c6e94ca66eb4f06d9b0ee6d019a6bf346/Hardware%20Results/Startup%20Sequence%20PWM%20at%20Gate%20Driver%20Output%20for%20Second%20Leg.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/94a5c29b298366247649e341ca2a88772a4d6023/Hardware%20Results/Complementary%20Pulse%20of%20Second%20Leg.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Startup Sequence PWM at Gate Driver Output for Second Leg</p>  
+<p align="center"><b>Figure 2:</b> Complementary Pulse of Second Leg</p>  
 
-
-## 5. Conclusion
+## Conclusion
 The **HCPL-3120, HCPL-J312, and HCNW3120** optocouplers provide a reliable and efficient solution for **motor control and inverter applications**. Their ability to drive power IGBTs and MOSFETs ensures precise and efficient performance, while their wide operating voltage range makes them suitable for diverse gate drive requirements. The **HCNW3120** offers high insulation voltage, adding an extra layer of safety and compliance with industry standards.
 
-By following the guidelines for **schematic design, PCB layout, and material selection**, designers can maximize the performance and reliability of their gate driver circuits.
-
-## References
-- [HCPL-3120 Datasheet](https://www.broadcom.com/products/optocouplers/industrial-plastic/hcpl-3120)
-- [PCB Design Guidelines for Optocouplers](https://www.analog.com/en/technical-articles/gate-drive-optocoupler-design.html)
+## 🔗 References
+- https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9e6d71f39f1dc52c4896c2a9bf28941dc81d05e/DataSheet/HCPL-3120.pdf
 
 ---
 
-# Design of Isolated UCC23513DWYR Optocoupler Gate Drivers
+
+# Design of Isolated UCC23513DWYR Optocoupler Gate Driver
 
 ## Introduction
 The **UCC23513DWYR** is a high-performance, single-channel gate driver designed for IGBTs, MOSFETs, and SiC MOSFETs. With a peak output current of **4.5A source** and **5.3A sink**, along with a reinforced isolation rating of **5.7kV RMS**, it offers reliability and efficiency. Its **33V wide supply voltage range** enables effective driving of IGBTs and SiC power FETs using bipolar supplies. This driver can operate both **low-side and high-side power FETs**, providing significant performance improvements over standard opto-coupler-based gate drivers.
