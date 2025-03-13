@@ -400,23 +400,17 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 #### Input Resistor Calculation:
 The input resistor can be determined using the formula:
 
-## External Resistor Calculation
-
-The external resistor \( R_{\text{EXT}} \) is calculated as:
-
-\[
+```math
 R_{\text{EXT}} = \frac{V_{\text{SUP}} - V_F}{I_F}
-\]
+```
 
-Substituting the given values:
+```math
+= \frac{(3.3V - 2.1V)}{0.01A}
+```
 
-\[
-R_{\text{EXT}} = \frac{(3.3V - 2.1V)}{0.01A}
-\]
-
-\[
-R_{\text{EXT}} = 120\Omega
-\]
+```math
+= 120\Omega
+```
 
 
 ```
