@@ -403,6 +403,9 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 - **Operation:** When ePWM1A is high, it activates the LED inside the UCC23513DWYR, turning on the phototransistor and driving the gate of the IGBT/MOSFET.
 
 #### Input Resistor Calculation:
+- **Purpose:** Limits the current to the input diode of the UCC23513 isolated gate driver (U1).
+- **Equation:** To calculate $R_1$, we need the forward voltage $V_F$ of the diode in U1 and the desired input current $I_{\text{in}}$. The resistor can be calculated using Ohm’s Law:
+
 The input resistor can be determined using the formula:
 
 ```math
@@ -421,9 +424,6 @@ R_{\text{EXT}} = \frac{V_{\text{SUP}} - V_F}{I_F}
 \subsection{Resistor R_1 (150\Omega)}
 ```
 
-**Purpose:** Limits the current to the input diode of the UCC23513 isolated gate driver (U1).
-
-**Equation:** To calculate \( R_1 \), we need the forward voltage \( V_F \) of the diode in U1 and the desired input current \( I_{\text{in}} \). The resistor can be calculated using Ohm’s Law:
 
 ```math
 R_1 = \frac{V_2 - V_F}{I_{\text{in}}}
