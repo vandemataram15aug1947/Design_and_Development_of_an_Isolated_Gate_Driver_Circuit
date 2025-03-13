@@ -574,13 +574,6 @@ Using a **15.33Ω** gate resistor ensures optimal **switching performance, EMI c
 
 ---
 
-## 🔗 References
-- MOSFET datasheets (Infineon, STMicroelectronics, etc.)
-- Application notes from Texas Instruments, ON Semiconductor, etc.
-
----
-
-
 ### Selecting $V_{CC}$ Capacitor
 The **$V_{CC}$ capacitor** is crucial for maintaining a stable supply voltage to the gate driver, ensuring reliable operation during high-speed switching events. It acts as a **local energy storage device**, supplying current during transients and filtering out noise.
 
@@ -592,16 +585,31 @@ The **$V_{CC}$ capacitor** is crucial for maintaining a stable supply voltage to
 - **Bulk capacitors:** 4.7μF capacitors (C4 and C5) supply the IGBT gate current and minimize parasitic inductance, ensuring faster switching.
 - **Noise decoupling capacitors:** 0.1μF capacitors (C2 and C3) filter the power input.
 
-Using these capacitors in combination ensures:
-- **Stable voltage levels**
-- **Reduced power supply noise**
-- **Improved system reliability**
+### **Selecting VCC Capacitor**
+Proper **VCC bypass capacitors** are crucial for ensuring stable and reliable operation of the gate driver. **Texas Instruments (TI)** recommends using **low-ESR and low-ESL, surface-mount, multi-layer ceramic capacitors (MLCCs)** with adequate **voltage ratings, temperature coefficients, and capacitance tolerances**.
+
+For **CVCC**, the following capacitors are selected:
+- **10-μF MLCC (50V)** to provide bulk energy storage and reduce voltage fluctuations.
+- **0.22-μF MLCC (50V)** to filter high-frequency noise and improve transient response.
+
+If the **bias power supply output** is located at a considerable distance from the **VCC pin**, an additional **tantalum or electrolytic capacitor (>10 μF)** should be placed in parallel with **CVCC** to compensate for voltage drops and maintain stability.
+
+**Note:**
+The **DC bias effect** in MLCCs can significantly reduce their effective capacitance. For example, a **25-V, 1-μF X7R capacitor** may exhibit an actual capacitance of only **500 nF** when subjected to a **15-V DC bias**. It is important to account for this effect when selecting capacitors to ensure sufficient capacitance under real operating conditions.
+
+### **Conclusion**
+- Additionally, selecting appropriate **VCC bypass capacitors** helps maintain stable operation and minimize voltage fluctuations. Proper component selection enhances the overall robustness of the circuit.
+
+
 
 ---
 
 This guide provides the essential component selection criteria for designing with the **UCC23513DWYR** gate driver, ensuring optimal performance in power electronics applications.
 
 
+## 🔗 References
+- MOSFET datasheets (Infineon, STMicroelectronics, etc.)
+- Application notes from Texas Instruments, ON Semiconductor, etc.
 
 
 
