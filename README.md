@@ -436,7 +436,7 @@ R_{IN} = 210,\Omega
 - In practical implementation, a **150Ω** resistor is chosen instead of **210Ω** to allow a slightly higher current.
 - This results in **faster switching**, but increases the current draw, which is a trade-off between switching speed and power dissipation.
 
-- **Conclusion**
+### **Conclusion**
 The **150Ω resistor** ensures a robust and efficient operation of the UCC23513 gate driver, balancing switching speed and power consumption.
 
 
