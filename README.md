@@ -271,7 +271,7 @@ The **HCPL-3120, HCPL-J312, and HCNW3120** optocouplers provide a reliable and e
 ---
 
 
-# Design of Isolated UCC23513DWYR Optocoupler Gate Drivers
+# Design of Isolated UCC23513DWYR Optocoupler Gate Driver
 
 ## Introduction
 The **UCC23513DWYR** is a high-performance, single-channel gate driver designed for IGBTs, MOSFETs, and SiC MOSFETs. With a peak output current of **4.5A source** and **5.3A sink**, along with a reinforced isolation rating of **5.7kV RMS**, it offers reliability and efficiency. Its **33V wide supply voltage range** enables effective driving of IGBTs and SiC power FETs using bipolar supplies. This driver can operate both **low-side and high-side power FETs**, providing significant performance improvements over standard opto-coupler-based gate drivers.
