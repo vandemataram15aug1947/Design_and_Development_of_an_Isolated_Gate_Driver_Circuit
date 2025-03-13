@@ -393,6 +393,8 @@ Typical **quiescent power supply current** from **V_CC** is **1.2mA (max 2.2mA)*
 - **Purpose:** This is the PWM signal from a DSP or microcontroller. It controls the switching of the IGBT or MOSFET by turning the optocoupler on and off.
 - **Operation:** When ePWM1A is high, it activates the LED inside the UCC23513DWYR, turning on the phototransistor and driving the gate of the IGBT/MOSFET.
 
+---
+
 ### **Selecting Gate Driver Input Resistor ($R_{IN}$)**
 
 - **Current Limiting for Safe Operation:** The input resistor plays a critical role in limiting the current flowing into the input diode (e-diode) of the UCC23513 isolated gate driver. The input resistor is essential to limit the current flowing into the input diode, ensuring reliable operation while preventing excessive current that could damage the device.
@@ -456,6 +458,8 @@ P_{IN} \approx 0.015W
 ### **Conclusion**
 - The **120Ω resistor** ensures a robust and efficient operation of the UCC23513 gate driver, balancing switching speed and power consumption.
 - A 1/4W (0.25W) resistor is sufficient as it has a power rating significantly higher than the calculated power dissipation (0.057W), ensuring safe operation and reliability.
+
+---
 
 ### **Selecting the Gate Driver Resistor ($R_G$)**
 The gate resistor ($R_G$) plays a crucial role in shaping the turn-on and turn-off behavior of the power MOSFET/IGBT driven by the UCC23513 isolated gate driver. It is connected in series with the gate terminal to **limit inrush current** during charging and discharging of the gate capacitance. It helps control the switching speed, reduce ringing, and mitigate excessive dv/dt and di/dt effects that can impact reliability. Proper selection of the external gate resistor ensures optimal system performance by balancing switching losses, gate drive strength, and electromagnetic interference (EMI).
@@ -567,6 +571,8 @@ R_g = 15.33Ω
 
 ### **Conclusion**
 Using a **15.33Ω** gate resistor ensures optimal **switching performance, EMI control, and reliability** of the **UCC23513** gate driver. Adjustments may be made based on **specific circuit requirements** and **EMI constraints**.
+
+---
 
 ## 🔗 References
 - MOSFET datasheets (Infineon, STMicroelectronics, etc.)
