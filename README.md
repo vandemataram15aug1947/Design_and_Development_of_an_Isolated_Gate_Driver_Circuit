@@ -408,10 +408,9 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 ### **Formula**
 The input resistor ($R_{IN}$) is calculated using Ohm’s Law:
 
-$R_{IN}$ = \frac ${V_{SUP}$ - V_F}{I_F}
+$R_{IN}$ = \frac $V_{SUP}$ - V_F}{I_F}
 
-
-Where:
+Where,
 - $V_{SUP}$ = 3.3V (Input supply voltage)
 - $V_F$ = 1.2V (Forward voltage drop of the input diode)
 - $I_F$ = 10mA (Desired forward current for proper operation)
@@ -427,7 +426,7 @@ $R_{IN}$ = \frac{2.1V}{0.01A} = 210\,\Omega
 - In practical implementation, a **150Ω** resistor is chosen instead of **210Ω** to allow a slightly higher current.
 - This results in **faster switching**, but increases the current draw, which is a trade-off between switching speed and power dissipation.
 
-### **Conclusion**
+- **Conclusion**
 The **150Ω resistor** ensures a robust and efficient operation of the UCC23513 gate driver, balancing switching speed and power consumption.
 
 
