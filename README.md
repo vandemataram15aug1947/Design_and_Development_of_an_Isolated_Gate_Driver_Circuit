@@ -422,7 +422,7 @@ R_{IN} = \frac{V_{SUP} - V_F}{I_F}
 Where,
 - $V_2$ = 5V is the input supply voltage.
 - $V_F$ \approx 1.2V is the forward voltage drop of the input diode.
-- $I_{\text{in}$ \approx 10mA \) is the desired forward current.
+- $I_{in}$ \approx 10mA \) is the desired forward current.
 
 Substituting the values:
 
