@@ -37,14 +37,6 @@ The **HCPL-3120**, **HCPL-J312**, and **HCNW3120** are high-performance optocoup
 - **Industrial Power Electronics**
 - **High-Voltage Switching Circuits**
 
-## Documentation
-This repository provides detailed insights into:
-- **Schematic Design**
-- **PCB Layout Considerations**
-- **Material Selection**
-- **Gate Driver Outputs**
-- **Performance Optimization Techniques**
-
 ## Features of HCPL-3120
 - 2.5 A maximum peak output current
 - 2.0 A minimum peak output current
