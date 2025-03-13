@@ -468,19 +468,25 @@ To achieve a balance between **switching speed** and **EMI reduction**, the gate
 
 ### **Formula**
 The gate resistor ($R_G$) is calculated using Ohm’s Law:
-\[
+
+```math
 R_G = \frac{V_{DRV}}{I_G}
-\]
+```
 
 Where,
-- \( V_{DRV} = 15V \) (Gate drive voltage)
-- \( I_G = 0.5A \) (Desired gate drive current)
+- $V_{DRV}$ = 15V (Gate drive voltage)
+- $I_G$ = 0.5A  (Desired gate drive current)
 
 ### **Calculation**
 Substituting the given values:
-\[
-R_G = \frac{15V}{0.5A} = 30\Omega
-\]
+
+```math
+R_G = \frac{15V}{0.5A}
+```
+
+```math
+R_G = 30\Omega
+```
 
 ## **Design Considerations**
 - A **30Ω** resistor is chosen to ensure **moderate switching speed** while minimizing ringing and excessive power dissipation.
