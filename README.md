@@ -575,7 +575,7 @@ Using a **15.33Ω** gate resistor ensures optimal **switching performance, EMI c
 ---
 
 ### Selecting $V_{CC}$ Capacitor
-The **$V_{CC}$ bypass capacitor** is crucial for maintaining a stable supply voltage to the gate driver, ensuring reliable operation during high-speed switching events. It acts as a **local energy storage device**, supplying current during transients and filtering out noise.
+The **$V_{CC}$ bypass capacitor** is crucial for maintaining a stable supply voltage to the gate driver, ensuring reliable operation during high-speed switching events. It acts as a **local energy storage device**, supplying current during transients and filtering out noise. Place the cpoacitor as close to the input power pins of the octacoupler as possible to minimize impedence. 
 
 To achieve optimal performance, **Texas Instruments (TI)** recommends using **low-ESR and low-ESL, surface-mount, multi-layer ceramic capacitors (MLCCs)** with adequate **voltage ratings, temperature coefficients, and capacitance tolerances** to ensure stability under varying operating conditions.
 
@@ -598,7 +598,24 @@ The **DC bias effect** in MLCCs can significantly reduce their effective capacit
 
 ---
 
-This guide provides the essential component selection criteria for designing with the **UCC23513DWYR** gate driver, ensuring optimal performance in power electronics applications.
+\subsection{Schottky Diode $D_2$ (NSR20F30NXT5G)}
+
+\textbf{Purpose:} A fast-switching diode used for freewheeling or rectification. Schottky diodes have a low forward voltage drop and fast recovery time, making them ideal for power applications.
+
+\textbf{Key Parameters:}
+\begin{itemize}
+    \item Forward Voltage Drop: $V_F \approx 0.25V$ at low currents.
+    \item Continuous Forward Current Rating: $200\text{mA}$.
+\end{itemize}
+
+
+\section{Flyback Diode and Gate Driving}
+\subsection{D1 (Flyback Diode)}
+\textbf{Purpose:} Protects the circuit from inductive spikes that can occur when the IGBT/MOSFET is turned off. It provides a path for the inductive kickback current. \\
+\textbf{Selection Criteria:} Choose a diode with a reverse voltage rating higher than the supply voltage and a current rating higher than the maximum load current. \\
+\textbf{Example:} A 1N4007 diode with a reverse voltage rating of 1000V and a current rating of 1A.
+
+---
 
 
 ## 🔗 References
