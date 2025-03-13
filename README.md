@@ -430,12 +430,32 @@ R_{IN} = \frac{1.2V}{0.01A}
 R_{IN} = 120Ω
 ```
 
+### **Power Dissipation Calculation for Resistor R_{IN}**
+
+## **Calculation:**
+The power dissipated by resistor R_{IN} is given by:
+
+```math
+P_{IN} = I_{F}^2 \times R_{IN}
+```
+
+Substituting the given values:
+
+```math
+P_{IN} = (0.01A)^2 \times 150
+```
+
+```math
+P_{IN} \approx 0.015W
+```
+
 ### **Design Consideration**
 - In practical implementation, a **120Ω** resistor is chosen instead of **150Ω** to allow a slightly higher current.
 - This results in **faster switching**, but increases the current draw, which is a trade-off between switching speed and power dissipation.
 
 ### **Conclusion**
-The **120Ω resistor** ensures a robust and efficient operation of the UCC23513 gate driver, balancing switching speed and power consumption.
+- The **120Ω resistor** ensures a robust and efficient operation of the UCC23513 gate driver, balancing switching speed and power consumption.
+- A 1/4W (0.25W) resistor is sufficient as it has a power rating significantly higher than the calculated power dissipation (0.057W), ensuring safe operation and reliability.
 
 ### **Selecting the Gate Driver Resistor ($R_G$)**
 The gate resistor ($R_G$) plays a crucial role in shaping the turn-on and turn-off behavior of the power MOSFET/IGBT driven by the UCC23513 isolated gate driver. It helps control the switching speed, reduce ringing, and mitigate excessive dv/dt and di/dt effects that can impact reliability. Proper selection of the external gate resistor ensures optimal system performance by balancing switching losses, gate drive strength, and electromagnetic interference (EMI).
