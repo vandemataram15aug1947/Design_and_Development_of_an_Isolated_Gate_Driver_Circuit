@@ -671,14 +671,13 @@ A **10kΩ gate-to-source/emitter resistor** is essential for ensuring **stable o
 
 ---
 
-### **Gate-Source Zener Diode Protection for MOSFETs/IGBTs**
+### **Selecting Gate-Source Zener Diode Protection for MOSFETs/IGBTs**
 A **gate-to-source Zener diode** or **back-to-back Zener diodes** protects MOSFETs/IGBTs from **electrostatic discharge (ESD)** and **high-voltage transients** by clamping the gate-source voltage to a safe level, preventing damage to the gate oxide when a high voltage surge occurs. 
 
 ### **Why Use a Gate-Source Zener Diode?**
 
 ### **ESD Protection**
-- The **gate oxide layer** in MOSFETs is extremely thin and can be permanently damaged by high-voltage transients.
-- A **Zener diode clamps** the gate-source voltage (**V_GS**) and prevents it from exceeding safe limits.
+MOSFETs are susceptible to damage from static electricity (ESD) because the thin gate oxide layer can be easily punctured by high voltages.
 
 ### **How a Zener Diode Works for Protection**
 - If the **gate voltage** surpasses the Zener diode’s **breakdown voltage (V_Z)**, the diode **conducts** and clamps the voltage.
@@ -688,10 +687,6 @@ A **gate-to-source Zener diode** or **back-to-back Zener diodes** protects MOSFE
 ### **Back-to-Back Zener Diodes**
 - Used for **bidirectional protection** against **positive and negative voltage surges**.
 - Protects the MOSFET from **both overvoltage spikes and negative transients** that could damage the **gate driver**.
-- Commonly used in **high-speed switching applications** such as:
-  - **Motor drives**
-  - **Switched-mode power supplies (SMPS)**
-  - **RF circuits**
 
 ### **Alternative Protection Methods**
 - Some MOSFETs come with **built-in ESD protection diodes** (e.g., **TVS diodes** inside).
