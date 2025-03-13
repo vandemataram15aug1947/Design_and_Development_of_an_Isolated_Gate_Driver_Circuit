@@ -482,9 +482,9 @@ Gate resistors are used to:
 ### **Optimal Resistor Selection**
 To achieve an effective trade-off between **switching speed** and **EMI reduction**, the gate resistor is selected based on the desired **gate charge current**.
 
-Selecting the appropriate gate resistor (Rg) is crucial for optimizing IGBT/MOSFET switching performance. This resistor controls the gate drive current, influences turn-on and turn-off times, and helps in reducing oscillations.
+Selecting the appropriate gate resistor (R_g) is crucial for optimizing IGBT/MOSFET switching performance. This resistor controls the gate drive current, influences turn-on and turn-off times, and helps in reducing oscillations.
 
-## 📌 Formula
+### 📌 Formula
 
 The gate resistor is determined using the following steps:
 
@@ -507,17 +507,15 @@ Where,
 - **Vgs(th)** = Threshold voltage (V)
 - **Ig** = Gate drive current (A)
 
-## 📖 Example Calculation
+### 📖 Example Calculation
 
-# Gate Drive Resistor and Current Calculation
+### Given Parameters
+- **Total Gate Charge**: $Q_g = 120 nC *(From DataSheet, Page No. 3)*
+- **Switching Time**: t = 200 ns *(Assumed, See DataSheet, Page No. 3)*
+- **Gate-Source Voltage (On)**: $V_{gs(on)}$ = 15V *(From DataSheet, Page No. 3)*
+- **Threshold Voltage**: $V_{gs(th)}$ = 5.8V *(Typical, See DataSheet, Page No. 2)*
 
-## Given Parameters
-- **Total Gate Charge**: \( Q_g = 120 \) nC *(From DataSheet, Page No. 3)*
-- **Switching Time**: \( t = 200 \) ns *(Assumed, See DataSheet, Page No. 3)*
-- **Gate-Source Voltage (On)**: \( V_{gs(on)} = 15V \) *(From DataSheet, Page No. 3)*
-- **Threshold Voltage**: \( V_{gs(th)} = 5.8V \) *(Typical, See DataSheet, Page No. 2)*
-
-## Calculations
+### Calculations
 ### Step 1: Compute Gate Drive Current
 Using the equation:
 
@@ -552,12 +550,12 @@ R_g = \frac{9.2V}{0.6A}
 ```
 
 ```math
-R_g = 15.33 \Omega
+R_g = 15.33Ω
 ```
 
 ## Final Results
-- **Gate Drive Current**: \( 0.6A \) (600 mA)
-- **Gate Resistor**: \( 15.33 \Omega \)  
+- **Gate Drive Current**: \0.6A (600 mA)
+- **Gate Resistor**: 15.33Ω  
 
 ## Notes
 - The calculated resistor value is a theoretical value. A standard resistor close to this value should be chosen, considering the power dissipation and practical design considerations.
