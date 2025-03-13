@@ -407,27 +407,27 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 This document provides the calculation method for selecting the appropriate input resistor for the **UCC23513** isolated gate driver. The input resistor is essential to limit the current flowing into the input diode, ensuring reliable operation while preventing excessive current that could damage the device.
 
 ## **Formula**
-The input resistor (​\( R_{IN} \)​) is calculated using Ohm’s Law:
+The input resistor ($ R_{IN} $) is calculated using Ohm’s Law:
 
-\[
+$$
 R_{IN} = \frac{V_{SUP} - V_F}{I_F}
-\]
+$$
 
 Where:
-- \( V_{SUP} \) = 3.3V (Input supply voltage)
-- \( V_F \) = 1.2V (Forward voltage drop of the input diode)
-- \( I_F \) = 10mA (Desired forward current for proper operation)
+- $ V_{SUP} $ = 3.3V (Input supply voltage)
+- $ V_F $ = 1.2V (Forward voltage drop of the input diode)
+- $ I_F $ = 10mA (Desired forward current for proper operation)
 
 ## **Calculation**
 Substituting the given values:
 
-\[
+$$
 R_{IN} = \frac{3.3V - 1.2V}{0.01A}
-\]
+$$
 
-\[
+$$
 R_{IN} = \frac{2.1V}{0.01A} = 210\,\Omega
-\]
+$$
 
 ## **Design Consideration**
 - In practical implementation, a **150Ω** resistor is chosen instead of **210Ω** to allow a slightly higher current.
@@ -435,7 +435,6 @@ R_{IN} = \frac{2.1V}{0.01A} = 210\,\Omega
 
 ## **Conclusion**
 The **150Ω resistor** ensures a robust and efficient operation of the UCC23513 gate driver, balancing switching speed and power consumption.
-
 
 
 
