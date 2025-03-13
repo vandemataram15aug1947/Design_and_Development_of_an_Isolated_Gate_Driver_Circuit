@@ -386,7 +386,6 @@ Typically, **MCUs are not capable of providing the required forward current**, s
 Typical **quiescent power supply current** from **V_CC** is **1.2mA (max 2.2mA)**.
 
 ---
-This document provides a detailed overview of the **UCC23513DWYR** gate driver, including its input and output power stages, application information, and power supply considerations.
 
 ## Detailed Design Procedure
 
@@ -401,10 +400,18 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 #### Input Resistor Calculation:
 The input resistor can be determined using the formula:
 
-```
+```math
 R_EXT = (V_SUP - V_F) / I_F
-      = (3.3V - 2.1V) / 0.01A
-      = 120Ω
+```
+
+```math
+= (3.3V - 2.1V) / 0.01A
+```
+
+```math
+ = 120Ω
+```
+
 ```
 
 ### Selecting Gate Driver Output Resistor
