@@ -401,11 +401,11 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 The input resistor can be determined using the formula:
 
 ```math
-R_EXT = (V_SUP - V_F) / I_F
+\frac{R_{EXT} = (V_{SUP} - V_F) / I_F}
 ```
 
 ```math
-= (3.3V - 2.1V) / 0.01A
+= \frac(3.3V - 2.1V) / 0.01A}
 ```
 
 ```math
