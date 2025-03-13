@@ -401,36 +401,41 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 - **Purpose:** This is the PWM signal from a DSP or microcontroller. It controls the switching of the IGBT or MOSFET by turning the optocoupler on and off.
 - **Operation:** When ePWM1A is high, it activates the LED inside the UCC23513DWYR, turning on the phototransistor and driving the gate of the IGBT/MOSFET.
 
-#### Input Resistor Calculation:
-- **Purpose:** Limits the current to the input diode of the UCC23513 isolated gate driver (U1).
-- **Equation:** To calculate $R_1$, we need the forward voltage $V_F$ of the diode in U1 and the desired input current $I_{\text{in}}$. The resistor can be calculated using Ohm’s Law:
+# **UCC23513 Isolated Gate Driver Input Resistor Calculation**
 
-The input resistor can be determined using the formula:
+## **Overview**
+This document provides the calculation method for selecting the appropriate input resistor for the **UCC23513** isolated gate driver. The input resistor is essential to limit the current flowing into the input diode, ensuring reliable operation while preventing excessive current that could damage the device.
 
-```math
+## **Formula**
+The input resistor (​\( R_{IN} \)​) is calculated using Ohm’s Law:
+
+\[
 R_{IN} = \frac{V_{SUP} - V_F}{I_F}
-```
+\]
 
-```math
-= \frac{(3.3V - 2.1V)}{0.01A}
-```
+Where:
+- \( V_{SUP} \) = 3.3V (Input supply voltage)
+- \( V_F \) = 1.2V (Forward voltage drop of the input diode)
+- \( I_F \) = 10mA (Desired forward current for proper operation)
 
-```math
-= 120\Omega
-```
+## **Calculation**
+Substituting the given values:
 
-Where,
-- $V_2$ = 5V is the input supply voltage.
-- $V_F$ \approx 1.2V is the forward voltage drop of the input diode.
-- $I_{in}$ \approx 10mA \) is the desired forward current.
+\[
+R_{IN} = \frac{3.3V - 1.2V}{0.01A}
+\]
 
-Substituting the values:
+\[
+R_{IN} = \frac{2.1V}{0.01A} = 210\,\Omega
+\]
 
-```math
-R_1 = \frac{5V - 1.2V}{10mA} = \frac{3.8V}{10mA} = 380\Omega
-```
+## **Design Consideration**
+- In practical implementation, a **150Ω** resistor is chosen instead of **210Ω** to allow a slightly higher current.
+- This results in **faster switching**, but increases the current draw, which is a trade-off between switching speed and power dissipation.
 
-**Conclusion:** The design uses a \( 150\Omega \) resistor for faster switching, at the expense of drawing more current.
+## **Conclusion**
+The **150Ω resistor** ensures a robust and efficient operation of the UCC23513 gate driver, balancing switching speed and power consumption.
+
 
 
 
