@@ -265,7 +265,6 @@ By following the guidelines for **schematic design, PCB layout, and material sel
 
 ---
 
-
 # Design of Isolated UCC23513DWYR Optocoupler Gate Drivers
 
 ## Introduction
@@ -409,7 +408,7 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 The input resistor can be determined using the formula:
 
 ```math
-R_{\text{EXT}} = \frac{V_{\text{SUP}} - V_F}{I_F}
+R_{IN} = \frac{V_{SUP} - V_F}{I_F}
 ```
 
 ```math
@@ -420,19 +419,10 @@ R_{\text{EXT}} = \frac{V_{\text{SUP}} - V_F}{I_F}
 = 120\Omega
 ```
 
-```math
-\subsection{Resistor R_1 (150\Omega)}
-```
-
-
-```math
-R_1 = \frac{V_2 - V_F}{I_{\text{in}}}
-```
-
-where:
-- \( V_2 = 5V \) is the input supply voltage.
-- \( V_F \approx 1.2V \) is the forward voltage drop of the input diode.
-- \( I_{\text{in}} \approx 10mA \) is the desired forward current.
+Where,
+- $V_2$ = 5V is the input supply voltage.
+- $V_F$ \approx 1.2V is the forward voltage drop of the input diode.
+- $I_{\text{in}$ \approx 10mA \) is the desired forward current.
 
 Substituting the values:
 
