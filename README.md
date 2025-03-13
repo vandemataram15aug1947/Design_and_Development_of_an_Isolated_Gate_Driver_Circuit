@@ -712,7 +712,7 @@ Using a **gate-to-source Zener diode** is a **cost-effective and reliable method
 
 ## Simulation Diagram of Diagram of UCC23513DWYR
 
-## 1. Gate Driver Circuit Analysis
+## Gate Driver Circuit Analysis
 The circuit consists of a gate driver IC (UCC23513), which is used to drive the gate of a MOSFET (NSR20F30NXT5G). Below is a breakdown of the key components and their roles:
 
 ### Components and Functionality
@@ -732,7 +732,7 @@ The circuit consists of a gate driver IC (UCC23513), which is used to drive the 
 
 <p align="center"><b>Figure 2:</b> Simulation Diagram of UCC23513DWY</p>
 
-## 2. Simulation Results Interpretation
+## Simulation Results Interpretation
 The second image shows simulation waveforms:
 
 <p align="center">
@@ -753,7 +753,7 @@ The second image shows simulation waveforms:
     - When the input is LOW (0V) → Output switches to 0V (turning MOSFET OFF).
   - There is a small delay between the input and output transitions due to propagation delay in the driver.
 
-## 3. Key Observations and Conclusion
+## Key Observations and Conclusion
 ✅ The gate driver is successfully amplifying the 5V input pulse to 15V, suitable for driving the MOSFET.
 ✅ The switching speed and response align well with the expected behavior.
 ✅ Proper decoupling capacitors ensure stability, reducing noise in the circuit.
@@ -805,24 +805,31 @@ When designing a PCB layout for the **HCPL-3120**, the following key points shou
 <p align="center"><b>Figure 2:</b> SMD Final Assembled Gate Driver PCB Design</p>  
 
 
-## 3. PCB Material Selection
+## PCB Material Selection
 For reliability and performance, the **FR-4 UL94V-0** printed circuit board material is recommended. This material is preferred due to:
 - **Low Dielectric Losses:** Suitable for high-frequency applications.
 - **Minimal Moisture Absorption:** Enhances durability in humid environments.
 - **High Mechanical Strength and Stiffness:** Prevents PCB warping under thermal stress.
 - **Self-Extinguishing Properties:** Improves safety by reducing fire hazards.
 
-## 4. Gate Driver Output Signals
+## Gate Driver Output Signals
 The HCPL-3120 provides **complementary gate drive pulses** to control the IGBTs/MOSFETs in an inverter bridge.
 
-#### **Complementary Pulse of First Leg**
-![First Leg](Complementary_Pulse_First_Leg.png)
 
-#### **Complementary Pulse of Second Leg**
-![Second Leg](Complementary_Pulse_Second_Leg.png)
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/e901177c6e94ca66eb4f06d9b0ee6d019a6bf346/Hardware%20Results/Startup%20Sequence%20PWM%20at%20Gate%20Driver%20Output%20for%20First%20Leg.png" width="700">
+</p>  
 
-#### **Complementary Pulse of Third Leg**
-![Third Leg](Complementary_Pulse_Third_Leg.png)
+<p align="center"><b>Figure 2:</b> Startup Sequence PWM at Gate Driver Output for First Leg</p>  
+
+
+<p align="center">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/e901177c6e94ca66eb4f06d9b0ee6d019a6bf346/Hardware%20Results/Startup%20Sequence%20PWM%20at%20Gate%20Driver%20Output%20for%20Second%20Leg.png" width="700">
+</p>  
+
+<p align="center"><b>Figure 2:</b> Startup Sequence PWM at Gate Driver Output for Second Leg</p>  
+
+
 
 ## 🔗 References
 - MOSFET datasheets (Infineon, STMicroelectronics, etc.)
