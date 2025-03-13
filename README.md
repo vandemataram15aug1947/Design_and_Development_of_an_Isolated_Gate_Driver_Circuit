@@ -1,12 +1,6 @@
 # Design and Development of an Isolated Gate Driver Circuit
 
 ## Introduction
-
-This project focuses on the design and development of two isolated gate driver circuits using:
-
-- **HCPL-3120** – A high-speed optocoupler-based gate driver.  
-- **UCC23513DWYR** – A high-performance isolated gate driver with reinforced insulation.  
-
 In this project, I designed and developed two isolated gate driver circuits: one using the DIP HCPL-3120 and the other using the SMD UCC23513DWYR. While I did not provide an extensive explanation for the HCPL-3120, I have thoroughly explained the UCC23513DWYR, including component selection with formulas and detailed explanations.
 
 The same formulas used for selecting components in the UCC23513DWYR can also be applied to the HCPL-3120. Additionally, I have included:
@@ -16,6 +10,11 @@ The same formulas used for selecting components in the UCC23513DWYR can also be 
 - Hardware Testing Results of the gate driver circuits for my inverter.
 
 This project ensures a comprehensive understanding of the UCC23513DWYR gate driver and its practical implementation in inverter applications.
+
+This project focuses on the design and development of two isolated gate driver circuits using:
+- **HCPL-3120** – A high-speed optocoupler-based gate driver.  
+- **UCC23513DWYR** – A high-performance isolated gate driver with reinforced insulation.  
+
 
 The circuits are designed to efficiently drive power switches in high-frequency applications, ensuring **reliable isolation, fast switching, and enhanced noise immunity**. These gate drivers play a crucial role in power electronics applications such as **DC-DC converters, inverters, and motor drives**.  
 
