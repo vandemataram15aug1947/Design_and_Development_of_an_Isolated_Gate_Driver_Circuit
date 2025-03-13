@@ -510,7 +510,7 @@ Where,
 ### 📖 Example Calculation
 
 ### Given Parameters
-- **Total Gate Charge**: $Q_g = 120 nC *(From DataSheet, Page No. 3)*
+- **Total Gate Charge**: Q_g = 120 nC *(From DataSheet, Page No. 3)*
 - **Switching Time**: t = 200 ns *(Assumed, See DataSheet, Page No. 3)*
 - **Gate-Source Voltage (On)**: $V_{gs(on)}$ = 15V *(From DataSheet, Page No. 3)*
 - **Threshold Voltage**: $V_{gs(th)}$ = 5.8V *(Typical, See DataSheet, Page No. 2)*
@@ -531,7 +531,7 @@ I_g = \frac{120 \times 10^{-9} C}{200 \times 10^{-9} s}
 
 ```math
 I_g = 0.6A \quad (600 \text{ mA})
-\]
+```
 
 ### Step 2: Calculate the Gate Resistor
 Using Ohm's Law:
@@ -557,72 +557,22 @@ R_g = 15.33Ω
 - **Gate Drive Current**: \0.6A (600 mA)
 - **Gate Resistor**: 15.33Ω  
 
-## Notes
-- The calculated resistor value is a theoretical value. A standard resistor close to this value should be chosen, considering the power dissipation and practical design considerations.
-- The actual switching performance may depend on additional factors such as PCB layout, driver strength, and parasitic capacitances.
+### ✅ Result: **15.33 Ω gate resistor is required**
 
+### **Design Considerations**
+- A **15.33Ω** resistor provides a balance between **switching speed and power dissipation**.
+- If excessive **switching noise or oscillations** occur, consider increasing the resistance to **22Ω–30Ω**.
+- For **faster switching**, a **lower value (e.g., 10Ω)** may be used, but this increases **EMI and transient stress**.
+- The resistor selection depends on factors such as **gate charge, driver capability, and system noise immunity**.
 
-### ✅ Result: **40 Ω gate resistor is required**
-
-## 📌 Considerations
-- **Refer to the MOSFET datasheet** for accurate values.
-- **Higher switching frequencies** require faster transitions, affecting resistor selection.
-- **Check the internal resistance** of the gate driver if applicable.
-- **Fine-tuning may be necessary** for minimizing ringing and optimizing efficiency.
-
-## 🛠 Applications
-✔️ Buck Converters  
-✔️ Inverters  
-✔️ Motor Drives  
-✔️ Switching Power Supplies  
+### **Conclusion**
+Using a **15.33Ω** gate resistor ensures optimal **switching performance, EMI control, and reliability** of the **UCC23513** gate driver. Adjustments may be made based on **specific circuit requirements** and **EMI constraints**.
 
 ## 🔗 References
 - MOSFET datasheets (Infineon, STMicroelectronics, etc.)
 - Application notes from Texas Instruments, ON Semiconductor, etc.
 
 ---
-### 🛠 **Contribute**
-Feel free to submit pull requests if you have improvements or additional insights!
-
-### **Formula**
-The gate resistor ($R_G$) is calculated using Ohm’s Law:
-
-```math
-R_G = \frac{V_{DRV}}{I_G}
-```
-
-Where,
-- **$V_{DRV}$** = 15V (Gate drive voltage)
-- **$I_G$** = 0.5A (Desired gate drive current)
-
-### **Calculation**
-Substituting the given values:
-
-```math
-R_G = \frac{15V}{0.5A}
-```
-
-```math
-R_G = 30Ω
-```
-
-### **Design Considerations**
-- A **30Ω** resistor is chosen to ensure **moderate switching speed** while minimizing ringing and excessive power dissipation.
-- If excessive switching noise or oscillations occur, a slightly **higher resistor value (e.g., 47Ω)** may be used.
-- For **faster switching**, a **lower value (e.g., 10Ω–20Ω)** can be selected at the expense of increased EMI and transient stress.
-
-### **Conclusion**
-The **30Ω** resistor provides a balanced trade-off between **switching speed, power dissipation, and EMI performance**, ensuring the **reliable operation** of the **UCC23513** gate driver when driving power MOSFETs or IGBTs.
-
----
-
-### 📌 References
-- [TI UCC23513 Datasheet](https://www.ti.com/product/UCC23513)
-- [Power MOSFET Application Notes](https://www.infineon.com/cms/en/product/power/mosfet/)
-
----
-
-
 
 ### Selecting Gate Driver Output Resistor
 The gate driver output resistor is an essential component in controlling the switching characteristics of power MOSFETs or IGBTs. It is connected in series with the gate terminal to **limit inrush current** during charging and discharging of the gate capacitance. The value of this resistor directly affects:
