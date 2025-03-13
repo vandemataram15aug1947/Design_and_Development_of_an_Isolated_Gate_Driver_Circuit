@@ -598,22 +598,42 @@ The **DC bias effect** in MLCCs can significantly reduce their effective capacit
 
 ---
 
-\subsection{Schottky Diode $D_2$ (NSR20F30NXT5G)}
+### **Schottky Diode (SD) – Also Called Flyback Diode**
 
-\textbf{Purpose:} A fast-switching diode used for freewheeling or rectification. Schottky diodes have a low forward voltage drop and fast recovery time, making them ideal for power applications.
+A Schottky diode is a fast-switching diode used primarily for **freewheeling** or **rectification** in power electronics applications. It is widely used due to its **low forward voltage drop** and **fast recovery time**, making it suitable for high-efficiency circuits.
 
-\textbf{Key Parameters:}
-\begin{itemize}
-    \item Forward Voltage Drop: $V_F \approx 0.25V$ at low currents.
-    \item Continuous Forward Current Rating: $200\text{mA}$.
-\end{itemize}
+### **Purpose**
+- Acts as a **protection device** against inductive voltage spikes when the **IGBT/MOSFET** turns off.
+- Provides a **low-resistance path** for the inductive kickback current, preventing damage to switching components.
+- Reduces **power losses** and improves circuit efficiency by minimizing conduction and switching losses.
 
+### **Key Parameters**
+- **Forward Voltage Drop ($V_F$):** Approx. **0.25V** at low currents.
+- **Continuous Forward Current Rating:** **200mA**.
+- **Fast switching response**, ensuring reduced switching losses.
 
-\section{Flyback Diode and Gate Driving}
-\subsection{D1 (Flyback Diode)}
-\textbf{Purpose:} Protects the circuit from inductive spikes that can occur when the IGBT/MOSFET is turned off. It provides a path for the inductive kickback current. \\
-\textbf{Selection Criteria:} Choose a diode with a reverse voltage rating higher than the supply voltage and a current rating higher than the maximum load current. \\
-\textbf{Example:} A 1N4007 diode with a reverse voltage rating of 1000V and a current rating of 1A.
+### **Application in Circuits**
+- Used as a **freewheeling diode** in inductive circuits.
+- Commonly placed **parallel to the gate resistor** in MOSFET/IGBT circuits to control **switching speed**.
+- Helps in **reducing electromagnetic interference (EMI)** by providing a controlled turn-off path.
+
+### **Selection Criteria**
+- **Reverse Voltage Rating:** Should be **higher than the supply voltage** to prevent breakdown.
+- **Current Rating:** Should be **higher than the maximum expected load current** to ensure reliability.
+
+### **Example Diodes**
+- **1N4007**
+  - Reverse Voltage Rating: **1000V**
+  - Current Rating: **1A**
+- **BAT54** (Low-power applications)
+  - Reverse Voltage Rating: **30V**
+  - Current Rating: **200mA**
+- **SS14** (High-speed switching applications)
+  - Reverse Voltage Rating: **40V**
+  - Current Rating: **1A**
+
+### **Conclusion**
+A **Schottky diode** is an essential component in power electronics, especially in circuits requiring **fast recovery**, **low voltage drop**, and **efficient protection against inductive transients**. Proper selection ensures improved system performance and longevity of power switching devices.
 
 ---
 
