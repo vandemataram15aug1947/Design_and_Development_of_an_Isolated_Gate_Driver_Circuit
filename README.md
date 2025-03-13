@@ -413,8 +413,6 @@ R_{\text{EXT}} = \frac{V_{\text{SUP}} - V_F}{I_F}
 ```
 
 
-```
-
 ### Selecting Gate Driver Output Resistor
 The gate driver output resistor is an essential component in controlling the switching characteristics of power MOSFETs or IGBTs. It is connected in series with the gate terminal to **limit inrush current** during charging and discharging of the gate capacitance. The value of this resistor directly affects:
 - **Rise and fall times** of the switching device
