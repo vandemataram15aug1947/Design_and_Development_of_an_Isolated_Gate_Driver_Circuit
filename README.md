@@ -448,14 +448,20 @@ The **120Ω resistor** ensures a robust and efficient operation of the UCC23513 
 ### **Controlling Switching Behavior**
 The gate resistor ($R_G$) plays a crucial role in shaping the turn-on and turn-off behavior of the power MOSFET/IGBT driven by the **UCC23513** isolated gate driver. It helps control the switching speed, reduce ringing, and mitigate excessive **dv/dt** and **di/dt** effects that can lead to reliability issues.
 
-### **Recommended Operating Range**
+### **Gate Resistor Optimization**
+
 The gate resistor value is determined based on the required gate drive strength, switching losses, and EMI considerations:
-- **Lower resistance** leads to faster switching but increases **dv/dt** stress and ringing.
-- **Higher resistance** reduces stress but slows down switching, increasing power dissipation.
-- Limit ringing caused by parasitic inductances and capacitances
-- Limit ringing caused by high voltage or high current switching dv/dt, di/dt, and body-diode reverse recovery
-- Fine-tune gate drive strength, specifically peak sink and source current to optimize the switching loss
-- Reduce electromagnetic interference (EMI)
+
+- Lower resistance leads to faster switching but increases **dv/dt** stress and ringing.
+- Higher resistance reduces stress but slows down switching, increasing power dissipation.
+- Limit ringing caused by parasitic inductances and capacitances.
+- Limit ringing caused by high voltage or high current switching (**dv/dt**, **di/dt**) and body-diode reverse recovery.
+- Fine-tune gate drive strength, specifically peak sink and source current, to optimize the switching loss.
+- Reduce electromagnetic interference (EMI).
+
+---
+
+**🔧 Note:** Proper tuning of the gate resistor is crucial for balancing **switching efficiency, noise suppression, and component reliability**.  
 
 ### **Optimal Resistor Selection**
 To achieve a balance between **switching speed** and **EMI reduction**, the gate resistor is selected based on the desired **gate charge current**. A typical gate drive current ($I_G$) is set to **0.5A**, ensuring a controlled turn-on and turn-off transition.
