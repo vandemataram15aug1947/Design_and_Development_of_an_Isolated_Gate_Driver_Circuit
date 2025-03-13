@@ -400,7 +400,7 @@ The input resistor limits the current flowing into the e-diode when it is forwar
 ## Input Section
 ### ePWM1A (Input Signal)
 - **Purpose:** This is the PWM signal from a DSP or microcontroller. It controls the switching of the IGBT or MOSFET by turning the optocoupler on and off.
-- **Operation:** When ePWM1A is high, it activates the LED inside the HCPL-3120, turning on the phototransistor and driving the gate of the IGBT/MOSFET.
+- **Operation:** When ePWM1A is high, it activates the LED inside the UCC23513DWYR, turning on the phototransistor and driving the gate of the IGBT/MOSFET.
 
 #### Input Resistor Calculation:
 The input resistor can be determined using the formula:
@@ -416,6 +416,38 @@ R_{\text{EXT}} = \frac{V_{\text{SUP}} - V_F}{I_F}
 ```math
 = 120\Omega
 ```
+
+```math
+\subsection{Resistor R_1 (150\Omega)}
+```
+
+**Purpose:** Limits the current to the input diode of the UCC23513 isolated gate driver (U1).
+
+**Equation:** To calculate \( R_1 \), we need the forward voltage \( V_F \) of the diode in U1 and the desired input current \( I_{\text{in}} \). The resistor can be calculated using Ohm’s Law:
+
+```math
+R_1 = \frac{V_2 - V_F}{I_{\text{in}}}
+```
+
+where:
+- \( V_2 = 5V \) is the input supply voltage.
+- \( V_F \approx 1.2V \) is the forward voltage drop of the input diode.
+- \( I_{\text{in}} \approx 10mA \) is the desired forward current.
+
+Substituting the values:
+
+```math
+R_1 = \frac{5V - 1.2V}{10mA} = \frac{3.8V}{10mA} = 380\Omega
+```
+
+**Conclusion:** The design uses a \( 150\Omega \) resistor for faster switching, at the expense of drawing more current.
+
+
+
+
+
+
+
 
 ### Selecting Gate Driver Output Resistor
 The gate driver output resistor is an essential component in controlling the switching characteristics of power MOSFETs or IGBTs. It is connected in series with the gate terminal to **limit inrush current** during charging and discharging of the gate capacitance. The value of this resistor directly affects:
