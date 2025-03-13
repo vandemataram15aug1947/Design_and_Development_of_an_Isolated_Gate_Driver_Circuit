@@ -418,7 +418,7 @@ R_{IN} = \frac {V_{SUP} - V_F}{I_F}
 
 Where,
 - $V_{SUP}$ = 3.3V (Input supply voltage)
-- $V_F$ = 2.1V (Typical forward voltage drop of the input diode)
+- $V_F$ = 1.8V (Minimum forward voltage drop of the input diode)
 - $I_F$ = 10mA (Desired forward current for proper operation)
 
 ### **Calculation**
@@ -437,13 +437,48 @@ R_{IN} = 120Ω
 ```
 
 ### **Design Consideration**
-- In practical implementation, a **220Ω** resistor is chosen instead of **120Ω** to allow a slightly higher current.
+- In practical implementation, a **120Ω** resistor is chosen instead of **150Ω** to allow a slightly higher current.
 - This results in **faster switching**, but increases the current draw, which is a trade-off between switching speed and power dissipation.
 
 ### **Conclusion**
 The **120Ω resistor** ensures a robust and efficient operation of the UCC23513 gate driver, balancing switching speed and power consumption.
 
+# Selecting Gate Driver Gate Resistor
 
+## Controlling Switching Behavior
+The gate resistor (\( R_G \)) plays a crucial role in shaping the turn-on and turn-off behavior of the power MOSFET/IGBT driven by the **UCC23513** isolated gate driver. It helps control the switching speed, reduce ringing, and mitigate excessive **dv/dt** and **di/dt** effects that can lead to reliability issues.
+
+## Recommended Operating Range
+The gate resistor value is determined based on the required gate drive strength, switching losses, and EMI considerations:
+- **Lower resistance** leads to faster switching but increases **dv/dt** stress and ringing.
+- **Higher resistance** reduces stress but slows down switching, increasing power dissipation.
+
+## Optimal Resistor Selection
+To achieve a balance between **switching speed** and **EMI reduction**, the gate resistor is selected based on the desired **gate charge current**. A typical gate drive current (\( I_G \)) is set to **0.5A**, ensuring a controlled turn-on and turn-off transition.
+
+### Formula
+The gate resistor (\( R_G \)) is calculated using Ohm’s Law:
+\[
+R_G = \frac{V_{DRV}}{I_G}
+\]
+
+Where:
+- \( V_{DRV} = 15V \) (Gate drive voltage)
+- \( I_G = 0.5A \) (Desired gate drive current)
+
+### Calculation
+Substituting the given values:
+\[
+R_G = \frac{15V}{0.5A} = 30\Omega
+\]
+
+## Design Considerations
+- A **30Ω** resistor is chosen to ensure **moderate switching speed** while minimizing ringing and excessive power dissipation.
+- If the system exhibits **excessive switching noise or oscillations**, a slightly **higher resistor value (e.g., 47Ω)** may be used.
+- For applications requiring **faster switching**, a **lower value (e.g., 10Ω–20Ω)** can be selected at the expense of increased EMI and transient stress.
+
+## Conclusion
+The **30Ω** resistor provides a balanced trade-off between **switching speed, power dissipation, and EMI performance**, ensuring the **reliable operation** of the **UCC23513** gate driver in driving power MOSFETs/IGBTs.
 
 
 
