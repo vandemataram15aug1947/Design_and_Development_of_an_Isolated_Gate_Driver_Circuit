@@ -740,7 +740,7 @@ The circuit consists of a gate driver IC (UCC23513), which is used to drive the 
 - **Pull-down Resistor (R3 - 10kΩ):** Ensures that the MOSFET gate is properly discharged when the driver output is low.
 
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/5c4121c9f85b02a9eb4ea9f7d3a58f8cf5eb174c/Simulation%20Diagran%20and%20Results/Simulation%20Diagram%20of%20UCC23513DWY.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/27ef7cd60f87a3f9a03c78c4b577b47d1f959d3d/Simulation%20Diagran%20and%20Results/Simulation%20Diagram%20of%20UCC23513DWY.png" width="700">
 </p>  
 
 <p align="center"><b>Figure 2:</b> Simulation Diagram of UCC23513DWY</p>
