@@ -527,6 +527,7 @@ Where,
 ### 📖 Example Calculation
 
 ### Given Parameters
+From the IKW25N120T2 datasheet:
 - **Total Gate Charge**: Q_g = 120 nC *(From DataSheet, Page No. 3)*
 - **Switching Time**: t = 200 ns *(Assumed, See DataSheet, Page No. 3)*
 - **Gate-Source Voltage (On)**: $V_{gs(on)}$ = 15V *(From DataSheet, Page No. 3)*
