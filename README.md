@@ -207,7 +207,7 @@ A properly designed schematic ensures that the **HCPL-3120** functions optimally
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/Simulation%20Diagran%20and%20Results/Schematic%20Diagram%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Schematic Diagram of HCPL-3120</p>
+<p align="center"><b>Figure 3:</b> Schematic Diagram of HCPL-3120</p>
 
 ## PCB Layout Design Considerations
 ### **Best Practices for PCB Layout**
@@ -225,28 +225,28 @@ PCB layout images visually represent the design of a printed circuit board, show
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%20Top-Layer%20Traces%20and%20Copper%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> DIP Top-Layer Traces and Copper of HCPL-3120</p>  
+<p align="center"><b>Figure 4:</b> DIP Top-Layer Traces and Copper of HCPL-3120</p>  
 
 
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%20Bottom-Layer%20Traces%20and%20Copper%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> DIP Bottom-Layer Traces and Copper of HCPL-3120</p>  
+<p align="center"><b>Figure 5:</b> DIP Bottom-Layer Traces and Copper of HCPL-3120</p>  
 
 
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%203-D%20PCB%20View%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> DIP 3-D PCB View of HCPL-3120</p>  
+<p align="center"><b>Figure 6:</b> DIP 3-D PCB View of HCPL-3120</p>  
 
 
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/14f879ef49b1cb7ad4574742b9d1e01ea4e0d266/PCB/DIP%20Final%20Assembled%20Gate%20Driver%20PCB%20Design.jpg" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> DIP Final Assembled Gate Driver PCB Design</p>  
+<p align="center"><b>Figure 7:</b> DIP Final Assembled Gate Driver PCB Design</p>  
 
 ## PCB Material Selection
 For reliability and performance, the **FR-4 UL94V-0** printed circuit board material is recommended. This material is preferred due to:
@@ -262,14 +262,14 @@ The HCPL-3120 provides **complementary gate drive pulses** to control the IGBTs/
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/94a5c29b298366247649e341ca2a88772a4d6023/Hardware%20Results/Complementary%20Pulse%20of%20First%20Leg.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Complementary Pulse of First Leg</p>  
+<p align="center"><b>Figure 8:</b> Complementary Pulse of First Leg</p>  
 
 
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/94a5c29b298366247649e341ca2a88772a4d6023/Hardware%20Results/Complementary%20Pulse%20of%20Second%20Leg.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Complementary Pulse of Second Leg</p>  
+<p align="center"><b>Figure 9:</b> Complementary Pulse of Second Leg</p>  
 
 ## Conclusion
 The **HCPL-3120** optocouplers provide a reliable and efficient solution for **motor control and inverter applications**. Their ability to drive power IGBTs and MOSFETs ensures precise and efficient performance, while their wide operating voltage range makes them suitable for diverse gate drive requirements. The **HCNW3120** offers high insulation voltage, adding an extra layer of safety and compliance with industry standards.
@@ -365,13 +365,13 @@ The total secondary voltage is **23V**, which is used for biasing the gate drive
 ## Input Power Stage
 The input stage of **UCC23513DWYR** is simply the e-diode and therefore has an **Anode (Pin 1)** and a **Cathode (Pin 3)**. **Pin 2** has no internal connection and can be left open or connected to ground. The input stage does not have a power and ground pin.
 
-When the e-diode is forward biased by applying a positive voltage to the Anode with respect to the Cathode, a forward current **(I_F)** flows into the e-diode. The forward voltage drop across the e-diode is **2.1V (typical)**. An external resistor should be used to limit the forward current. The recommended range for the forward current is **7mA to 16mA**.
+When the e-diode is forward biased by applying a positive voltage to the Anode with respect to the Cathode, a forward current **($I_F$)** flows into the e-diode. The forward voltage drop across the e-diode is **2.1V (typical)**. An external resistor should be used to limit the forward current. The recommended range for the forward current is **7mA to 16mA**.
 
-When **I_F** exceeds the threshold current **I_FLH** (2.8mA typical.), a high-frequency signal is transmitted across the isolation barrier through the high-voltage **SiO₂ capacitors**. The HF signal is detected by the receiver and **V_OUT** is driven high. The dynamic impedance of the e-diode is very small (**<1.0 Ω**) and the temperature coefficient of the e-diode forward voltage drop is **<1.35 mV/°C**. This leads to excellent stability of the forward current **I_F** across all operating conditions.
+When **$I_F$** exceeds the threshold current **$I_{FLH}$** (2.8mA typical.), a high-frequency signal is transmitted across the isolation barrier through the high-voltage **SiO₂ capacitors**. The HF signal is detected by the receiver and **$V_{OUT}$** is driven high. The dynamic impedance of the e-diode is very small (**<1.0 Ω**) and the temperature coefficient of the e-diode forward voltage drop is **<1.35 mV/°C**. This leads to excellent stability of the forward current **$I_F$** across all operating conditions.
 
-If the Anode voltage drops below **V_FHL** (0.9V), or is reverse biased, the gate driver output is driven low. The reverse breakdown voltage of the e-diode is **>15V**, allowing normal operation with a reverse bias of up to **13V**.
+If the Anode voltage drops below **$V_{FHL}$** (0.9V), or is reverse biased, the gate driver output is driven low. The reverse breakdown voltage of the e-diode is **>15V**, allowing normal operation with a reverse bias of up to **13V**.
 
-The **UCC23513DWYR** can be used in an **interlock architecture**, where **V_SUP** can be as high as **12V**. The system designer has the flexibility to choose a **3.3V, 5.0V, or up to 12V** PWM signal source to drive the input stage of UCC23513DWYR using an appropriate input resistor.
+The **UCC23513DWYR** can be used in an **interlock architecture**, where **$V_{SUP}$** can be as high as **12V**. The system designer has the flexibility to choose a **3.3V, 5.0V, or up to 12V** PWM signal source to drive the input stage of UCC23513DWYR using an appropriate input resistor.
 
 The interlock architecture ensures that if both PWM signals are erroneously stuck high (or low) simultaneously, both gate driver outputs will be driven low, preventing shoot-through in the IGBTs.
 
@@ -394,10 +394,10 @@ Typically, **MCUs are not capable of providing the required forward current**, s
 - **Maximum output power supply voltage**: **33V (35V abs max)**
 - **Configurable externally as:**
   - **Single isolated supply** up to **33V**
-  - **Isolated bipolar supply** ensuring **V_CC - V_EE** does not exceed **33V**
+  - **Isolated bipolar supply** ensuring **$V_{CC}$ - $V_{EE}$** does not exceed **33V**
   - **Bootstrapped configuration** (external diode & capacitor) when using a single power supply with respect to the power ground
 
-Typical **quiescent power supply current** from **V_CC** is **1.2mA (max 2.2mA)**.
+Typical **quiescent power supply current** from **$V_{CC}$** is **1.2mA (max 2.2mA)**.
 
 ---
 
