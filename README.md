@@ -53,7 +53,7 @@ The **HCPL-3120**, **HCPL-J312**, and **HCNW3120** are high-performance optocoup
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/Functional%20Diagram%20of%20HCPL-3120.png" width="500">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Functional Diagram of HCPL-3120</p>  
+<p align="center"><b>Figure 1:</b> Functional Diagram of HCPL-3120</p>  
 
 A 0.1 μF bypass capacitor must be connected between pins 5 and 8.
 
@@ -80,7 +80,7 @@ A three-phase inverter requires six isolated gate drivers for IGBT switch contro
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Application Circuit with Negative IGBT Gate Drive</p>  
+<p align="center"><b>Figure 2:</b> HCPL-3120 Typical Application Circuit with Negative IGBT Gate Drive</p>  
 
 To eliminate negative IGBT gate drive, minimize Rg and lead inductance from HCPL-3120 to IGBT gate/emitter. Mount HCPL-3120 directly above the IGBT on a small PCB. Avoid routing IGBT collector/emitter traces close to the HCPL-3120 input to prevent signal coupling. If unavoidable, reverse-bias the LED in the off state to prevent unwanted HCPL-3120 activation from transient signals.
 
@@ -88,7 +88,7 @@ To eliminate negative IGBT gate drive, minimize Rg and lead inductance from HCPL
 
 ## Calculate $R_g$ Minimum from the $I_{OL}$ Peak Specification  
 
-The IGBT and $R_g$ in **Figure 26 [DataSheet, Page No. 22]** can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.  
+The IGBT and $R_g$ in **Figure 26 [DataSheet, Page No. 23]** can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.  
 
 ```math
 R_g \geq \frac{V_{CC} - V_{EE} - V_{OL}}{IOL_{\text{PEAK}}}
@@ -128,7 +128,7 @@ P_O = (P_{O(BIAS)} + P_{O(SWITCHING)})
 = I_{CC} \times (V_{CC} - V_{EE}) + E_{SW}(R_g, Q_g) \times f
 ```
 
-For the circuit in **Figure 26 [See DataSheet, Page No. 22]**, the worst case is:  
+For the circuit in **Figure 26 [See DataSheet, Page No. 23]**, the worst case is:  
 - $I_{F}$ = 16 mA  
 - $R_g = 8 \Omega$  
 - Max Duty Cycle = 80%  
@@ -272,7 +272,7 @@ The HCPL-3120 provides **complementary gate drive pulses** to control the IGBTs/
 <p align="center"><b>Figure 2:</b> Complementary Pulse of Second Leg</p>  
 
 ## Conclusion
-The **HCPL-3120, HCPL-J312, and HCNW3120** optocouplers provide a reliable and efficient solution for **motor control and inverter applications**. Their ability to drive power IGBTs and MOSFETs ensures precise and efficient performance, while their wide operating voltage range makes them suitable for diverse gate drive requirements. The **HCNW3120** offers high insulation voltage, adding an extra layer of safety and compliance with industry standards.
+The **HCPL-3120** optocouplers provide a reliable and efficient solution for **motor control and inverter applications**. Their ability to drive power IGBTs and MOSFETs ensures precise and efficient performance, while their wide operating voltage range makes them suitable for diverse gate drive requirements. The **HCNW3120** offers high insulation voltage, adding an extra layer of safety and compliance with industry standards.
 
 ## 🔗 References
 - https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9e6d71f39f1dc52c4896c2a9bf28941dc81d05e/DataSheet/HCPL-3120.pdf
