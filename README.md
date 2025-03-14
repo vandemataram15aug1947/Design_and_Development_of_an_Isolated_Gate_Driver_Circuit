@@ -1,14 +1,16 @@
 # Design and Development of an Isolated Gate Driver Circuit
 
 ## Introduction
-In this project, I designed and developed two isolated gate driver circuits: one using the DIP HCPL-3120 and the other using the SMD UCC23513DWYR. While I did not provide an extensive explanation for the HCPL-3120, I have thoroughly explained the UCC23513DWYR, including component selection with formulas and detailed explanations.
+In this project, two isolated gate driver circuits are designed and developed: one utilizing the DIP HCPL-3120 and the other employing the SMD UCC23513DWYR. While an extensive explanation is not provided for the HCPL-3120, a thorough explanation of the UCC23513DWYR is included, covering component selection with formulas and detailed justifications.
+
+The same formulas used for selecting components in the UCC23513DWYR can also be applied to the HCPL-3120. Additionally, the following are included:
 
 The same formulas used for selecting components in the UCC23513DWYR can also be applied to the HCPL-3120. Additionally, I have included:
 - Simulation Diagrams
 - Simulation Results
 - PCB Design
-- Hardware Testing Results of the gate driver circuits for my inverter.
-
+- Hardware Testing Results of the gate driver circuits for the inverter, which can also be tested with other converters.
+  
 This project ensures a comprehensive understanding of the UCC23513DWYR gate driver and its practical implementation in inverter applications.
 
 This project focuses on the design and development of two isolated gate driver circuits using:
@@ -101,7 +103,7 @@ R_g \geq \frac{V_{CC} - V_{EE} - V_{OL}}{IOL_{\text{PEAK}}}
 ```
 
 ```math
-= 7.2 Ω \quad @ \quad 8 Ω
+= 7.2 Ω \approx 8 Ω
 ```
 
 The $V_{OL}$ value of 2V in the previous equation is a conservative value at the peak current of 2.5A **Figure 6 [DataSheet, Page No. 17]**. At lower $R_g$ values, the voltage supplied by the HCPL-3120 is not an ideal voltage step. This results in lower peak currents (more margin) than predicted by this analysis. **When negative gate drive is not used, $V_{EE}$ in the previous equation is equal to zero volts**.
