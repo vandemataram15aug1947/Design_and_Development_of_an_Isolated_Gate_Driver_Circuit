@@ -1,14 +1,16 @@
 # Design and Development of an Isolated Gate Driver Circuit
 
 ## Introduction
-In this project, I designed and developed two isolated gate driver circuits: one using the DIP HCPL-3120 and the other using the SMD UCC23513DWYR. While I did not provide an extensive explanation for the HCPL-3120, I have thoroughly explained the UCC23513DWYR, including component selection with formulas and detailed explanations.
+In this project, two isolated gate driver circuits are designed and developed: one utilizing the DIP HCPL-3120 and the other employing the SMD UCC23513DWYR. While an extensive explanation is not provided for the HCPL-3120, a thorough explanation of the UCC23513DWYR is included, covering component selection with formulas and detailed justifications.
+
+The same formulas used for selecting components in the UCC23513DWYR can also be applied to the HCPL-3120. Additionally, the following are included:
 
 The same formulas used for selecting components in the UCC23513DWYR can also be applied to the HCPL-3120. Additionally, I have included:
 - Simulation Diagrams
 - Simulation Results
 - PCB Design
-- Hardware Testing Results of the gate driver circuits for my inverter.
-
+- Hardware Testing Results of the gate driver circuits for the inverter, which can also be tested with other converters.
+  
 This project ensures a comprehensive understanding of the UCC23513DWYR gate driver and its practical implementation in inverter applications.
 
 This project focuses on the design and development of two isolated gate driver circuits using:
@@ -51,7 +53,7 @@ The **HCPL-3120**, **HCPL-J312**, and **HCNW3120** are high-performance optocoup
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/Functional%20Diagram%20of%20HCPL-3120.png" width="500">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Functional Diagram of HCPL-3120</p>  
+<p align="center"><b>Figure 1:</b> Functional Diagram of HCPL-3120</p>  
 
 A 0.1 μF bypass capacitor must be connected between pins 5 and 8.
 
@@ -78,7 +80,7 @@ A three-phase inverter requires six isolated gate drivers for IGBT switch contro
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9d18d4efe7abc7e6e60d44be69375fd77f93948/Basic%20Photos/HCPL-3120%20Typical%20Application%20Circuit%20with%20Negative%20IGBT%20Gate%20Drive.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 1:</b> HCPL-3120 Typical Application Circuit with Negative IGBT Gate Drive</p>  
+<p align="center"><b>Figure 2:</b> HCPL-3120 Typical Application Circuit with Negative IGBT Gate Drive</p>  
 
 To eliminate negative IGBT gate drive, minimize Rg and lead inductance from HCPL-3120 to IGBT gate/emitter. Mount HCPL-3120 directly above the IGBT on a small PCB. Avoid routing IGBT collector/emitter traces close to the HCPL-3120 input to prevent signal coupling. If unavoidable, reverse-bias the LED in the off state to prevent unwanted HCPL-3120 activation from transient signals.
 
@@ -86,7 +88,7 @@ To eliminate negative IGBT gate drive, minimize Rg and lead inductance from HCPL
 
 ## Calculate $R_g$ Minimum from the $I_{OL}$ Peak Specification  
 
-The IGBT and $R_g$ in **Figure 26 [DataSheet, Page No. 22]** can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.  
+The IGBT and $R_g$ in **Figure 26 [DataSheet, Page No. 23]** can be analyzed as a simple RC circuit with a voltage supplied by the HCPL-3120.  
 
 ```math
 R_g \geq \frac{V_{CC} - V_{EE} - V_{OL}}{IOL_{\text{PEAK}}}
@@ -101,7 +103,7 @@ R_g \geq \frac{V_{CC} - V_{EE} - V_{OL}}{IOL_{\text{PEAK}}}
 ```
 
 ```math
-= 7.2 Ω \quad @ \quad 8 Ω
+= 7.2 Ω \approx 8 Ω
 ```
 
 The $V_{OL}$ value of 2V in the previous equation is a conservative value at the peak current of 2.5A **Figure 6 [DataSheet, Page No. 17]**. At lower $R_g$ values, the voltage supplied by the HCPL-3120 is not an ideal voltage step. This results in lower peak currents (more margin) than predicted by this analysis. **When negative gate drive is not used, $V_{EE}$ in the previous equation is equal to zero volts**.
@@ -126,7 +128,7 @@ P_O = (P_{O(BIAS)} + P_{O(SWITCHING)})
 = I_{CC} \times (V_{CC} - V_{EE}) + E_{SW}(R_g, Q_g) \times f
 ```
 
-For the circuit in **Figure 26 [See DataSheet, Page No. 22]**, the worst case is:  
+For the circuit in **Figure 26 [See DataSheet, Page No. 23]**, the worst case is:  
 - $I_{F}$ = 16 mA  
 - $R_g = 8 \Omega$  
 - Max Duty Cycle = 80%  
@@ -205,7 +207,7 @@ A properly designed schematic ensures that the **HCPL-3120** functions optimally
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/Simulation%20Diagran%20and%20Results/Schematic%20Diagram%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Schematic Diagram of HCPL-3120</p>
+<p align="center"><b>Figure 3:</b> Schematic Diagram of HCPL-3120</p>
 
 ## PCB Layout Design Considerations
 ### **Best Practices for PCB Layout**
@@ -223,28 +225,28 @@ PCB layout images visually represent the design of a printed circuit board, show
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%20Top-Layer%20Traces%20and%20Copper%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> DIP Top-Layer Traces and Copper of HCPL-3120</p>  
+<p align="center"><b>Figure 4:</b> DIP Top-Layer Traces and Copper of HCPL-3120</p>  
 
 
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%20Bottom-Layer%20Traces%20and%20Copper%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> DIP Bottom-Layer Traces and Copper of HCPL-3120</p>  
+<p align="center"><b>Figure 5:</b> DIP Bottom-Layer Traces and Copper of HCPL-3120</p>  
 
 
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/bc37744c1da089fc5ed373e309597bdcaad0b164/PCB/DIP%203-D%20PCB%20View%20of%20HCPL-3120.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> DIP 3-D PCB View of HCPL-3120</p>  
+<p align="center"><b>Figure 6:</b> DIP 3-D PCB View of HCPL-3120</p>  
 
 
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/14f879ef49b1cb7ad4574742b9d1e01ea4e0d266/PCB/DIP%20Final%20Assembled%20Gate%20Driver%20PCB%20Design.jpg" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> DIP Final Assembled Gate Driver PCB Design</p>  
+<p align="center"><b>Figure 7:</b> DIP Final Assembled Gate Driver PCB Design</p>  
 
 ## PCB Material Selection
 For reliability and performance, the **FR-4 UL94V-0** printed circuit board material is recommended. This material is preferred due to:
@@ -260,17 +262,17 @@ The HCPL-3120 provides **complementary gate drive pulses** to control the IGBTs/
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/94a5c29b298366247649e341ca2a88772a4d6023/Hardware%20Results/Complementary%20Pulse%20of%20First%20Leg.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Complementary Pulse of First Leg</p>  
+<p align="center"><b>Figure 8:</b> Complementary Pulse of First Leg</p>  
 
 
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/94a5c29b298366247649e341ca2a88772a4d6023/Hardware%20Results/Complementary%20Pulse%20of%20Second%20Leg.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Complementary Pulse of Second Leg</p>  
+<p align="center"><b>Figure 9:</b> Complementary Pulse of Second Leg</p>  
 
 ## Conclusion
-The **HCPL-3120, HCPL-J312, and HCNW3120** optocouplers provide a reliable and efficient solution for **motor control and inverter applications**. Their ability to drive power IGBTs and MOSFETs ensures precise and efficient performance, while their wide operating voltage range makes them suitable for diverse gate drive requirements. The **HCNW3120** offers high insulation voltage, adding an extra layer of safety and compliance with industry standards.
+The **HCPL-3120** optocouplers provide a reliable and efficient solution for **motor control and inverter applications**. Their ability to drive power IGBTs and MOSFETs ensures precise and efficient performance, while their wide operating voltage range makes them suitable for diverse gate drive requirements. The **HCNW3120** offers high insulation voltage, adding an extra layer of safety and compliance with industry standards.
 
 ## 🔗 References
 - https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9e6d71f39f1dc52c4896c2a9bf28941dc81d05e/DataSheet/HCPL-3120.pdf
@@ -295,7 +297,7 @@ The **UCC23513DWYR** is a high-performance, single-channel gate driver designed 
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/2cd613561b05f2d28f937a1e42ad4a2828a5d576/Basic%20Photos/Functional%20Block%20Diagram%20of%20UCC23513DWYR.png" width="300">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Functional Block Diagram of UCC23513DWYR</p>  
+<p align="center"><b>Figure 10:</b> Functional Block Diagram of UCC23513DWYR</p>  
 
 
 ## Pin Functions
@@ -363,13 +365,13 @@ The total secondary voltage is **23V**, which is used for biasing the gate drive
 ## Input Power Stage
 The input stage of **UCC23513DWYR** is simply the e-diode and therefore has an **Anode (Pin 1)** and a **Cathode (Pin 3)**. **Pin 2** has no internal connection and can be left open or connected to ground. The input stage does not have a power and ground pin.
 
-When the e-diode is forward biased by applying a positive voltage to the Anode with respect to the Cathode, a forward current **(I_F)** flows into the e-diode. The forward voltage drop across the e-diode is **2.1V (typical)**. An external resistor should be used to limit the forward current. The recommended range for the forward current is **7mA to 16mA**.
+When the e-diode is forward biased by applying a positive voltage to the Anode with respect to the Cathode, a forward current **($I_F$)** flows into the e-diode. The forward voltage drop across the e-diode is **2.1V (typical)**. An external resistor should be used to limit the forward current. The recommended range for the forward current is **7mA to 16mA**.
 
-When **I_F** exceeds the threshold current **I_FLH** (2.8mA typical.), a high-frequency signal is transmitted across the isolation barrier through the high-voltage **SiO₂ capacitors**. The HF signal is detected by the receiver and **V_OUT** is driven high. The dynamic impedance of the e-diode is very small (**<1.0 Ω**) and the temperature coefficient of the e-diode forward voltage drop is **<1.35 mV/°C**. This leads to excellent stability of the forward current **I_F** across all operating conditions.
+When **$I_F$** exceeds the threshold current **$I_{FLH}$** (2.8mA typical.), a high-frequency signal is transmitted across the isolation barrier through the high-voltage **SiO₂ capacitors**. The HF signal is detected by the receiver and **$V_{OUT}$** is driven high. The dynamic impedance of the e-diode is very small (**<1.0 Ω**) and the temperature coefficient of the e-diode forward voltage drop is **<1.35 mV/°C**. This leads to excellent stability of the forward current **$I_F$** across all operating conditions.
 
-If the Anode voltage drops below **V_FHL** (0.9V), or is reverse biased, the gate driver output is driven low. The reverse breakdown voltage of the e-diode is **>15V**, allowing normal operation with a reverse bias of up to **13V**.
+If the Anode voltage drops below **$V_{FHL}$** (0.9V), or is reverse biased, the gate driver output is driven low. The reverse breakdown voltage of the e-diode is **>15V**, allowing normal operation with a reverse bias of up to **13V**.
 
-The **UCC23513DWYR** can be used in an **interlock architecture**, where **V_SUP** can be as high as **12V**. The system designer has the flexibility to choose a **3.3V, 5.0V, or up to 12V** PWM signal source to drive the input stage of UCC23513DWYR using an appropriate input resistor.
+The **UCC23513DWYR** can be used in an **interlock architecture**, where **$V_{SUP}$** can be as high as **12V**. The system designer has the flexibility to choose a **3.3V, 5.0V, or up to 12V** PWM signal source to drive the input stage of UCC23513DWYR using an appropriate input resistor.
 
 The interlock architecture ensures that if both PWM signals are erroneously stuck high (or low) simultaneously, both gate driver outputs will be driven low, preventing shoot-through in the IGBTs.
 
@@ -392,10 +394,10 @@ Typically, **MCUs are not capable of providing the required forward current**, s
 - **Maximum output power supply voltage**: **33V (35V abs max)**
 - **Configurable externally as:**
   - **Single isolated supply** up to **33V**
-  - **Isolated bipolar supply** ensuring **V_CC - V_EE** does not exceed **33V**
+  - **Isolated bipolar supply** ensuring **$V_{CC}$ - $V_{EE}$** does not exceed **33V**
   - **Bootstrapped configuration** (external diode & capacitor) when using a single power supply with respect to the power ground
 
-Typical **quiescent power supply current** from **V_CC** is **1.2mA (max 2.2mA)**.
+Typical **quiescent power supply current** from **$V_{CC}$** is **1.2mA (max 2.2mA)**.
 
 ---
 
@@ -426,29 +428,30 @@ R_{IN} = \frac {V_{SUP} - V_F}{I_F}
 ```
 
 Where,
+From the UCC23513DWYR datasheet:
 - $V_{SUP}$ = 3.3V (Input supply voltage)
-- $V_F$ = 1.8V (Minimum forward voltage drop of the input diode)
-- $I_F$ = 10mA (Desired forward current for proper operation)
+- $V_F$ = 1.8V (Minimum forward voltage drop of the input diode, From DataSheet, Page No. 20)
+- $I_F$ = 10mA (Desired forward current for proper operation, From DataSheet, Page No. 23)
 
 ### **Calculation**
 Substituting the given values:
 
 ```math
-R_{IN} = \frac{3.3V - 2.1V}{0.01A}
+R_{IN} = \frac{3.3V - 1.8V}{0.01A}
 ```
 
 ```math
-R_{IN} = \frac{1.2V}{0.01A} 
+R_{IN} = \frac{1.5V}{0.01A} 
 ```
 
 ```math
-R_{IN} = 120Ω
+R_{IN} = 150Ω
 ```
 
 ### **Power Dissipation Calculation for Resistor $R_{IN}$**
 
 ## **Calculation:**
-The power dissipated by resistor R_{IN} is given by:
+The power dissipated by resistor $R_{IN}$ is given by:
 
 ```math
 P_{IN} = I_{F}^2 \times R_{IN}
@@ -469,8 +472,9 @@ P_{IN} \approx 0.015W
 - This results in **faster switching**, but increases the current draw, which is a trade-off between switching speed and power dissipation.
 
 ### **Conclusion**
-- The **120Ω resistor** ensures a robust and efficient operation of the UCC23513 gate driver, balancing switching speed and power consumption.
-- A 1/4W (0.25W) resistor is sufficient as it has a power rating significantly higher than the calculated power dissipation (0.057W), ensuring safe operation and reliability.
+- The **120Ω resistor** ensures a robust and efficient operation of the UCC23513 gate driver, balancing switching speed and power consumption. 
+- A 1/4W (0.25W) resistor is sufficient as it has a power rating significantly higher than the calculated power dissipation (0.015W), ensuring safe operation and reliability.
+- For DIP components can be used **220Ω** and **1/4W (0.25W)** is the best choice and it will work properly.
 
 ---
 
@@ -499,7 +503,7 @@ Gate resistors are used to:
 ### **Optimal Resistor Selection**
 To achieve an effective trade-off between **switching speed** and **EMI reduction**, the gate resistor is selected based on the desired **gate charge current**.
 
-Selecting the appropriate gate resistor (R_g) is crucial for optimizing IGBT/MOSFET switching performance. This resistor controls the gate drive current, influences turn-on and turn-off times, and helps in reducing oscillations.
+Selecting the appropriate gate resistor ($R_g$) is crucial for optimizing IGBT/MOSFET switching performance. This resistor controls the gate drive current, influences turn-on and turn-off times, and helps in reducing oscillations.
 
 ### 📌 Formula
 
@@ -528,7 +532,7 @@ Where,
 
 ### Given Parameters
 From the IKW25N120T2 datasheet:
-- **Total Gate Charge**: Q_g = 120 nC *(From DataSheet, Page No. 3)*
+- **Total Gate Charge**: $Q_g$ = 120 nC *(From DataSheet, Page No. 3)*
 - **Switching Time**: t = 200 ns *(Assumed, See DataSheet, Page No. 3)*
 - **Gate-Source Voltage (On)**: $V_{gs(on)}$ = 15V *(From DataSheet, Page No. 3)*
 - **Threshold Voltage**: $V_{gs(th)}$ = 5.8V *(Typical, See DataSheet, Page No. 2)*
@@ -575,8 +579,6 @@ R_g = 15.33Ω
 - **Gate Drive Current**: \0.6A (600 mA)
 - **Gate Resistor**: 15.33Ω  
 
-### ✅ Result: **15.33 Ω gate resistor is required**
-
 ### **Design Considerations**
 - A **15.33Ω** resistor provides a balance between **switching speed and power dissipation**.
 - If excessive **switching noise or oscillations** occur, consider increasing the resistance to **22Ω–30Ω**.
@@ -584,7 +586,8 @@ R_g = 15.33Ω
 - The resistor selection depends on factors such as **gate charge, driver capability, and system noise immunity**.
 
 ### **Conclusion**
-Using a **15.33Ω** gate resistor ensures optimal **switching performance, EMI control, and reliability** of the **UCC23513** gate driver. Adjustments may be made based on **specific circuit requirements** and **EMI constraints**.
+- Using a **15.33Ω** gate resistor ensures optimal **switching performance, EMI control, and reliability** of the **UCC23513** gate driver. Adjustments may be made based on **specific circuit requirements** and **EMI constraints**.
+- For DIP components can be used **20Ω-30Ω** and **1/4W (0.25W)** is the best choice and it will work properly.
 
 ---
 
@@ -599,17 +602,18 @@ For **$C_{VCC}$**, the following capacitors are selected:
 - **10-μF MLCC (50V)** to provide bulk energy storage and reduce voltage fluctuations.
 
 #### Capacitors Used:
-- **Noise decoupling capacitors:** 0.1μF capacitors (C2 and C3) filter the power input.
-- **Bulk capacitors:** 4.7μF capacitors (C4 and C5) supply the IGBT gate current and minimize parasitic inductance, ensuring faster switching.
+- **Noise decoupling capacitors:** 0.1μF capacitors (C2 and C4) filter the power input.
+- **Bulk capacitors:** 4.7μF capacitors (C3 and C5) supply the IGBT gate current and minimize parasitic inductance, ensuring faster switching.
 
-If the **bias power supply output** is located at a considerable distance from the **VCC pin**, an additional **tantalum or electrolytic capacitor (>10 μF)** should be placed in parallel with **CVCC** to compensate for voltage drops and maintain stability.
+If the **bias power supply output** is located at a considerable distance from the **$V_{CC}$ pin**, an additional **tantalum or electrolytic capacitor (>10 μF)** should be placed in parallel with **CVCC** to compensate for voltage drops and maintain stability.
 
 **Note:**
 The **DC bias effect** in MLCCs can significantly reduce their effective capacitance. For example, a **25-V, 1-μF X7R capacitor** may exhibit an actual capacitance of only **500 nF** when subjected to a **15-V DC bias**. It is important to account for this effect when selecting capacitors to ensure sufficient capacitance under real operating conditions.
 
 ### **Conclusion**
-- Additionally, selecting appropriate **VCC bypass capacitors** helps maintain stable operation and minimize voltage fluctuations. Proper component selection enhances the overall robustness of the circuit.
-
+- Additionally, selecting appropriate **$V_{CC}$ bypass capacitors** helps maintain stable operation and minimize voltage fluctuations. Proper component selection enhances the overall robustness of the circuit.
+- For DIP components can be used **Noise decoupling capacitors 0.1μF** and **Bulk capacitors 100μF** is the best choice and it will work properly.
+  
 ---
 
 ### **Selecting Schottky Diode (SD) – Also Called Flyback Diode**
@@ -647,7 +651,8 @@ A Schottky diode is a fast-switching diode used primarily for **freewheeling** o
   - Current Rating: **1A**
 
 ### **Conclusion**
-A **Schottky diode** is an essential component in power electronics, especially in circuits requiring **fast recovery**, **low voltage drop**, and **efficient protection against inductive transients**. Proper selection ensures improved system performance and longevity of power switching devices.
+- A **Schottky diode** is an essential component in power electronics, especially in circuits requiring **fast recovery**, **low voltage drop**, and **efficient protection against inductive transients**. Proper selection ensures improved system performance and longevity of power switching devices.
+- For DIP components can be used **30V-40V, 500mW and 1A** is the best choice and it will work properly.
 
 ---
 
@@ -681,7 +686,8 @@ When the controlling signal is low or inactive, the 10k resistor pulls the gate 
 - **H-bridges:** It is often used in H-bridge circuits to ensure that the MOSFETs are off when the bridge is not actively switching. 
 
 ### **Conclusion**
-A **10kΩ gate-to-source/emitter resistor** is essential for ensuring **stable operation, preventing false triggering, and improving switching response**. Proper selection of this component enhances system performance and ensures reliable operation of MOSFETs and IGBTs in power electronics applications.
+- A **10kΩ gate-to-source/emitter resistor** is essential for ensuring **stable operation, preventing false triggering, and improving switching response**. Proper selection of this component enhances system performance and ensures reliable operation of MOSFETs and IGBTs in power electronics applications.
+- For DIP components can be used same **10Ω** and **1/4W (0.25W)** is the best choice and it will work properly.
 
 ---
 
@@ -720,13 +726,14 @@ A Zener diode, placed between the gate and source, acts as a voltage clamp.
 For **circuit implementation**, refer to the schematic diagrams in the project documentation.
 
 ## **Conclusion**
-Using a **gate-to-source Zener diode** is a **cost-effective and reliable method** to protect MOSFETs in **power electronics, SMPS, and motor control circuits**. It helps **prevent failures due to ESD and high-voltage transients**, ensuring **long-term durability and operational stability**.
+- Using a **gate-to-source Zener diode** is a **cost-effective and reliable method** to protect MOSFETs in **power electronics, SMPS, and motor control circuits**. It helps **prevent failures due to ESD and high-voltage transients**, ensuring **long-term durability and operational stability**.
+- For DIP components can be used **15V, according to your supply voltage that means the breakdown voltage** and **(500mW)** is the best choice and it will work properly.
 
 ---
 
 ## Simulation Diagram of UCC23513DWYR
 ## Gate Driver Circuit Analysis
-The circuit consists of a gate driver IC (UCC23513), which is used to drive the gate of a MOSFET (NSR20F30NXT5G). Below is a breakdown of the key components and their roles:
+The circuit consists of a gate driver IC (UCC23513), which is used to drive the gate of a MOSFETs/IGBTs. Below is a breakdown of the key components and their roles:
 
 ### Components and Functionality
 - **Input Signal (V2):** A 5V pulse signal is provided to the input side of the gate driver through resistor R1 (270Ω).
@@ -736,14 +743,14 @@ The circuit consists of a gate driver IC (UCC23513), which is used to drive the 
   - **Pin 6 (VCC):** Connected to a 15V DC supply (V3).
   - **Pin 4 (VSS):** Ground of the driver.
 - **Decoupling Capacitors (C2, C3, C4, C5, C6):** These capacitors stabilize the power supply and reduce voltage noise.
-- **Schottky Diode (D2 - NSR20F30NXT5G):** The driver provides the required gate voltage (through R2 (30Ω)) to switch the MOSFET.
-- **Pull-down Resistor (R3 - 10kΩ):** Ensures that the MOSFET gate is properly discharged when the driver output is low.
+- **Schottky Diode (SD - NSR20F30NXT5G):** The driver provides the required gate voltage (through R2 (30Ω)) to switch the MOSFET.
+- **Pull-down Resistor (R4 - 10kΩ):** Ensures that the MOSFET gate is properly discharged when the driver output is low.
 
 <p align="center">
-  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/5c4121c9f85b02a9eb4ea9f7d3a58f8cf5eb174c/Simulation%20Diagran%20and%20Results/Simulation%20Diagram%20of%20UCC23513DWY.png" width="700">
+  <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/27ef7cd60f87a3f9a03c78c4b577b47d1f959d3d/Simulation%20Diagran%20and%20Results/Simulation%20Diagram%20of%20UCC23513DWY.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Simulation Diagram of UCC23513DWY</p>
+<p align="center"><b>Figure 11:</b> Simulation Diagram of UCC23513DWY</p>
 
 ## Simulation Results Interpretation
 The second image shows simulation waveforms:
@@ -752,10 +759,10 @@ The second image shows simulation waveforms:
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/Simulation%20Diagran%20and%20Results/Simulation%20Results%20of%20UCC23513DWY.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Simulation Results of UCC23513DWY</p>
+<p align="center"><b>Figure 12:</b> Simulation Results of UCC23513DWY</p>
 
 ### Waveform Analysis
-- **VCC (Supply Voltage - Red Line)**
+- **$V_$CC}$ (Supply Voltage - Red Line)**
   - The supply voltage is steady at 15V, ensuring proper operation of the gate driver.
 - **Input Signal (Purple Line)**
   - This is a 5V pulse train applied to the driver.
@@ -767,10 +774,10 @@ The second image shows simulation waveforms:
   - There is a small delay between the input and output transitions due to propagation delay in the driver.
 
 ## Key Observations and Conclusion
-✅ The gate driver is successfully amplifying the 5V input pulse to 15V, suitable for driving the MOSFET.
-✅ The switching speed and response align well with the expected behavior.
-✅ Proper decoupling capacitors ensure stability, reducing noise in the circuit.
-✅ The 30Ω series gate resistor (R2) limits the gate drive current, preventing excessive inrush.
+- The gate driver is successfully amplifying the 5V input pulse to 15V, suitable for driving the MOSFET.
+- The switching speed and response align well with the expected behavior.
+- Proper decoupling capacitors ensure stability, reducing noise in the circuit.
+- The 30Ω series gate resistor (R2) limits the gate drive current, preventing excessive inrush.
 
 ### Possible Improvements
 - **Check MOSFET Heating:** If switching losses occur, consider optimizing the gate resistor value (R2).
@@ -795,29 +802,28 @@ PCB layout images visually represent the design of a printed circuit board, show
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/PCB/SMD%20Top%20Layer%20of%20Gate%20Driver%20PCB%20Design.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> SMD Top Layer of Gate Driver PCB Design</p>  
+<p align="center"><b>Figure 13:</b> SMD Top Layer of Gate Driver PCB Design</p>  
 
 
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/PCB/SMD%20Bottom%20Layer%20of%20Gate%20Driver%20PCB%20Design.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> SMD Bottom Layer of Gate Driver PCB Design</p>  
+<p align="center"><b>Figure 14:</b> SMD Bottom Layer of Gate Driver PCB Design</p>  
 
 
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/PCB/SMD%203D%20Model%20of%20Gate%20Driver%20PCB%20Design.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> SMD 3D Model of Gate Driver PCB Design</p>  
+<p align="center"><b>Figure 15:</b> SMD 3D Model of Gate Driver PCB Design</p>  
 
 
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/237a240321ccf590e548612f46c43ec7dc147de4/PCB/SMD%20Final%20Assembled%20Gate%20Driver%20PCB%20Design.jpg" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> SMD Final Assembled Gate Driver PCB Design</p>  
-
+<p align="center"><b>Figure 16:</b> SMD Final Assembled Gate Driver PCB Design</p>  
 
 ## PCB Material Selection
 For reliability and performance, the **FR-4 UL94V-0** printed circuit board material is recommended. This material is preferred due to:
@@ -834,14 +840,14 @@ The HCPL-3120 provides **complementary gate drive pulses** to control the IGBTs/
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/e901177c6e94ca66eb4f06d9b0ee6d019a6bf346/Hardware%20Results/Startup%20Sequence%20PWM%20at%20Gate%20Driver%20Output%20for%20First%20Leg.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Startup Sequence PWM at Gate Driver Output for First Leg</p>  
+<p align="center"><b>Figure 17:</b> Startup Sequence PWM at Gate Driver Output for First Leg</p>  
 
 
 <p align="center">
   <img src="https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/e901177c6e94ca66eb4f06d9b0ee6d019a6bf346/Hardware%20Results/Startup%20Sequence%20PWM%20at%20Gate%20Driver%20Output%20for%20Second%20Leg.png" width="700">
 </p>  
 
-<p align="center"><b>Figure 2:</b> Startup Sequence PWM at Gate Driver Output for Second Leg</p>  
+<p align="center"><b>Figure 18:</b> Startup Sequence PWM at Gate Driver Output for Second Leg</p>  
 
 ## 🔗 References
 - https://github.com/vandemataram15aug1947/Design_and_Development_of_an_Isolated_Gate_Driver_Circuit/blob/f9e6d71f39f1dc52c4896c2a9bf28941dc81d05e/DataSheet/HCPL-3120.pdf
