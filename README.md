@@ -513,18 +513,18 @@ The gate resistor is determined using the following steps:
 The required gate-drive current can be estimated as:
 
 ```math
-I_g = \frac{Q_g}{t_{\text{sw}}}
+I_g = \frac{Q_g}{t_{\text{on}}}
 ```
 
-Where:  
+Where,  
 - **Ig** = Gate drive current (A)  
 - **Qg** = Total gate charge (C)  
-- **t<sub>sw</sub>** = Desired switching time (s)  
+- **t<sub>on</sub>** = Desired switching time (s)  
 
 The desired switching time is given by:
 
 ```math
-t_{\text{sw}} = t_{d(\text{on})} + t_r
+t_{\text{on}} = t_{d(\text{on})} + t_r
 ```
 
 - **t<sub>d(on)</sub>** = Turn-on delay time  
