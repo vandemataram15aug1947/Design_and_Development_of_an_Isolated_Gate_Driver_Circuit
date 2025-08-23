@@ -544,9 +544,8 @@ Where,
 ### Given Parameters
 From the IKW25N120T2 datasheet:
 - **Total Gate Charge**: $Q_g$ = 120 nC *(From DataSheet, Page No. 3)*
-- **Switching Time**: t = 200 ns *(Assumed, See DataSheet, Page No. 3)*
+- **Switching Time**: t = ? ns *(Assumed, See DataSheet, Page No. 3)*
 - **Gate-Source Voltage (On)**: $V_{gs(on)}$ = 15V *(From DataSheet, Page No. 3)*
-- **Threshold Voltage**: $V_{gs(th)}$ = 5.8V *(Typical, See DataSheet, Page No. 2)*
 
 ### Calculations
 ### Step 1: Compute Gate Drive Current
@@ -559,45 +558,41 @@ I_g = \frac{Q_g}{t}
 Substituting the values:
 
 ```math
-I_g = \frac{120 \times 10^{-9} C}{200 \times 10^{-9} s}
+I_g = \frac{120 \times 10^{-9} C}{49 \times 10^{-9} s}
 ```
 
 ```math
-I_g = 0.6A \quad (600 \text{ mA})
+I_g = 2.45A
 ```
 
 ### Step 2: Calculate the Gate Resistor
 Using Ohm's Law:
 
 ```math
-R_g = \frac{V_{gs(on)} - V_{gs(th)}}{I_g}
+R_g = \frac{V_{gs(on)}}{I_g}
 ```
 
 Substituting the values:
 ```math
-R_g = \frac{15V - 5.8V}{0.6A}
+R_g = \frac{15V}{2.45A}
 ```
 
 ```math
-R_g = \frac{9.2V}{0.6A}
-```
-
-```math
-R_g = 15.33Ω
+R_g = 6.12Ω
 ```
 
 ## Final Results
-- **Gate Drive Current**: \0.6A (600 mA)
-- **Gate Resistor**: 15.33Ω  
+- **Gate Drive Current**: \2.45A 
+- **Gate Resistor**: 6.12Ω  
 
 ### **Design Considerations**
-- A **15.33Ω** resistor provides a balance between **switching speed and power dissipation**.
+- A **6.12Ω** resistor provides a balance between **switching speed and power dissipation**.
 - If excessive **switching noise or oscillations** occur, consider increasing the resistance to **22Ω–30Ω**.
 - For **faster switching**, a **lower value (e.g., 10Ω)** may be used, but this increases **EMI and transient stress**.
 - The resistor selection depends on factors such as **gate charge, driver capability, and system noise immunity**.
 
 ### **Conclusion**
-- Using a **15.33Ω** gate resistor ensures optimal **switching performance, EMI control, and reliability** of the **UCC23513** gate driver. Adjustments may be made based on **specific circuit requirements** and **EMI constraints**.
+- Using a **6.12Ω** gate resistor ensures optimal **switching performance, EMI control, and reliability** of the **UCC23513** gate driver. Adjustments may be made based on **specific circuit requirements** and **EMI constraints**.
 - For DIP components can be used **20Ω-30Ω** and **1/4W (0.25W)** is the best choice and it will work properly.
 
 ---
