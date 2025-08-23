@@ -532,12 +532,11 @@ t_{\text{on}} = t_{d(\text{on})} + t_r
 
 ### **Step 2: Compute Gate Resistor (Rg)**
 ```math
-R_g = \frac{V_{gs(on)} - V_{gs(th)}}{I_g}
+R_g = \frac{V_{gs(on)}}{I_g}
 ```
 Where,
 - **Rg** = Gate resistor (Ω)
 - **Vgs(on)** = Applied gate-source voltage (V) 
-- **Vgs(th)** = Threshold voltage (V)
 - **Ig** = Gate drive current (A)
 
 ### 📖 Example Calculation
