@@ -510,17 +510,6 @@ Selecting the appropriate gate resistor ($R_g$) is crucial for optimizing IGBT/M
 The gate resistor is determined using the following steps:
 
 ### **Step 1: Calculate Gate Drive Current (Ig)**
-```math
-I_g = \frac{Q_g}{t}
-```
-Where,
-- **Ig** = Gate drive current (A)
-- **Qg** = Gate charge (C)
-- **t** = Desired switching time (s)
-- 
-
-## 🔹 Step 1: Calculate Gate Drive Current (Ig)
-
 The required gate-drive current can be estimated as:
 
 ```math
@@ -540,7 +529,6 @@ t_{\text{sw}} = t_{d(\text{on})} + t_r
 
 - **t<sub>d(on)</sub>** = Turn-on delay time  
 - **t<sub>r</sub>** = Rise time
-
 
 ### **Step 2: Compute Gate Resistor (Rg)**
 ```math
