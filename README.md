@@ -544,7 +544,7 @@ Where,
 ### Given Parameters
 From the IKW25N120T2 datasheet:
 - **Total Gate Charge**: $Q_g$ = 120 nC *(From DataSheet, Page No. 3)*
-- **Switching Time**: t = ? ns *(Assumed, See DataSheet, Page No. 3)*
+- **Switching Time**: $t_{on}$ = 49 ns *(From DataSheet, Page No. 4)*
 - **Gate-Source Voltage (On)**: $V_{gs(on)}$ = 15V *(From DataSheet, Page No. 3)*
 
 ### Calculations
@@ -582,7 +582,7 @@ R_g = 6.12Ω
 ```
 
 ## Final Results
-- **Gate Drive Current**: \2.45A 
+- **Gate Drive Current**: 2.45A 
 - **Gate Resistor**: 6.12Ω  
 
 ### **Design Considerations**
