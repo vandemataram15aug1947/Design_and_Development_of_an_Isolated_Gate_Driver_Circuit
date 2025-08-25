@@ -20,6 +20,8 @@ This project focuses on the design and development of two isolated gate driver c
 
 The circuits are designed to efficiently drive power switches in high-frequency applications, ensuring **reliable isolation, fast switching, and enhanced noise immunity**. These gate drivers play a crucial role in power electronics applications such as **DC-DC converters, inverters, and motor drives**.  
 
+<!--
+
 # HCPL-3120 Optocoupler Gate Drivers
 
 ## Introduction
@@ -279,6 +281,7 @@ The **HCPL-3120** optocouplers provide a reliable and efficient solution for **m
 
 ---
 
+-->
 
 # Design of Isolated UCC23513DWYR Optocoupler Gate Driver
 
