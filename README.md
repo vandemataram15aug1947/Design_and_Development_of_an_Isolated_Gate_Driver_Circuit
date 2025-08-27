@@ -671,9 +671,9 @@ The gate driver supplies current to charge/discharge this capacitor **through a 
 ## 2. RC Time Constant
 The charging/discharging behavior is governed by the **RC time constant**:
 
-\[
+```math
 \tau = R_g \cdot C_g
-\]
+```
 
 - \(R_g\) = Gate resistance (Ω)  
 - \(C_g\) = Gate capacitance (F)  
@@ -681,9 +681,9 @@ The charging/discharging behavior is governed by the **RC time constant**:
 
 The gate voltage during charging is:
 
-\[
+```math
 V_g(t) = V_{drive} \left( 1 - e^{-t / (R_g \cdot C_g)} \right)
-\]
+```
 
 - At \(t = \tau\), the gate voltage reaches **63%** of the final value.  
 - At \(t = 3\tau\), the gate voltage is ~95% charged.  
@@ -717,15 +717,17 @@ Suppose:
 - Gate capacitance: \(C_g = 2 \, \text{nF}\)  
 - Gate resistor: \(R_g = 10 \, \Omega\)  
 
-\[
+```math
 \tau = R_g \cdot C_g = 10 \cdot 2 \times 10^{-9} = 20 \, \text{ns}
-\]
+```
 
 - The MOSFET reaches 63% of its final gate voltage in **20 ns**.  
 - If we increase \(R_g\) to \(100 \, \Omega\):  
-  \[
+
+```math
   \tau = 200 \, \text{ns}
-  \]  
+```
+
   → The MOSFET switches much slower, reducing EMI but increasing switching loss.  
 
 ---
