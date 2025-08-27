@@ -669,7 +669,7 @@ The **gate resistor ($R_g$)** is inserted in series to control this charging/dis
 The equivalent model:
 
 
-## 2. RC Time Constant
+## RC Time Constant
 The charging/discharging behavior is governed by the **RC time constant**:
 
 $$
@@ -681,10 +681,6 @@ Where,
 - $C_g$ = Gate capacitance (F)  
 - $\tau$ = Time constant (s)  
 - $V_{drv}$ =  Driver voltage (v)
-
-The charging/discharging behavior is governed by the **RC time constant**:
-
-$\tau = R_g \cdot C_g$
 
 ---
 
@@ -711,7 +707,7 @@ $I_g = C_g \cdot \dfrac{dV}{dt}$
 
 For an **ideal step input** ($\tfrac{dV}{dt} \to \infty$):
 
-$I_g \to \infty \quad \text{(impulse current)}$
+$I_g \to \infty \quad \text{(Impulse current)}$
 
 ➡️ This causes:
 - Excessive current drawn from the driver  
@@ -730,20 +726,9 @@ Hence, a gate resistor prevents **high inrush current**.
 - **High $R_g$:**
   - Slower switching  
   - Reduced EMI  
-  - But **higher switching loss** (longer transition time)  
+  - But **higher switching loss** (Longer transition time)  
 
 ✅ **Optimal value of $R_g$** balances **switching losses** and **EMI**.
-
----
-
-## Graphical Meaning
-- **Gate Voltage ($V_g$):** exponential rise/fall with time constant $\tau = R_g \cdot C_g$.  
-- **Gate Current ($I_g$):** decays exponentially during charging.  
-
-With larger $R_g$ → slower charging → slower switching.  
-With smaller $R_g$ → faster charging → faster switching but noisy.  
-
-*(You can add plots here using Python/Matplotlib or simulation results.)*
 
 ---
 
