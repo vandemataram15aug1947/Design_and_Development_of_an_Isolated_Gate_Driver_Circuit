@@ -661,89 +661,91 @@ R_g = 6.12Ω
 # Why Gate Resistor is Needed (Explained Using Time Constant)
 
 ## 1. Gate as a Capacitive Load
-The **gate of a MOSFET/IGBT** behaves like a capacitor (between Gate and Source/Emitter).  
-- To **turn ON**, this gate capacitance (**C<sub>g</sub>**) must be charged.  
+The **gate of a MOSFET/IGBT** behaves like a capacitor (between Gate and Source/Emitter).
+
+- To **turn ON**, this gate capacitance ($C_g$) must be charged.  
 - To **turn OFF**, it must be discharged.  
-The gate driver supplies current to charge/discharge this capacitor **through a gate resistor (R<sub>g</sub>)**.
+- The gate driver supplies current to charge/discharge this capacitor **through a gate resistor ($R_g$)**.
 
 ---
 
 ## 2. RC Time Constant
 The charging/discharging behavior is governed by the **RC time constant**:
 
-```math
+$$
 \tau = R_g \cdot C_g
-```
+$$
 
-- \(R_g\) = Gate resistance (Ω)  
-- \(C_g\) = Gate capacitance (F)  
-- \(\tau\) = Time constant (s)  
+- $R_g$ = Gate resistance (Ω)  
+- $C_g$ = Gate capacitance (F)  
+- $\tau$ = Time constant (s)  
 
 The gate voltage during charging is:
 
-```math
+$$
 V_g(t) = V_{drive} \left( 1 - e^{-t / (R_g \cdot C_g)} \right)
-```
+$$
 
-- At \(t = \tau\), the gate voltage reaches **63%** of the final value.  
-- At \(t = 3\tau\), the gate voltage is ~95% charged.  
+- At $t = \tau$, the gate voltage reaches **63%** of the final value.  
+- At $t = 3\tau$, the gate voltage is ~95% charged.  
 
-Thus, the resistor directly controls how quickly the MOSFET/IGBT turns ON or OFF.
+Thus, $R_g$ directly controls how quickly the MOSFET/IGBT turns ON or OFF.
 
 ---
 
 ## 3. Why Do We Need a Gate Resistor?
 
 1. **Control Switching Speed**  
-   - Small \(R_g\) → Fast charging/discharging → High \(dV/dt\), \(dI/dt\)  
-   - Large \(R_g\) → Slower switching → More controlled transitions  
+   - Small $R_g$ → Fast charging/discharging → High $dV/dt$, $dI/dt$  
+   - Large $R_g$ → Slower switching → More controlled transitions  
 
 2. **Reduce EMI and Ringing**  
-   - Very fast transitions cause **EMI (Electromagnetic Interference)** and oscillations.  
-   - Gate resistor damps these unwanted effects.  
+   - Very fast transitions cause **Electromagnetic Interference (EMI)** and oscillations.  
+   - $R_g$ damps these unwanted effects.  
 
 3. **Balance Switching Loss vs Noise**  
-   - Small \(R_g\) → Lower switching losses but higher EMI.  
-   - Large \(R_g\) → Lower EMI but higher switching losses.  
-   - Choosing \(R_g\) provides a **trade-off** between efficiency and reliability.  
+   - Small $R_g$ → Lower switching losses but higher EMI.  
+   - Large $R_g$ → Lower EMI but higher switching losses.  
+   - Choosing $R_g$ provides a **trade-off** between efficiency and reliability.  
 
 4. **Protect Gate Driver**  
-   - Without a resistor, the initial charging current of the gate capacitance could be very high, possibly **damaging the driver**.  
+   - Without $R_g$, the initial charging current of $C_g$ could be very high.  
+   - This may **damage the gate driver**.
 
 ---
 
 ## 4. Example Calculation
 Suppose:  
-- Gate capacitance: \(C_g = 2 \, \text{nF}\)  
-- Gate resistor: \(R_g = 10 \, \Omega\)  
+- Gate capacitance: $C_g = 2 \, \text{nF}$  
+- Gate resistor: $R_g = 10 \, \Omega$  
 
-```math
+$$
 \tau = R_g \cdot C_g = 10 \cdot 2 \times 10^{-9} = 20 \, \text{ns}
-```
+$$
 
 - The MOSFET reaches 63% of its final gate voltage in **20 ns**.  
-- If we increase \(R_g\) to \(100 \, \Omega\):  
 
-```math
-  \tau = 200 \, \text{ns}
-```
+If we increase $R_g$ to $100 \, \Omega$:  
 
-  → The MOSFET switches much slower, reducing EMI but increasing switching loss.  
+$$
+\tau = 100 \cdot 2 \times 10^{-9} = 200 \, \text{ns}
+$$
+
+→ The MOSFET switches much slower, reducing EMI but increasing switching loss.
 
 ---
 
 ## 5. Summary
-The **gate resistor controls the charging/discharging speed** of the gate capacitor using the RC time constant:
+The **gate resistor ($R_g$)** controls the **charging/discharging speed** of the gate capacitance ($C_g$) using the RC time constant:
 
-- Prevents excessive driver current  
-- Reduces EMI and ringing  
-- Balances switching losses vs noise  
-- Improves overall system reliability  
+- ✔ Prevents excessive driver current  
+- ✔ Reduces EMI and ringing  
+- ✔ Balances switching losses vs noise  
+- ✔ Improves overall system reliability  
 
-In short:  
-**Gate resistor = A tuning knob for MOSFET/IGBT switching speed and reliability.**
+👉 In short:  
+**$R_g$ = A tuning knob for MOSFET/IGBT switching speed and reliability.**
 
----
 
 
 ### Selecting $V_{CC}$ Capacitor
