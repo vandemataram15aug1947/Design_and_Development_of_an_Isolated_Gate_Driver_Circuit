@@ -657,17 +657,17 @@ R_g = 6.12Ω
 
 ---
 
+# Why Gate Resistor ($R_g$) is Needed in MOSFET/IGBT (Explained Using Time Constant)?
 
-# Why Gate Resistor is Needed (Explained Using Time Constant)
-
-## 1. Gate as a Capacitive Load
-The **gate of a MOSFET/IGBT** behaves like a capacitor (between Gate and Source/Emitter).
-
-- To **turn ON**, this gate capacitance ($C_g$) must be charged.  
-- To **turn OFF**, it must be discharged.  
-- The gate driver supplies current to charge/discharge this capacitor **through a gate resistor ($R_g$)**.
+When driving a **MOSFET/IGBT**, the **gate terminal behaves like a capacitor** (Gate-to-Source/Emitter capacitance: $C_g$).  
+To switch the device ON or OFF, this capacitance must be charged or discharged.  
+The **gate resistor ($R_g$)** is inserted in series to control this charging/discharging process.
 
 ---
+
+## Gate as RC Charging Circuit
+The equivalent model:
+
 
 ## 2. RC Time Constant
 The charging/discharging behavior is governed by the **RC time constant**:
@@ -676,110 +676,35 @@ $$
 \tau = R_g \cdot C_g
 $$
 
+Where,  
 - $R_g$ = Gate resistance (Ω)  
 - $C_g$ = Gate capacitance (F)  
 - $\tau$ = Time constant (s)  
+- $V_{drv}$ =  Driver voltage (v)
 
-The gate voltage during charging is:
-
-$$
-V_g(t) = V_{drive} \left( 1 - e^{-t / (R_g \cdot C_g)} \right)
-$$
-
-- At $t = \tau$, the gate voltage reaches **63%** of the final value.  
-- At $t = 3\tau$, the gate voltage is ~95% charged.  
-
-Thus, $R_g$ directly controls how quickly the MOSFET/IGBT turns ON or OFF.
-
----
-
-## 3. Why Do We Need a Gate Resistor?
-
-1. **Control Switching Speed**  
-   - Small $R_g$ → Fast charging/discharging → High $dV/dt$, $dI/dt$  
-   - Large $R_g$ → Slower switching → More controlled transitions  
-
-2. **Reduce EMI and Ringing**  
-   - Very fast transitions cause **Electromagnetic Interference (EMI)** and oscillations.  
-   - $R_g$ damps these unwanted effects.  
-
-3. **Balance Switching Loss vs Noise**  
-   - Small $R_g$ → Lower switching losses but higher EMI.  
-   - Large $R_g$ → Lower EMI but higher switching losses.  
-   - Choosing $R_g$ provides a **trade-off** between efficiency and reliability.  
-
-4. **Protect Gate Driver**  
-   - Without $R_g$, the initial charging current of $C_g$ could be very high.  
-   - This may **damage the gate driver**.
-
----
-
-## 4. Example Calculation
-Suppose:  
-- Gate capacitance: $C_g = 2 \, \text{nF}$  
-- Gate resistor: $R_g = 10 \, \Omega$  
-
-$$
-\tau = R_g \cdot C_g = 10 \cdot 2 \times 10^{-9} = 20 \, \text{ns}
-$$
-
-- The MOSFET reaches 63% of its final gate voltage in **20 ns**.  
-
-If we increase $R_g$ to $100 \, \Omega$:  
-
-$$
-\tau = 100 \cdot 2 \times 10^{-9} = 200 \, \text{ns}
-$$
-
-→ The MOSFET switches much slower, reducing EMI but increasing switching loss.
-
----
-
-## 5. Summary
-The **gate resistor ($R_g$)** controls the **charging/discharging speed** of the gate capacitance ($C_g$) using the RC time constant:
-
-- ✔ Prevents excessive driver current  
-- ✔ Reduces EMI and ringing  
-- ✔ Balances switching losses vs noise  
-- ✔ Improves overall system reliability  
-
-👉 In short:  
-**$R_g$ = A tuning knob for MOSFET/IGBT switching speed and reliability.**
-
-# Purpose of Gate Resistor (Rg) in MOSFET/IGBT
-
-When driving a **MOSFET/IGBT**, the **gate terminal behaves like a capacitor** (Gate-to-Source/Emitter capacitance: $C_g$).  
-To switch the device ON or OFF, this capacitance must be charged or discharged.  
-The **gate resistor ($R_g$)** is inserted in series to control this charging/discharging process.
-
----
-
-## 1. Gate as RC Charging Circuit
-The equivalent model:
-
-- Gate capacitance → $C_g$  
-- Gate resistor → $R_g$  
-- Driver voltage → $V_{drv}$  
-
-The **time constant** is:
+The charging/discharging behavior is governed by the **RC time constant**:
 
 $\tau = R_g \cdot C_g$
 
 ---
 
-## 2. Charging Equation of Gate
+## Charging Equation of Gate
 When a step voltage is applied at the gate:
 
 $V_g(t) = V_{drv} \left( 1 - e^{-\tfrac{t}{R_g C_g}} \right)$
 
-- If $R_g \uparrow$ → switching becomes **slower** ($\tau$ increases).  
-- If $R_g \downarrow$ → switching becomes **faster** ($\tau$ decreases).  
+- At **t = τ**, the gate voltage reaches ~**63%** of its final value.  
+- At **t = 3τ**, the gate voltage reaches ~**95%** of its final value.  
 
-Thus, the gate resistor directly controls the **switching speed**.
+### 🔑 Key Insights
+- **Increase Rg (↑)** → Larger τ → Switching becomes **slower**.  
+- **Decrease Rg (↓)** → Smaller τ → Switching becomes **faster**.  
+
+Hence, the **gate resistor directly controls the switching speed** of the MOSFET/IGBT and plays a critical role in power electronics design.
 
 ---
 
-## 3. Case Without Gate Resistor ($R_g = 0$)
+## Case Without Gate Resistor ($R_g = 0$)
 If no resistor is present:
 
 $I_g = C_g \cdot \dfrac{dV}{dt}$
@@ -797,10 +722,10 @@ Hence, a gate resistor prevents **high inrush current**.
 
 ---
 
-## 4. Trade-Off in Gate Resistor Selection
+## Trade-Off in Gate Resistor Selection
 - **Low $R_g$:**
   - Faster switching  
-  - Higher $dv/dt$, $di/dt$ → **EMI and overshoot**  
+  - Higher $\tfrac{dV}{dt}$, $\tfrac{di}{dt}$ → **EMI and overshoot**  
 
 - **High $R_g$:**
   - Slower switching  
@@ -811,7 +736,7 @@ Hence, a gate resistor prevents **high inrush current**.
 
 ---
 
-## 5. Graphical Meaning
+## Graphical Meaning
 - **Gate Voltage ($V_g$):** exponential rise/fall with time constant $\tau = R_g \cdot C_g$.  
 - **Gate Current ($I_g$):** decays exponentially during charging.  
 
