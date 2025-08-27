@@ -746,6 +746,90 @@ The **gate resistor ($R_g$)** controls the **charging/discharging speed** of the
 👉 In short:  
 **$R_g$ = A tuning knob for MOSFET/IGBT switching speed and reliability.**
 
+# Purpose of Gate Resistor (Rg) in MOSFET/IGBT
+
+When driving a **MOSFET/IGBT**, the **gate terminal behaves like a capacitor** (Gate-to-Source/Emitter capacitance: $C_g$).  
+To switch the device ON or OFF, this capacitance must be charged or discharged.  
+The **gate resistor ($R_g$)** is inserted in series to control this charging/discharging process.
+
+---
+
+## 1. Gate as RC Charging Circuit
+The equivalent model:
+
+- Gate capacitance → $C_g$  
+- Gate resistor → $R_g$  
+- Driver voltage → $V_{drv}$  
+
+The **time constant** is:
+
+$\tau = R_g \cdot C_g$
+
+---
+
+## 2. Charging Equation of Gate
+When a step voltage is applied at the gate:
+
+$V_g(t) = V_{drv} \left( 1 - e^{-\tfrac{t}{R_g C_g}} \right)$
+
+- If $R_g \uparrow$ → switching becomes **slower** ($\tau$ increases).  
+- If $R_g \downarrow$ → switching becomes **faster** ($\tau$ decreases).  
+
+Thus, the gate resistor directly controls the **switching speed**.
+
+---
+
+## 3. Case Without Gate Resistor ($R_g = 0$)
+If no resistor is present:
+
+$I_g = C_g \cdot \dfrac{dV}{dt}$
+
+For an **ideal step input** ($\tfrac{dV}{dt} \to \infty$):
+
+$I_g \to \infty \quad \text{(impulse current)}$
+
+➡️ This causes:
+- Excessive current drawn from the driver  
+- EMI issues  
+- Possible gate or driver **damage**  
+
+Hence, a gate resistor prevents **high inrush current**.
+
+---
+
+## 4. Trade-Off in Gate Resistor Selection
+- **Low $R_g$:**
+  - Faster switching  
+  - Higher $dv/dt$, $di/dt$ → **EMI and overshoot**  
+
+- **High $R_g$:**
+  - Slower switching  
+  - Reduced EMI  
+  - But **higher switching loss** (longer transition time)  
+
+✅ **Optimal value of $R_g$** balances **switching losses** and **EMI**.
+
+---
+
+## 5. Graphical Meaning
+- **Gate Voltage ($V_g$):** exponential rise/fall with time constant $\tau = R_g \cdot C_g$.  
+- **Gate Current ($I_g$):** decays exponentially during charging.  
+
+With larger $R_g$ → slower charging → slower switching.  
+With smaller $R_g$ → faster charging → faster switching but noisy.  
+
+*(You can add plots here using Python/Matplotlib or simulation results.)*
+
+---
+
+## 📌 Final Summary
+The **purpose of the gate resistor ($R_g$)** is:
+
+1. To **control the charging/discharging rate** of MOSFET/IGBT gate capacitance.  
+2. To **limit inrush current** into the gate (protecting driver & device).  
+3. To **tune switching speed**, balancing **losses vs EMI**.  
+
+$\tau = R_g \cdot C_g$
 
 
 ### Selecting $V_{CC}$ Capacitor
